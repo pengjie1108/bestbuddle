@@ -25,6 +25,9 @@
 		44A5D55F1EB99D2E00D924E9 /* TBLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44A5D55D1EB99D2E00D924E9 /* TBLoginViewController.xib */; };
 		44A5D5621EB9AE4400D924E9 /* TBLoginTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A5D5611EB9AE4400D924E9 /* TBLoginTextField.m */; };
 		44A5D5651EB9AEAE00D924E9 /* UITextField+TBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A5D5641EB9AEAE00D924E9 /* UITextField+TBExtension.m */; };
+		44A5D5681EB9BFB900D924E9 /* TBHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A5D5671EB9BFB900D924E9 /* TBHTTPSessionManager.m */; };
+		44A5D56E1EB9D7D000D924E9 /* MBProgressHUD+TBHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A5D56D1EB9D7D000D924E9 /* MBProgressHUD+TBHUD.m */; };
+		82CBF6F801EF705B8DA242A0 /* libPods-TonBright.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D4634E77ED09FDC4904872E /* libPods-TonBright.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D4634E77ED09FDC4904872E /* libPods-TonBright.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TonBright.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		36BB66F3B13A2B7559AE4F97 /* Pods-TonBright.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TonBright.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TonBright/Pods-TonBright.debug.xcconfig"; sourceTree = "<group>"; };
 		44A5D4E61EB8757C00D924E9 /* TonBright.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TonBright.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44A5D4F51EB8757C00D924E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44A5D4FF1EB8757C00D924E9 /* TonBrightTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TonBrightTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +85,11 @@
 		44A5D5611EB9AE4400D924E9 /* TBLoginTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBLoginTextField.m; sourceTree = "<group>"; };
 		44A5D5631EB9AEAE00D924E9 /* UITextField+TBExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+TBExtension.h"; sourceTree = "<group>"; };
 		44A5D5641EB9AEAE00D924E9 /* UITextField+TBExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+TBExtension.m"; sourceTree = "<group>"; };
+		44A5D5661EB9BFB900D924E9 /* TBHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBHTTPSessionManager.h; sourceTree = "<group>"; };
+		44A5D5671EB9BFB900D924E9 /* TBHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBHTTPSessionManager.m; sourceTree = "<group>"; };
+		44A5D56C1EB9D7D000D924E9 /* MBProgressHUD+TBHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+TBHUD.h"; sourceTree = "<group>"; };
+		44A5D56D1EB9D7D000D924E9 /* MBProgressHUD+TBHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+TBHUD.m"; sourceTree = "<group>"; };
+		F492298DDFEE419F458C69AA /* Pods-TonBright.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TonBright.release.xcconfig"; path = "Pods/Target Support Files/Pods-TonBright/Pods-TonBright.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82CBF6F801EF705B8DA242A0 /* libPods-TonBright.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +125,8 @@
 				44A5D5021EB8757C00D924E9 /* TonBrightTests */,
 				44A5D50D1EB8757C00D924E9 /* TonBrightUITests */,
 				44A5D4E71EB8757C00D924E9 /* Products */,
+				F4239FADF00EC9E58CA48BAC /* Pods */,
+				E859810EE14612C978DE1713 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -350,6 +363,8 @@
 				44A5D5371EB87A5800D924E9 /* AppDelegate.m */,
 				44A5D5381EB87A5800D924E9 /* main.m */,
 				44A5D5581EB96F4C00D924E9 /* TonBright.pch */,
+				44A5D5661EB9BFB900D924E9 /* TBHTTPSessionManager.h */,
+				44A5D5671EB9BFB900D924E9 /* TBHTTPSessionManager.m */,
 			);
 			path = "Other-其他";
 			sourceTree = "<group>";
@@ -361,6 +376,8 @@
 				44A5D5551EB9671B00D924E9 /* UIView+PJExtension.m */,
 				44A5D5631EB9AEAE00D924E9 /* UITextField+TBExtension.h */,
 				44A5D5641EB9AEAE00D924E9 /* UITextField+TBExtension.m */,
+				44A5D56C1EB9D7D000D924E9 /* MBProgressHUD+TBHUD.h */,
+				44A5D56D1EB9D7D000D924E9 /* MBProgressHUD+TBHUD.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -388,6 +405,23 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		E859810EE14612C978DE1713 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1D4634E77ED09FDC4904872E /* libPods-TonBright.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F4239FADF00EC9E58CA48BAC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				36BB66F3B13A2B7559AE4F97 /* Pods-TonBright.debug.xcconfig */,
+				F492298DDFEE419F458C69AA /* Pods-TonBright.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -395,9 +429,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 44A5D5131EB8757C00D924E9 /* Build configuration list for PBXNativeTarget "TonBright" */;
 			buildPhases = (
+				3B93DF269E1448FA1BFD6B61 /* [CP] Check Pods Manifest.lock */,
 				44A5D4E21EB8757C00D924E9 /* Sources */,
 				44A5D4E31EB8757C00D924E9 /* Frameworks */,
 				44A5D4E41EB8757C00D924E9 /* Resources */,
+				DC79D1B6B082E1E70042C1B5 /* [CP] Embed Pods Frameworks */,
+				0A1E6C30029785D23700985F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -518,12 +555,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0A1E6C30029785D23700985F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TonBright/Pods-TonBright-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3B93DF269E1448FA1BFD6B61 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DC79D1B6B082E1E70042C1B5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TonBright/Pods-TonBright-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		44A5D4E21EB8757C00D924E9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				44A5D54A1EB883AA00D924E9 /* TBMeViewController.m in Sources */,
+				44A5D56E1EB9D7D000D924E9 /* MBProgressHUD+TBHUD.m in Sources */,
 				44A5D5621EB9AE4400D924E9 /* TBLoginTextField.m in Sources */,
 				44A5D5471EB8837500D924E9 /* TBFocusViewController.m in Sources */,
 				44A5D55E1EB99D2E00D924E9 /* TBLoginViewController.m in Sources */,
@@ -531,6 +617,7 @@
 				44A5D5651EB9AEAE00D924E9 /* UITextField+TBExtension.m in Sources */,
 				44A5D53A1EB87A5800D924E9 /* main.m in Sources */,
 				44A5D5441EB8833400D924E9 /* TBSystemViewController.m in Sources */,
+				44A5D5681EB9BFB900D924E9 /* TBHTTPSessionManager.m in Sources */,
 				44A5D5561EB9671B00D924E9 /* UIView+PJExtension.m in Sources */,
 				44A5D5391EB87A5800D924E9 /* AppDelegate.m in Sources */,
 				44A5D5411EB87F3400D924E9 /* TBTabBarController.m in Sources */,
@@ -668,6 +755,7 @@
 		};
 		44A5D5141EB8757C00D924E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36BB66F3B13A2B7559AE4F97 /* Pods-TonBright.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -682,6 +770,7 @@
 		};
 		44A5D5151EB8757C00D924E9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F492298DDFEE419F458C69AA /* Pods-TonBright.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

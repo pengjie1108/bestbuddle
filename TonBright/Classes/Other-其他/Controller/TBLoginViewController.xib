@@ -12,6 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TBLoginViewController">
             <connections>
+                <outlet property="loginName" destination="uBw-tF-CGZ" id="BhM-vh-g8S"/>
+                <outlet property="passWord" destination="YXb-9p-rC3" id="Wsz-RZ-KfT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -78,6 +80,9 @@
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <state key="highlighted" backgroundImage="login_register_button_click"/>
+                            <connections>
+                                <action selector="login:" destination="-1" eventType="touchUpInside" id="h5U-d6-YKt"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
