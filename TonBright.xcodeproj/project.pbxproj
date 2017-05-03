@@ -1,0 +1,785 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		44A5D4F61EB8757C00D924E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44A5D4F51EB8757C00D924E9 /* Assets.xcassets */; };
+		44A5D5041EB8757C00D924E9 /* TonBrightTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A5D5031EB8757C00D924E9 /* TonBrightTests.m */; };
+		44A5D50F1EB8757C00D924E9 /* TonBrightUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A5D50E1EB8757C00D924E9 /* TonBrightUITests.m */; };
+		44A5D51F1EB87A2F00D924E9 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44A5D51E1EB87A2F00D924E9 /* Info.plist */; };
+		44A5D5391EB87A5800D924E9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A5D5371EB87A5800D924E9 /* AppDelegate.m */; };
+		44A5D53A1EB87A5800D924E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A5D5381EB87A5800D924E9 /* main.m */; };
+		44A5D5411EB87F3400D924E9 /* TBTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A5D5401EB87F3400D924E9 /* TBTabBarController.m */; };
+		44A5D5441EB8833400D924E9 /* TBSystemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A5D5431EB8833400D924E9 /* TBSystemViewController.m */; };
+		44A5D5471EB8837500D924E9 /* TBFocusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A5D5461EB8837500D924E9 /* TBFocusViewController.m */; };
+		44A5D54A1EB883AA00D924E9 /* TBMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A5D5491EB883AA00D924E9 /* TBMeViewController.m */; };
+		44A5D54D1EB883D900D924E9 /* TBTodoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A5D54C1EB883D900D924E9 /* TBTodoViewController.m */; };
+		44A5D5501EB88C9100D924E9 /* TBTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A5D54F1EB88C9100D924E9 /* TBTabBar.m */; };
+		44A5D5561EB9671B00D924E9 /* UIView+PJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A5D5551EB9671B00D924E9 /* UIView+PJExtension.m */; };
+		44A5D55A1EB980F100D924E9 /* TBTodoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44A5D5591EB980F100D924E9 /* TBTodoViewController.xib */; };
+		44A5D55E1EB99D2E00D924E9 /* TBLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A5D55C1EB99D2E00D924E9 /* TBLoginViewController.m */; };
+		44A5D55F1EB99D2E00D924E9 /* TBLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44A5D55D1EB99D2E00D924E9 /* TBLoginViewController.xib */; };
+		44A5D5621EB9AE4400D924E9 /* TBLoginTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A5D5611EB9AE4400D924E9 /* TBLoginTextField.m */; };
+		44A5D5651EB9AEAE00D924E9 /* UITextField+TBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A5D5641EB9AEAE00D924E9 /* UITextField+TBExtension.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		44A5D5001EB8757C00D924E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 44A5D4DE1EB8757C00D924E9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 44A5D4E51EB8757C00D924E9;
+			remoteInfo = TonBright;
+		};
+		44A5D50B1EB8757C00D924E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 44A5D4DE1EB8757C00D924E9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 44A5D4E51EB8757C00D924E9;
+			remoteInfo = TonBright;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		44A5D4E61EB8757C00D924E9 /* TonBright.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TonBright.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		44A5D4F51EB8757C00D924E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		44A5D4FF1EB8757C00D924E9 /* TonBrightTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TonBrightTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		44A5D5031EB8757C00D924E9 /* TonBrightTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TonBrightTests.m; sourceTree = "<group>"; };
+		44A5D5051EB8757C00D924E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44A5D50A1EB8757C00D924E9 /* TonBrightUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TonBrightUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		44A5D50E1EB8757C00D924E9 /* TonBrightUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TonBrightUITests.m; sourceTree = "<group>"; };
+		44A5D5101EB8757C00D924E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44A5D51E1EB87A2F00D924E9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44A5D5361EB87A5800D924E9 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		44A5D5371EB87A5800D924E9 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		44A5D5381EB87A5800D924E9 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		44A5D53F1EB87F3400D924E9 /* TBTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBTabBarController.h; sourceTree = "<group>"; };
+		44A5D5401EB87F3400D924E9 /* TBTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBTabBarController.m; sourceTree = "<group>"; };
+		44A5D5421EB8833400D924E9 /* TBSystemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBSystemViewController.h; sourceTree = "<group>"; };
+		44A5D5431EB8833400D924E9 /* TBSystemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBSystemViewController.m; sourceTree = "<group>"; };
+		44A5D5451EB8837500D924E9 /* TBFocusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBFocusViewController.h; sourceTree = "<group>"; };
+		44A5D5461EB8837500D924E9 /* TBFocusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBFocusViewController.m; sourceTree = "<group>"; };
+		44A5D5481EB883AA00D924E9 /* TBMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBMeViewController.h; sourceTree = "<group>"; };
+		44A5D5491EB883AA00D924E9 /* TBMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBMeViewController.m; sourceTree = "<group>"; };
+		44A5D54B1EB883D900D924E9 /* TBTodoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBTodoViewController.h; sourceTree = "<group>"; };
+		44A5D54C1EB883D900D924E9 /* TBTodoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBTodoViewController.m; sourceTree = "<group>"; };
+		44A5D54E1EB88C9100D924E9 /* TBTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBTabBar.h; sourceTree = "<group>"; };
+		44A5D54F1EB88C9100D924E9 /* TBTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBTabBar.m; sourceTree = "<group>"; };
+		44A5D5541EB9671B00D924E9 /* UIView+PJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+PJExtension.h"; sourceTree = "<group>"; };
+		44A5D5551EB9671B00D924E9 /* UIView+PJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PJExtension.m"; sourceTree = "<group>"; };
+		44A5D5581EB96F4C00D924E9 /* TonBright.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TonBright.pch; path = ../../../TonBright.pch; sourceTree = "<group>"; };
+		44A5D5591EB980F100D924E9 /* TBTodoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TBTodoViewController.xib; sourceTree = "<group>"; };
+		44A5D55B1EB99D2E00D924E9 /* TBLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBLoginViewController.h; sourceTree = "<group>"; };
+		44A5D55C1EB99D2E00D924E9 /* TBLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBLoginViewController.m; sourceTree = "<group>"; };
+		44A5D55D1EB99D2E00D924E9 /* TBLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TBLoginViewController.xib; sourceTree = "<group>"; };
+		44A5D5601EB9AE4400D924E9 /* TBLoginTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBLoginTextField.h; sourceTree = "<group>"; };
+		44A5D5611EB9AE4400D924E9 /* TBLoginTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBLoginTextField.m; sourceTree = "<group>"; };
+		44A5D5631EB9AEAE00D924E9 /* UITextField+TBExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+TBExtension.h"; sourceTree = "<group>"; };
+		44A5D5641EB9AEAE00D924E9 /* UITextField+TBExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+TBExtension.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		44A5D4E31EB8757C00D924E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44A5D4FC1EB8757C00D924E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44A5D5071EB8757C00D924E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		44A5D4DD1EB8757C00D924E9 = {
+			isa = PBXGroup;
+			children = (
+				44A5D4E81EB8757C00D924E9 /* TonBright */,
+				44A5D5021EB8757C00D924E9 /* TonBrightTests */,
+				44A5D50D1EB8757C00D924E9 /* TonBrightUITests */,
+				44A5D4E71EB8757C00D924E9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		44A5D4E71EB8757C00D924E9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				44A5D4E61EB8757C00D924E9 /* TonBright.app */,
+				44A5D4FF1EB8757C00D924E9 /* TonBrightTests.xctest */,
+				44A5D50A1EB8757C00D924E9 /* TonBrightUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		44A5D4E81EB8757C00D924E9 /* TonBright */ = {
+			isa = PBXGroup;
+			children = (
+				44A5D5201EB87A5800D924E9 /* Classes */,
+				44A5D4E91EB8757C00D924E9 /* Supporting Files */,
+			);
+			path = TonBright;
+			sourceTree = "<group>";
+		};
+		44A5D4E91EB8757C00D924E9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				44A5D51E1EB87A2F00D924E9 /* Info.plist */,
+				44A5D4F51EB8757C00D924E9 /* Assets.xcassets */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		44A5D5021EB8757C00D924E9 /* TonBrightTests */ = {
+			isa = PBXGroup;
+			children = (
+				44A5D5031EB8757C00D924E9 /* TonBrightTests.m */,
+				44A5D5051EB8757C00D924E9 /* Info.plist */,
+			);
+			path = TonBrightTests;
+			sourceTree = "<group>";
+		};
+		44A5D50D1EB8757C00D924E9 /* TonBrightUITests */ = {
+			isa = PBXGroup;
+			children = (
+				44A5D50E1EB8757C00D924E9 /* TonBrightUITests.m */,
+				44A5D5101EB8757C00D924E9 /* Info.plist */,
+			);
+			path = TonBrightUITests;
+			sourceTree = "<group>";
+		};
+		44A5D5201EB87A5800D924E9 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				44A5D52D1EB87A5800D924E9 /* My to-do我的待办 */,
+				44A5D5211EB87A5800D924E9 /* Business system-业务系统 */,
+				44A5D5311EB87A5800D924E9 /* New-新建 */,
+				44A5D5251EB87A5800D924E9 /* Focus-关注 */,
+				44A5D5291EB87A5800D924E9 /* Me-我的设置 */,
+				44A5D5351EB87A5800D924E9 /* Other-其他 */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		44A5D5211EB87A5800D924E9 /* Business system-业务系统 */ = {
+			isa = PBXGroup;
+			children = (
+				44A5D5221EB87A5800D924E9 /* Controllor */,
+				44A5D5231EB87A5800D924E9 /* Model */,
+				44A5D5241EB87A5800D924E9 /* View */,
+			);
+			path = "Business system-业务系统";
+			sourceTree = "<group>";
+		};
+		44A5D5221EB87A5800D924E9 /* Controllor */ = {
+			isa = PBXGroup;
+			children = (
+				44A5D5421EB8833400D924E9 /* TBSystemViewController.h */,
+				44A5D5431EB8833400D924E9 /* TBSystemViewController.m */,
+			);
+			path = Controllor;
+			sourceTree = "<group>";
+		};
+		44A5D5231EB87A5800D924E9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		44A5D5241EB87A5800D924E9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		44A5D5251EB87A5800D924E9 /* Focus-关注 */ = {
+			isa = PBXGroup;
+			children = (
+				44A5D5261EB87A5800D924E9 /* Controllor */,
+				44A5D5271EB87A5800D924E9 /* Model */,
+				44A5D5281EB87A5800D924E9 /* View */,
+			);
+			path = "Focus-关注";
+			sourceTree = "<group>";
+		};
+		44A5D5261EB87A5800D924E9 /* Controllor */ = {
+			isa = PBXGroup;
+			children = (
+				44A5D5451EB8837500D924E9 /* TBFocusViewController.h */,
+				44A5D5461EB8837500D924E9 /* TBFocusViewController.m */,
+			);
+			path = Controllor;
+			sourceTree = "<group>";
+		};
+		44A5D5271EB87A5800D924E9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		44A5D5281EB87A5800D924E9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		44A5D5291EB87A5800D924E9 /* Me-我的设置 */ = {
+			isa = PBXGroup;
+			children = (
+				44A5D52A1EB87A5800D924E9 /* Controllor */,
+				44A5D52B1EB87A5800D924E9 /* Model */,
+				44A5D52C1EB87A5800D924E9 /* View */,
+			);
+			path = "Me-我的设置";
+			sourceTree = "<group>";
+		};
+		44A5D52A1EB87A5800D924E9 /* Controllor */ = {
+			isa = PBXGroup;
+			children = (
+				44A5D5481EB883AA00D924E9 /* TBMeViewController.h */,
+				44A5D5491EB883AA00D924E9 /* TBMeViewController.m */,
+			);
+			path = Controllor;
+			sourceTree = "<group>";
+		};
+		44A5D52B1EB87A5800D924E9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		44A5D52C1EB87A5800D924E9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		44A5D52D1EB87A5800D924E9 /* My to-do我的待办 */ = {
+			isa = PBXGroup;
+			children = (
+				44A5D52E1EB87A5800D924E9 /* Controllor */,
+				44A5D52F1EB87A5800D924E9 /* Model */,
+				44A5D5301EB87A5800D924E9 /* View */,
+			);
+			path = "My to-do我的待办";
+			sourceTree = "<group>";
+		};
+		44A5D52E1EB87A5800D924E9 /* Controllor */ = {
+			isa = PBXGroup;
+			children = (
+				44A5D54B1EB883D900D924E9 /* TBTodoViewController.h */,
+				44A5D54C1EB883D900D924E9 /* TBTodoViewController.m */,
+				44A5D5591EB980F100D924E9 /* TBTodoViewController.xib */,
+			);
+			path = Controllor;
+			sourceTree = "<group>";
+		};
+		44A5D52F1EB87A5800D924E9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		44A5D5301EB87A5800D924E9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		44A5D5311EB87A5800D924E9 /* New-新建 */ = {
+			isa = PBXGroup;
+			children = (
+				44A5D5321EB87A5800D924E9 /* Controllor */,
+				44A5D5331EB87A5800D924E9 /* Model */,
+				44A5D5341EB87A5800D924E9 /* View */,
+			);
+			path = "New-新建";
+			sourceTree = "<group>";
+		};
+		44A5D5321EB87A5800D924E9 /* Controllor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllor;
+			sourceTree = "<group>";
+		};
+		44A5D5331EB87A5800D924E9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		44A5D5341EB87A5800D924E9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		44A5D5351EB87A5800D924E9 /* Other-其他 */ = {
+			isa = PBXGroup;
+			children = (
+				44A5D53C1EB87EDF00D924E9 /* Category */,
+				44A5D53D1EB87EDF00D924E9 /* Controller */,
+				44A5D53E1EB87EDF00D924E9 /* View */,
+				44A5D5361EB87A5800D924E9 /* AppDelegate.h */,
+				44A5D5371EB87A5800D924E9 /* AppDelegate.m */,
+				44A5D5381EB87A5800D924E9 /* main.m */,
+				44A5D5581EB96F4C00D924E9 /* TonBright.pch */,
+			);
+			path = "Other-其他";
+			sourceTree = "<group>";
+		};
+		44A5D53C1EB87EDF00D924E9 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				44A5D5541EB9671B00D924E9 /* UIView+PJExtension.h */,
+				44A5D5551EB9671B00D924E9 /* UIView+PJExtension.m */,
+				44A5D5631EB9AEAE00D924E9 /* UITextField+TBExtension.h */,
+				44A5D5641EB9AEAE00D924E9 /* UITextField+TBExtension.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		44A5D53D1EB87EDF00D924E9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				44A5D53F1EB87F3400D924E9 /* TBTabBarController.h */,
+				44A5D5401EB87F3400D924E9 /* TBTabBarController.m */,
+				44A5D55B1EB99D2E00D924E9 /* TBLoginViewController.h */,
+				44A5D55C1EB99D2E00D924E9 /* TBLoginViewController.m */,
+				44A5D55D1EB99D2E00D924E9 /* TBLoginViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		44A5D53E1EB87EDF00D924E9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				44A5D54E1EB88C9100D924E9 /* TBTabBar.h */,
+				44A5D54F1EB88C9100D924E9 /* TBTabBar.m */,
+				44A5D5601EB9AE4400D924E9 /* TBLoginTextField.h */,
+				44A5D5611EB9AE4400D924E9 /* TBLoginTextField.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		44A5D4E51EB8757C00D924E9 /* TonBright */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 44A5D5131EB8757C00D924E9 /* Build configuration list for PBXNativeTarget "TonBright" */;
+			buildPhases = (
+				44A5D4E21EB8757C00D924E9 /* Sources */,
+				44A5D4E31EB8757C00D924E9 /* Frameworks */,
+				44A5D4E41EB8757C00D924E9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TonBright;
+			productName = TonBright;
+			productReference = 44A5D4E61EB8757C00D924E9 /* TonBright.app */;
+			productType = "com.apple.product-type.application";
+		};
+		44A5D4FE1EB8757C00D924E9 /* TonBrightTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 44A5D5161EB8757C00D924E9 /* Build configuration list for PBXNativeTarget "TonBrightTests" */;
+			buildPhases = (
+				44A5D4FB1EB8757C00D924E9 /* Sources */,
+				44A5D4FC1EB8757C00D924E9 /* Frameworks */,
+				44A5D4FD1EB8757C00D924E9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				44A5D5011EB8757C00D924E9 /* PBXTargetDependency */,
+			);
+			name = TonBrightTests;
+			productName = TonBrightTests;
+			productReference = 44A5D4FF1EB8757C00D924E9 /* TonBrightTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		44A5D5091EB8757C00D924E9 /* TonBrightUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 44A5D5191EB8757C00D924E9 /* Build configuration list for PBXNativeTarget "TonBrightUITests" */;
+			buildPhases = (
+				44A5D5061EB8757C00D924E9 /* Sources */,
+				44A5D5071EB8757C00D924E9 /* Frameworks */,
+				44A5D5081EB8757C00D924E9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				44A5D50C1EB8757C00D924E9 /* PBXTargetDependency */,
+			);
+			name = TonBrightUITests;
+			productName = TonBrightUITests;
+			productReference = 44A5D50A1EB8757C00D924E9 /* TonBrightUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		44A5D4DE1EB8757C00D924E9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TB;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "jie peng";
+				TargetAttributes = {
+					44A5D4E51EB8757C00D924E9 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
+					44A5D4FE1EB8757C00D924E9 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 44A5D4E51EB8757C00D924E9;
+					};
+					44A5D5091EB8757C00D924E9 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 44A5D4E51EB8757C00D924E9;
+					};
+				};
+			};
+			buildConfigurationList = 44A5D4E11EB8757C00D924E9 /* Build configuration list for PBXProject "TonBright" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 44A5D4DD1EB8757C00D924E9;
+			productRefGroup = 44A5D4E71EB8757C00D924E9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				44A5D4E51EB8757C00D924E9 /* TonBright */,
+				44A5D4FE1EB8757C00D924E9 /* TonBrightTests */,
+				44A5D5091EB8757C00D924E9 /* TonBrightUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		44A5D4E41EB8757C00D924E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44A5D55F1EB99D2E00D924E9 /* TBLoginViewController.xib in Resources */,
+				44A5D51F1EB87A2F00D924E9 /* Info.plist in Resources */,
+				44A5D55A1EB980F100D924E9 /* TBTodoViewController.xib in Resources */,
+				44A5D4F61EB8757C00D924E9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44A5D4FD1EB8757C00D924E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44A5D5081EB8757C00D924E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		44A5D4E21EB8757C00D924E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44A5D54A1EB883AA00D924E9 /* TBMeViewController.m in Sources */,
+				44A5D5621EB9AE4400D924E9 /* TBLoginTextField.m in Sources */,
+				44A5D5471EB8837500D924E9 /* TBFocusViewController.m in Sources */,
+				44A5D55E1EB99D2E00D924E9 /* TBLoginViewController.m in Sources */,
+				44A5D54D1EB883D900D924E9 /* TBTodoViewController.m in Sources */,
+				44A5D5651EB9AEAE00D924E9 /* UITextField+TBExtension.m in Sources */,
+				44A5D53A1EB87A5800D924E9 /* main.m in Sources */,
+				44A5D5441EB8833400D924E9 /* TBSystemViewController.m in Sources */,
+				44A5D5561EB9671B00D924E9 /* UIView+PJExtension.m in Sources */,
+				44A5D5391EB87A5800D924E9 /* AppDelegate.m in Sources */,
+				44A5D5411EB87F3400D924E9 /* TBTabBarController.m in Sources */,
+				44A5D5501EB88C9100D924E9 /* TBTabBar.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44A5D4FB1EB8757C00D924E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44A5D5041EB8757C00D924E9 /* TonBrightTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44A5D5061EB8757C00D924E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44A5D50F1EB8757C00D924E9 /* TonBrightUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		44A5D5011EB8757C00D924E9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 44A5D4E51EB8757C00D924E9 /* TonBright */;
+			targetProxy = 44A5D5001EB8757C00D924E9 /* PBXContainerItemProxy */;
+		};
+		44A5D50C1EB8757C00D924E9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 44A5D4E51EB8757C00D924E9 /* TonBright */;
+			targetProxy = 44A5D50B1EB8757C00D924E9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		44A5D5111EB8757C00D924E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "/Users/jiepeng/代码/TonBright/TonBright.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		44A5D5121EB8757C00D924E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "/Users/jiepeng/代码/TonBright/TonBright.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		44A5D5141EB8757C00D924E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = H96A698YS9;
+				INFOPLIST_FILE = TonBright/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tonbright.www.TonBright;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		44A5D5151EB8757C00D924E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = H96A698YS9;
+				INFOPLIST_FILE = TonBright/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tonbright.www.TonBright;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		44A5D5171EB8757C00D924E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TonBrightTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tonbright.www.TonBrightTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TonBright.app/TonBright";
+			};
+			name = Debug;
+		};
+		44A5D5181EB8757C00D924E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TonBrightTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tonbright.www.TonBrightTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TonBright.app/TonBright";
+			};
+			name = Release;
+		};
+		44A5D51A1EB8757C00D924E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TonBrightUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tonbright.www.TonBrightUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TonBright;
+			};
+			name = Debug;
+		};
+		44A5D51B1EB8757C00D924E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TonBrightUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tonbright.www.TonBrightUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TonBright;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		44A5D4E11EB8757C00D924E9 /* Build configuration list for PBXProject "TonBright" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44A5D5111EB8757C00D924E9 /* Debug */,
+				44A5D5121EB8757C00D924E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		44A5D5131EB8757C00D924E9 /* Build configuration list for PBXNativeTarget "TonBright" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44A5D5141EB8757C00D924E9 /* Debug */,
+				44A5D5151EB8757C00D924E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		44A5D5161EB8757C00D924E9 /* Build configuration list for PBXNativeTarget "TonBrightTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44A5D5171EB8757C00D924E9 /* Debug */,
+				44A5D5181EB8757C00D924E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		44A5D5191EB8757C00D924E9 /* Build configuration list for PBXNativeTarget "TonBrightUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44A5D51A1EB8757C00D924E9 /* Debug */,
+				44A5D51B1EB8757C00D924E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 44A5D4DE1EB8757C00D924E9 /* Project object */;
+}

@@ -1,0 +1,35 @@
+//
+//  TonBright.pch
+//  TonBright
+//
+//  Created by jie peng on 2017/5/3.
+//  Copyright © 2017年 jie peng. All rights reserved.
+//
+
+#ifndef TonBright_pch
+#define TonBright_pch
+
+
+#ifdef __OBJC__
+
+#import "UIView+PJExtension.h"
+#import "UITextField+TBExtension.h"
+
+#ifdef DEBUG
+#define TBLog(...) NSLog(__VA_ARGS__);
+#else
+#define TBLog(...)
+#endif
+
+#define TBLogFunc TBLog(@"%s",__func__)
+
+#define TBColorA(r, g, b, a)  [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)/255.0]
+#define TBColor(r,g,b) TBColorA((r),(g),(b),255)
+#define TBRandomColor TBColor(arc4random_uniform(255),arc4random_uniform(255),arc4random_uniform(255))
+#define TBGrayColor(v) TBColor((v),(v),(v))
+#define TBCommonBgColor TBGrayColor(206)
+
+#endif
+
+
+#endif /* TonBright_pch */
