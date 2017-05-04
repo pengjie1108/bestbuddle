@@ -22,7 +22,8 @@ static NSString * const TBCommonURL = @"http://121.40.92.131/newbusiness/apipj/a
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.loginName.text = @"TH14074";
+    self.passWord.text = @"111111";
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle{
@@ -36,29 +37,35 @@ static NSString * const TBCommonURL = @"http://121.40.92.131/newbusiness/apipj/a
 
 - (IBAction)login:(id)sender {
     
-    [MBProgressHUD showMessage:@"登录中..."];
+    [MBProgressHUD showMessage:@"登录中..." toView:self.view];
     
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"loginname"] = self.loginName.text;
     params[@"password"] = self.passWord.text;
     
-    [[TBHTTPSessionManager manager] POST:TBCommonURL parameters:params success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary * _Nullable responseObject) {
-        TBLog(@"stat--%@",responseObject[@"stat"])
-        
-        if (responseObject[@"stat"]) {
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [MBProgressHUD hideHUD];
+    __weak typeof(self) weakSelf = self;
+    
+    [[TBHTTPSessionManager manager] POST:TBCommonURL parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary * _Nullable responseObject) {
+       TBLog(@"responseObject----%@",[responseObject class])
+       TBLog(@"responseObject-stat----%@",[responseObject[@"stat"] class])
+       TBLog(@"responseObject-data----%@",[responseObject[@"data"] class])
+       TBLog(@"responseObject-error----%@",[responseObject[@"error"] class])
+       NSString *stat = [NSString stringWithString:responseObject[@"stat"]];
+       TBLog(@"%@",stat)
+        if ([stat intValue] == 0) {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [MBProgressHUD showSuccess:@"登陆成功"];
-                [self dismissViewControllerAnimated:YES completion:nil];
-
+                [weakSelf dismissViewControllerAnimated:YES completion:^{
+                    [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
+                }];
             });
-           
-                   }
-
+   }
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         TBLog(@"请求失败--%@",error);
     }];
-}
+    
+   }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
