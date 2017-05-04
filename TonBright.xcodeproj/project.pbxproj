@@ -27,6 +27,7 @@
 		44A5D5651EB9AEAE00D924E9 /* UITextField+TBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A5D5641EB9AEAE00D924E9 /* UITextField+TBExtension.m */; };
 		44A5D5681EB9BFB900D924E9 /* TBHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A5D5671EB9BFB900D924E9 /* TBHTTPSessionManager.m */; };
 		44A5D56E1EB9D7D000D924E9 /* MBProgressHUD+TBHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A5D56D1EB9D7D000D924E9 /* MBProgressHUD+TBHUD.m */; };
+		44A5D5711EBAD71600D924E9 /* TBUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A5D5701EBAD71600D924E9 /* TBUser.m */; };
 		82CBF6F801EF705B8DA242A0 /* libPods-TonBright.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D4634E77ED09FDC4904872E /* libPods-TonBright.a */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +90,8 @@
 		44A5D5671EB9BFB900D924E9 /* TBHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBHTTPSessionManager.m; sourceTree = "<group>"; };
 		44A5D56C1EB9D7D000D924E9 /* MBProgressHUD+TBHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+TBHUD.h"; sourceTree = "<group>"; };
 		44A5D56D1EB9D7D000D924E9 /* MBProgressHUD+TBHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+TBHUD.m"; sourceTree = "<group>"; };
+		44A5D56F1EBAD71600D924E9 /* TBUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBUser.h; sourceTree = "<group>"; };
+		44A5D5701EBAD71600D924E9 /* TBUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBUser.m; sourceTree = "<group>"; };
 		F492298DDFEE419F458C69AA /* Pods-TonBright.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TonBright.release.xcconfig"; path = "Pods/Target Support Files/Pods-TonBright/Pods-TonBright.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -311,6 +314,8 @@
 		44A5D52F1EB87A5800D924E9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				44A5D56F1EBAD71600D924E9 /* TBUser.h */,
+				44A5D5701EBAD71600D924E9 /* TBUser.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -612,6 +617,7 @@
 				44A5D56E1EB9D7D000D924E9 /* MBProgressHUD+TBHUD.m in Sources */,
 				44A5D5621EB9AE4400D924E9 /* TBLoginTextField.m in Sources */,
 				44A5D5471EB8837500D924E9 /* TBFocusViewController.m in Sources */,
+				44A5D5711EBAD71600D924E9 /* TBUser.m in Sources */,
 				44A5D55E1EB99D2E00D924E9 /* TBLoginViewController.m in Sources */,
 				44A5D54D1EB883D900D924E9 /* TBTodoViewController.m in Sources */,
 				44A5D5651EB9AEAE00D924E9 /* UITextField+TBExtension.m in Sources */,

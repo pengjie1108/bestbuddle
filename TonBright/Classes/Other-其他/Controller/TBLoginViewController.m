@@ -9,6 +9,8 @@
 #import "TBLoginViewController.h"
 #import "TBLoginTextField.h"
 #import "TBHTTPSessionManager.h"
+#import <YYModel.h>
+#import "TBUser.h"
 
 static NSString * const TBCommonURL = @"http://121.40.92.131/newbusiness/apipj/api.user.login.php";
 
@@ -45,13 +47,16 @@ static NSString * const TBCommonURL = @"http://121.40.92.131/newbusiness/apipj/a
     
     __weak typeof(self) weakSelf = self;
     
-    [[TBHTTPSessionManager manager] POST:TBCommonURL parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary * _Nullable responseObject) {
+    [[TBHTTPSessionManager manager] POST:TBCommonURL parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id _Nullable responseObject) {
        TBLog(@"responseObject----%@",[responseObject class])
        TBLog(@"responseObject-stat----%@",[responseObject[@"stat"] class])
        TBLog(@"responseObject-data----%@",[responseObject[@"data"] class])
+        TBLog(@"responseObject-data-tokenid-----%@",[responseObject[@"data"][@"tokenid"] class])
        TBLog(@"responseObject-error----%@",[responseObject[@"error"] class])
        NSString *stat = [NSString stringWithString:responseObject[@"stat"]];
-       TBLog(@"%@",stat)
+       
+        TBUser *user = [TBUser yy_modelWithDictionary:responseObject[@"data"]];
+
         if ([stat intValue] == 0) {
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [MBProgressHUD showSuccess:@"登陆成功"];
