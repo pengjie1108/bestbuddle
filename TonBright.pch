@@ -14,8 +14,29 @@
 
 #import "UIView+PJExtension.h"
 #import "UITextField+TBExtension.h"
-#import "MBProgressHUD+TBHUD.h"
+#import "UIViewController+TBMBPProgressHUD.h"
+#import "UIView+TBMBProgressHUD.h"
+#import "TBAPPSetting.h"
 
+#define USERNM_KEY @"usernm"
+
+#define SERVICENAME [[NSBundle mainBundle] bundleIdentifier]
+
+#define TOPCOMPANYID_KEY @"topcompanyid"
+
+#define USERID_KEY @"userid"
+
+#define CAUTHTYPE_KEY @"cauthtype"
+
+#define GAUTHTYPE_KEY @"gauthtype"
+
+#define TOKENID_KEY @"tokenid"
+
+#define LOGINNAME_KEY @"loginname"
+
+#define USERROLE_KEY @"userrole"
+
+#define USERFUNCTION_KEY @"userfunction"
 
 #ifdef DEBUG
 #define TBLog(...) NSLog(__VA_ARGS__);

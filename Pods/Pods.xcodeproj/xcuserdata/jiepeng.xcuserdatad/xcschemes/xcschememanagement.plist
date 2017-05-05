@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SSKeychain.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>YYModel.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,17 +37,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>8331C2563B042D2E1F132DD61D08EA8D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>9E033EDB5EC0819481B0546434FA577B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AA2510CF0E43F57F8C7BBB451BB1740A</key>
+		<key>D0AA37E5DEE42394D45B21F64C4E87F7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C0D9369C4B6F610064BA78F5BAAB2E31</key>
+		<key>EA1F0444FA6695CF4B8423B4C7CE58AB</key>
 		<dict>
 			<key>primary</key>
 			<true/>

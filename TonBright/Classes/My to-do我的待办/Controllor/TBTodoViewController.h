@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TBTodoViewController : UIViewController
+@interface TBTodoViewController : UITableViewController
 
 @end

@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "TBTabBarController.h"
+#import "TBLoginViewController.h"
+
 
 @interface AppDelegate ()
 
@@ -18,12 +20,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    application.statusBarHidden = NO;
+    
     self.window = [[UIWindow alloc] init];
     self.window.frame = [UIScreen mainScreen].bounds;
     
-    TBTabBarController *rootVc = [[TBTabBarController alloc] init];
-    self.window.rootViewController = rootVc;
-    
+    UIStoryboard *loginVc = [UIStoryboard storyboardWithName:@"TBLoginViewController" bundle:nil];
+    self.window.rootViewController = (TBLoginViewController *)[loginVc instantiateInitialViewController];
     [self.window makeKeyAndVisible];
     
     return YES;

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4460ED091EBC6F7400D85AB6 /* TBNetWorkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4460ED081EBC6F7400D85AB6 /* TBNetWorkRequest.m */; };
+		447E87281EBC1756005B4EE2 /* TBLoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 447E87271EBC1756005B4EE2 /* TBLoginViewController.storyboard */; };
+		447E872B1EBC2592005B4EE2 /* UIView+TBMBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 447E872A1EBC2592005B4EE2 /* UIView+TBMBProgressHUD.m */; };
+		447E872E1EBC26F1005B4EE2 /* UIViewController+TBMBPProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 447E872D1EBC26F1005B4EE2 /* UIViewController+TBMBPProgressHUD.m */; };
+		447E87321EBC4094005B4EE2 /* TBAPPSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 447E87311EBC4094005B4EE2 /* TBAPPSetting.m */; };
 		44A5D4F61EB8757C00D924E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44A5D4F51EB8757C00D924E9 /* Assets.xcassets */; };
 		44A5D5041EB8757C00D924E9 /* TonBrightTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A5D5031EB8757C00D924E9 /* TonBrightTests.m */; };
 		44A5D50F1EB8757C00D924E9 /* TonBrightUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A5D50E1EB8757C00D924E9 /* TonBrightUITests.m */; };
@@ -20,13 +25,10 @@
 		44A5D54D1EB883D900D924E9 /* TBTodoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A5D54C1EB883D900D924E9 /* TBTodoViewController.m */; };
 		44A5D5501EB88C9100D924E9 /* TBTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A5D54F1EB88C9100D924E9 /* TBTabBar.m */; };
 		44A5D5561EB9671B00D924E9 /* UIView+PJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A5D5551EB9671B00D924E9 /* UIView+PJExtension.m */; };
-		44A5D55A1EB980F100D924E9 /* TBTodoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44A5D5591EB980F100D924E9 /* TBTodoViewController.xib */; };
 		44A5D55E1EB99D2E00D924E9 /* TBLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A5D55C1EB99D2E00D924E9 /* TBLoginViewController.m */; };
-		44A5D55F1EB99D2E00D924E9 /* TBLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44A5D55D1EB99D2E00D924E9 /* TBLoginViewController.xib */; };
 		44A5D5621EB9AE4400D924E9 /* TBLoginTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A5D5611EB9AE4400D924E9 /* TBLoginTextField.m */; };
 		44A5D5651EB9AEAE00D924E9 /* UITextField+TBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A5D5641EB9AEAE00D924E9 /* UITextField+TBExtension.m */; };
 		44A5D5681EB9BFB900D924E9 /* TBHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A5D5671EB9BFB900D924E9 /* TBHTTPSessionManager.m */; };
-		44A5D56E1EB9D7D000D924E9 /* MBProgressHUD+TBHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A5D56D1EB9D7D000D924E9 /* MBProgressHUD+TBHUD.m */; };
 		44A5D5711EBAD71600D924E9 /* TBUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A5D5701EBAD71600D924E9 /* TBUser.m */; };
 		82CBF6F801EF705B8DA242A0 /* libPods-TonBright.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D4634E77ED09FDC4904872E /* libPods-TonBright.a */; };
 /* End PBXBuildFile section */
@@ -51,6 +53,15 @@
 /* Begin PBXFileReference section */
 		1D4634E77ED09FDC4904872E /* libPods-TonBright.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TonBright.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		36BB66F3B13A2B7559AE4F97 /* Pods-TonBright.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TonBright.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TonBright/Pods-TonBright.debug.xcconfig"; sourceTree = "<group>"; };
+		4460ED071EBC6F7400D85AB6 /* TBNetWorkRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBNetWorkRequest.h; sourceTree = "<group>"; };
+		4460ED081EBC6F7400D85AB6 /* TBNetWorkRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBNetWorkRequest.m; sourceTree = "<group>"; };
+		447E87271EBC1756005B4EE2 /* TBLoginViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TBLoginViewController.storyboard; sourceTree = "<group>"; };
+		447E87291EBC2592005B4EE2 /* UIView+TBMBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+TBMBProgressHUD.h"; sourceTree = "<group>"; };
+		447E872A1EBC2592005B4EE2 /* UIView+TBMBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TBMBProgressHUD.m"; sourceTree = "<group>"; };
+		447E872C1EBC26F1005B4EE2 /* UIViewController+TBMBPProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TBMBPProgressHUD.h"; sourceTree = "<group>"; };
+		447E872D1EBC26F1005B4EE2 /* UIViewController+TBMBPProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TBMBPProgressHUD.m"; sourceTree = "<group>"; };
+		447E87301EBC4094005B4EE2 /* TBAPPSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBAPPSetting.h; sourceTree = "<group>"; };
+		447E87311EBC4094005B4EE2 /* TBAPPSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBAPPSetting.m; sourceTree = "<group>"; };
 		44A5D4E61EB8757C00D924E9 /* TonBright.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TonBright.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44A5D4F51EB8757C00D924E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44A5D4FF1EB8757C00D924E9 /* TonBrightTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TonBrightTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,18 +89,14 @@
 		44A5D5541EB9671B00D924E9 /* UIView+PJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+PJExtension.h"; sourceTree = "<group>"; };
 		44A5D5551EB9671B00D924E9 /* UIView+PJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PJExtension.m"; sourceTree = "<group>"; };
 		44A5D5581EB96F4C00D924E9 /* TonBright.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TonBright.pch; path = ../../../TonBright.pch; sourceTree = "<group>"; };
-		44A5D5591EB980F100D924E9 /* TBTodoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TBTodoViewController.xib; sourceTree = "<group>"; };
 		44A5D55B1EB99D2E00D924E9 /* TBLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBLoginViewController.h; sourceTree = "<group>"; };
 		44A5D55C1EB99D2E00D924E9 /* TBLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBLoginViewController.m; sourceTree = "<group>"; };
-		44A5D55D1EB99D2E00D924E9 /* TBLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TBLoginViewController.xib; sourceTree = "<group>"; };
 		44A5D5601EB9AE4400D924E9 /* TBLoginTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBLoginTextField.h; sourceTree = "<group>"; };
 		44A5D5611EB9AE4400D924E9 /* TBLoginTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBLoginTextField.m; sourceTree = "<group>"; };
 		44A5D5631EB9AEAE00D924E9 /* UITextField+TBExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+TBExtension.h"; sourceTree = "<group>"; };
 		44A5D5641EB9AEAE00D924E9 /* UITextField+TBExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+TBExtension.m"; sourceTree = "<group>"; };
 		44A5D5661EB9BFB900D924E9 /* TBHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBHTTPSessionManager.h; sourceTree = "<group>"; };
 		44A5D5671EB9BFB900D924E9 /* TBHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBHTTPSessionManager.m; sourceTree = "<group>"; };
-		44A5D56C1EB9D7D000D924E9 /* MBProgressHUD+TBHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+TBHUD.h"; sourceTree = "<group>"; };
-		44A5D56D1EB9D7D000D924E9 /* MBProgressHUD+TBHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+TBHUD.m"; sourceTree = "<group>"; };
 		44A5D56F1EBAD71600D924E9 /* TBUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBUser.h; sourceTree = "<group>"; };
 		44A5D5701EBAD71600D924E9 /* TBUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBUser.m; sourceTree = "<group>"; };
 		F492298DDFEE419F458C69AA /* Pods-TonBright.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TonBright.release.xcconfig"; path = "Pods/Target Support Files/Pods-TonBright/Pods-TonBright.release.xcconfig"; sourceTree = "<group>"; };
@@ -306,7 +313,6 @@
 			children = (
 				44A5D54B1EB883D900D924E9 /* TBTodoViewController.h */,
 				44A5D54C1EB883D900D924E9 /* TBTodoViewController.m */,
-				44A5D5591EB980F100D924E9 /* TBTodoViewController.xib */,
 			);
 			path = Controllor;
 			sourceTree = "<group>";
@@ -370,6 +376,10 @@
 				44A5D5581EB96F4C00D924E9 /* TonBright.pch */,
 				44A5D5661EB9BFB900D924E9 /* TBHTTPSessionManager.h */,
 				44A5D5671EB9BFB900D924E9 /* TBHTTPSessionManager.m */,
+				447E87301EBC4094005B4EE2 /* TBAPPSetting.h */,
+				447E87311EBC4094005B4EE2 /* TBAPPSetting.m */,
+				4460ED071EBC6F7400D85AB6 /* TBNetWorkRequest.h */,
+				4460ED081EBC6F7400D85AB6 /* TBNetWorkRequest.m */,
 			);
 			path = "Other-其他";
 			sourceTree = "<group>";
@@ -381,8 +391,10 @@
 				44A5D5551EB9671B00D924E9 /* UIView+PJExtension.m */,
 				44A5D5631EB9AEAE00D924E9 /* UITextField+TBExtension.h */,
 				44A5D5641EB9AEAE00D924E9 /* UITextField+TBExtension.m */,
-				44A5D56C1EB9D7D000D924E9 /* MBProgressHUD+TBHUD.h */,
-				44A5D56D1EB9D7D000D924E9 /* MBProgressHUD+TBHUD.m */,
+				447E87291EBC2592005B4EE2 /* UIView+TBMBProgressHUD.h */,
+				447E872A1EBC2592005B4EE2 /* UIView+TBMBProgressHUD.m */,
+				447E872C1EBC26F1005B4EE2 /* UIViewController+TBMBPProgressHUD.h */,
+				447E872D1EBC26F1005B4EE2 /* UIViewController+TBMBPProgressHUD.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -394,7 +406,7 @@
 				44A5D5401EB87F3400D924E9 /* TBTabBarController.m */,
 				44A5D55B1EB99D2E00D924E9 /* TBLoginViewController.h */,
 				44A5D55C1EB99D2E00D924E9 /* TBLoginViewController.m */,
-				44A5D55D1EB99D2E00D924E9 /* TBLoginViewController.xib */,
+				447E87271EBC1756005B4EE2 /* TBLoginViewController.storyboard */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -537,9 +549,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44A5D55F1EB99D2E00D924E9 /* TBLoginViewController.xib in Resources */,
 				44A5D51F1EB87A2F00D924E9 /* Info.plist in Resources */,
-				44A5D55A1EB980F100D924E9 /* TBTodoViewController.xib in Resources */,
+				447E87281EBC1756005B4EE2 /* TBLoginViewController.storyboard in Resources */,
 				44A5D4F61EB8757C00D924E9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -614,15 +625,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				44A5D54A1EB883AA00D924E9 /* TBMeViewController.m in Sources */,
-				44A5D56E1EB9D7D000D924E9 /* MBProgressHUD+TBHUD.m in Sources */,
+				447E872B1EBC2592005B4EE2 /* UIView+TBMBProgressHUD.m in Sources */,
 				44A5D5621EB9AE4400D924E9 /* TBLoginTextField.m in Sources */,
 				44A5D5471EB8837500D924E9 /* TBFocusViewController.m in Sources */,
 				44A5D5711EBAD71600D924E9 /* TBUser.m in Sources */,
 				44A5D55E1EB99D2E00D924E9 /* TBLoginViewController.m in Sources */,
 				44A5D54D1EB883D900D924E9 /* TBTodoViewController.m in Sources */,
+				447E87321EBC4094005B4EE2 /* TBAPPSetting.m in Sources */,
 				44A5D5651EB9AEAE00D924E9 /* UITextField+TBExtension.m in Sources */,
 				44A5D53A1EB87A5800D924E9 /* main.m in Sources */,
+				4460ED091EBC6F7400D85AB6 /* TBNetWorkRequest.m in Sources */,
 				44A5D5441EB8833400D924E9 /* TBSystemViewController.m in Sources */,
+				447E872E1EBC26F1005B4EE2 /* UIViewController+TBMBPProgressHUD.m in Sources */,
 				44A5D5681EB9BFB900D924E9 /* TBHTTPSessionManager.m in Sources */,
 				44A5D5561EB9671B00D924E9 /* UIView+PJExtension.m in Sources */,
 				44A5D5391EB87A5800D924E9 /* AppDelegate.m in Sources */,
