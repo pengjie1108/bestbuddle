@@ -45,11 +45,11 @@
 }
 
 - (NSInteger)cauthtype{
-    return (NSInteger)[self.userDefault objectForKey:CAUTHTYPE_KEY];
+    return [[self.userDefault objectForKey:CAUTHTYPE_KEY] intValue];
 }
 
 - (NSInteger)gauthtype{
-    return (NSInteger)[self.userDefault objectForKey:GAUTHTYPE_KEY];
+    return [[self.userDefault objectForKey:GAUTHTYPE_KEY] intValue];
 }
 
 - (NSString *)userid{

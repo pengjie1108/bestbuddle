@@ -46,9 +46,9 @@
 
 - (void)setupChildViewControllers{
     
-    [self setupOneChildViewController:[[UINavigationController alloc] initWithRootViewController:[[TBTodoViewController alloc ] init]]  title:@"待办" image:@"tabBar_new_icon" selectedImage:@"tabBar_new_click_icon"];
-    
     [self setupOneChildViewController:[[UINavigationController alloc] initWithRootViewController:[[TBSystemViewController alloc] init]] title:@"系统" image:@"tabBar_essence_icon" selectedImage:@"tabBar_essence_click_icon"];
+    
+    [self setupOneChildViewController:[[UINavigationController alloc] initWithRootViewController:[[TBTodoViewController alloc ] init]]  title:@"待办" image:@"tabBar_new_icon" selectedImage:@"tabBar_new_click_icon"];
     
      [self setupOneChildViewController:[[UINavigationController alloc] initWithRootViewController:[[TBFocusViewController alloc] init]] title:@"关注" image:@"tabBar_me_icon" selectedImage:@"tabBar_me_click_icon"];
     

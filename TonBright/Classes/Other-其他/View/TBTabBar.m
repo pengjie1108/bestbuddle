@@ -66,7 +66,7 @@
 
 - (void)publishClick{
     
-    NSLog(@"%s",__FUNCTION__);
+    TBLogFunc
 }
 
 

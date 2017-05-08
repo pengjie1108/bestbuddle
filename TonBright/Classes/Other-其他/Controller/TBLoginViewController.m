@@ -12,7 +12,8 @@
 #import "TBTabBarController.h"
 #import "TBAPPSetting.h"
 
-static NSString * const TBCommonURL = @"http://121.40.92.131/newbusiness/apipj/api.user.login.php";
+//static NSString * const TBCommonURL = @"http://121.40.92.131/newbusiness/apipj/api.user.login.php";
+static NSString * const TBCommonURL = @"http://121.40.92.131/newbusiness/apimzp/api.user.login.php";
 
 @interface TBLoginViewController ()
 
@@ -25,8 +26,8 @@ static NSString * const TBCommonURL = @"http://121.40.92.131/newbusiness/apipj/a
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.loginNameTextField.text = @"TH14074";
-    self.passWordTextField.text = @"111111";
+    self.loginNameTextField.text = @"TH16029";
+    self.passWordTextField.text = @"123456";
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle{
@@ -51,15 +52,15 @@ static NSString * const TBCommonURL = @"http://121.40.92.131/newbusiness/apipj/a
     params[@"password"] = password;
     
     __weak typeof(self) weakSelf = self;
-    [[TBHTTPSessionManager manager] POST:TBCommonURL parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id _Nullable responseObject) {
+    [[TBHTTPSessionManager manager] POST:TBCommonURL parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary* _Nullable responseObject) {
 
         NSString *stat = [NSString stringWithString:responseObject[@"stat"]];
         if (![stat intValue]) {
+            [responseObject writeToFile:@"/Users/jiepeng/Desktop/me.plist" atomically:YES];
             //模拟网络延迟
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [weakSelf hideProgressHUD];
                 [weakSelf setAppSeting:responseObject[@"data"]];
-                NSLog(@"%zd",(NSInteger)responseObject[@"cauthtype"]);
                 TBTabBarController *tabVc = [[TBTabBarController alloc] init];
                 UIWindow *window = [UIApplication sharedApplication].keyWindow;
                 window.rootViewController = tabVc;

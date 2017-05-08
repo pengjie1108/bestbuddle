@@ -18,11 +18,26 @@
     [super viewDidLoad];
     self.navigationItem.title = @"业务系统";
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    //1.获取function
+    NSArray *functionArray = [TBAPPSetting shareAppSetting].userfunction;
+    //3.解析function内部的值
+    //遍历,删选
+    NSMutableArray *tempArray = [NSMutableArray array];
+
+    for (NSDictionary *dict in functionArray) {
+        NSInteger ismenu = [dict[@"ismenu"] intValue];
+        if (!ismenu) {//筛选放在目录中的页面
+         //分组,
+        }
+    }
+    NSArray *finalArray = tempArray;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
+    
+    
+    NSMutableDictionary *tempDict = [NSMutableDictionary dictionary];
+    
+    NSDictionary *dict = tempDict;
 }
 
 - (void)didReceiveMemoryWarning {
