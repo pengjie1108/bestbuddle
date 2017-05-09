@@ -4,6 +4,7 @@ pod "AFNetworking"
 pod 'MBProgressHUD', '~> 1.0.0'
 pod 'YYModel'
 pod 'SSKeychain'
+pod 'Masonry'
 
 post_install do |installer_representation|
   installer_representation.pods_project.targets.each do |target|

@@ -14,22 +14,25 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - Masonry (1.0.2)
   - MBProgressHUD (1.0.0)
   - SSKeychain (1.4.1)
   - YYModel (1.0.4)
 
 DEPENDENCIES:
   - AFNetworking
+  - Masonry
   - MBProgressHUD (~> 1.0.0)
   - SSKeychain
   - YYModel
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   SSKeychain: 55cc80f66f5c73da827e3077f02e43528897db41
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 7e4e915f4e08a07dd9518cddcc35689529c8102c
+PODFILE CHECKSUM: 9bdf9d15396f13bf7297c83d8768ab2b7a9c591f
 
 COCOAPODS: 1.2.1

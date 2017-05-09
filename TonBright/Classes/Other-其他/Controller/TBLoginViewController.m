@@ -82,8 +82,8 @@ static NSString * const TBCommonURL = @"http://121.40.92.131/newbusiness/apimzp/
 - (void)setAppSeting:(NSDictionary *_Nullable)responseObject{
     [TBAPPSetting shareAppSetting].loginname = responseObject[@"loginname"];
     [TBAPPSetting shareAppSetting].tokenid = responseObject[@"tokenid"];
-    [TBAPPSetting shareAppSetting].cauthtype = (NSInteger)responseObject[@"cauthtype"] ;
-    [TBAPPSetting shareAppSetting].gauthtype = (NSInteger)responseObject[@"gauthtype"];
+    [TBAPPSetting shareAppSetting].cauthtype = [responseObject[@"cauthtype"] intValue];
+    [TBAPPSetting shareAppSetting].gauthtype = [responseObject[@"gauthtype"] intValue];
     [TBAPPSetting shareAppSetting].userid = responseObject[@"userid"];
     [TBAPPSetting shareAppSetting].topcompanyid = responseObject[@"topcompanyid"];
     [TBAPPSetting shareAppSetting].usernm = responseObject[@"usernm"];
