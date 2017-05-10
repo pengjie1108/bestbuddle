@@ -10,16 +10,12 @@
 
 @interface TBSystemMenu : NSObject
 
-@property (nonatomic,copy) NSString *functionnm;
+@property (nonatomic,strong) NSArray *functions;
 
-@property (nonatomic,strong) NSNumber *functionorder;
+@property (nonatomic,copy) NSString *name;
 
-@property (nonatomic,copy) NSString *functionurl;
+- (instancetype)initWithDict:(NSDictionary *)dict;
 
-@property (nonatomic,strong) NSNumber *ismenu;
-
-@property (nonatomic,copy) NSString *menu;
-
-@property (nonatomic,strong) NSNumber *menuorder;
++(instancetype) systemMenuWithDict:(NSDictionary *)dict;
 
 @end

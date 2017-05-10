@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4460ED091EBC6F7400D85AB6 /* TBNetWorkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4460ED081EBC6F7400D85AB6 /* TBNetWorkRequest.m */; };
-		446BE0961EC196A800528513 /* TBSystemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 446BE0951EC196A800528513 /* TBSystemTableViewCell.m */; };
 		446BE0991EC1B3DF00528513 /* TBSystemMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 446BE0981EC1B3DF00528513 /* TBSystemMenu.m */; };
+		446BE09C1EC2AEB900528513 /* TBFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 446BE09B1EC2AEB900528513 /* TBFunction.m */; };
 		447E87281EBC1756005B4EE2 /* TBLoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 447E87271EBC1756005B4EE2 /* TBLoginViewController.storyboard */; };
 		447E872B1EBC2592005B4EE2 /* UIView+TBMBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 447E872A1EBC2592005B4EE2 /* UIView+TBMBProgressHUD.m */; };
 		447E872E1EBC26F1005B4EE2 /* UIViewController+TBMBPProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 447E872D1EBC26F1005B4EE2 /* UIViewController+TBMBPProgressHUD.m */; };
@@ -57,10 +57,10 @@
 		36BB66F3B13A2B7559AE4F97 /* Pods-TonBright.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TonBright.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TonBright/Pods-TonBright.debug.xcconfig"; sourceTree = "<group>"; };
 		4460ED071EBC6F7400D85AB6 /* TBNetWorkRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBNetWorkRequest.h; sourceTree = "<group>"; };
 		4460ED081EBC6F7400D85AB6 /* TBNetWorkRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBNetWorkRequest.m; sourceTree = "<group>"; };
-		446BE0941EC196A800528513 /* TBSystemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBSystemTableViewCell.h; sourceTree = "<group>"; };
-		446BE0951EC196A800528513 /* TBSystemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBSystemTableViewCell.m; sourceTree = "<group>"; };
-		446BE0971EC1B3DF00528513 /* TBSystemMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBSystemMenu.h; sourceTree = "<group>"; };
-		446BE0981EC1B3DF00528513 /* TBSystemMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBSystemMenu.m; sourceTree = "<group>"; };
+		446BE0971EC1B3DF00528513 /* TBSystemMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TBSystemMenu.h; path = ../TBSystemMenu.h; sourceTree = "<group>"; };
+		446BE0981EC1B3DF00528513 /* TBSystemMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TBSystemMenu.m; path = ../TBSystemMenu.m; sourceTree = "<group>"; };
+		446BE09A1EC2AEB900528513 /* TBFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBFunction.h; sourceTree = "<group>"; };
+		446BE09B1EC2AEB900528513 /* TBFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBFunction.m; sourceTree = "<group>"; };
 		447E87271EBC1756005B4EE2 /* TBLoginViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TBLoginViewController.storyboard; sourceTree = "<group>"; };
 		447E87291EBC2592005B4EE2 /* UIView+TBMBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+TBMBProgressHUD.h"; sourceTree = "<group>"; };
 		447E872A1EBC2592005B4EE2 /* UIView+TBMBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TBMBProgressHUD.m"; sourceTree = "<group>"; };
@@ -210,8 +210,6 @@
 			children = (
 				44A5D5221EB87A5800D924E9 /* Controllor */,
 				44A5D5231EB87A5800D924E9 /* Model */,
-				446BE0971EC1B3DF00528513 /* TBSystemMenu.h */,
-				446BE0981EC1B3DF00528513 /* TBSystemMenu.m */,
 				44A5D5241EB87A5800D924E9 /* View */,
 			);
 			path = "Business system-业务系统";
@@ -229,6 +227,10 @@
 		44A5D5231EB87A5800D924E9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				446BE0971EC1B3DF00528513 /* TBSystemMenu.h */,
+				446BE0981EC1B3DF00528513 /* TBSystemMenu.m */,
+				446BE09A1EC2AEB900528513 /* TBFunction.h */,
+				446BE09B1EC2AEB900528513 /* TBFunction.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -236,8 +238,6 @@
 		44A5D5241EB87A5800D924E9 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				446BE0941EC196A800528513 /* TBSystemTableViewCell.h */,
-				446BE0951EC196A800528513 /* TBSystemTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -637,6 +637,7 @@
 				44A5D54A1EB883AA00D924E9 /* TBMeViewController.m in Sources */,
 				447E872B1EBC2592005B4EE2 /* UIView+TBMBProgressHUD.m in Sources */,
 				44A5D5621EB9AE4400D924E9 /* TBLoginTextField.m in Sources */,
+				446BE09C1EC2AEB900528513 /* TBFunction.m in Sources */,
 				44A5D5471EB8837500D924E9 /* TBFocusViewController.m in Sources */,
 				44A5D5711EBAD71600D924E9 /* TBUser.m in Sources */,
 				44A5D55E1EB99D2E00D924E9 /* TBLoginViewController.m in Sources */,
@@ -644,7 +645,6 @@
 				447E87321EBC4094005B4EE2 /* TBAPPSetting.m in Sources */,
 				44A5D5651EB9AEAE00D924E9 /* UITextField+TBExtension.m in Sources */,
 				446BE0991EC1B3DF00528513 /* TBSystemMenu.m in Sources */,
-				446BE0961EC196A800528513 /* TBSystemTableViewCell.m in Sources */,
 				44A5D53A1EB87A5800D924E9 /* main.m in Sources */,
 				4460ED091EBC6F7400D85AB6 /* TBNetWorkRequest.m in Sources */,
 				44A5D5441EB8833400D924E9 /* TBSystemViewController.m in Sources */,

@@ -7,9 +7,8 @@
 //
 
 #import "TBSystemViewController.h"
-#import "TBSystemTableViewCell.h"
 #import "TBSystemMenu.h"
-#import <YYModel.h>
+#import "TBFunction.h"
 
 @interface TBSystemViewController ()
 
@@ -33,8 +32,8 @@ static NSString *tableSampleIdentifier = @"tableSampleIdentifier";
     [super viewDidLoad];
     self.navigationItem.title = @"业务系统";
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:tableSampleIdentifier];
-    [self loadData];
-    self.dataArray;
+    [self.dataArray writeToFile:@"/Users/jiepeng/Desktop/menus.plist" atomically:YES];
+//    self.tableView.tableFooterView = [[UIView alloc] init];
 }
 
 - (NSArray *)dataArray{
@@ -42,52 +41,74 @@ static NSString *tableSampleIdentifier = @"tableSampleIdentifier";
     if (!_dataArray) {
         //获取数据源
         NSArray *userfunctionArray = [TBAPPSetting shareAppSetting].userfunction;
+        NSMutableArray *zhuBiaoArray = [NSMutableArray array];
+        NSMutableArray *anJianArray = [NSMutableArray array];
+        NSMutableArray *heTongArray = [NSMutableArray array];
+        NSMutableArray *zhiXingArray = [NSMutableArray array];
+        NSMutableArray *yueDuArray = [NSMutableArray array];
+        NSMutableArray *baoBiaoArray = [NSMutableArray array];
+        NSMutableArray *xiTongSZArray = [NSMutableArray array];
         NSMutableArray *tempArray = [NSMutableArray array];
-
+        NSMutableArray *nmArray = [NSMutableArray array];
+        
         //解析数据
         for (NSDictionary* dict in userfunctionArray) {
             if ([dict[@"ismenu"] intValue]) {
-                
-                TBSystemMenu *mu = [TBSystemMenu yy_modelWithDictionary:dict];
-                
-                [tempArray addObject:mu];
+            NSMutableDictionary *tempDict = [NSMutableDictionary dictionary];
+                int menuorder = [dict[@"menuorder"] intValue] - 1;
+                [self.boolArr addObject:@NO];
+                if (menuorder == 0) {
+                    [zhuBiaoArray addObject:dict];
+                    [tempDict setValue:zhuBiaoArray forKey:@"functions"];
+                    [tempDict setValue:dict[@"menu"] forKey:@"name"];
+                    [tempArray setObject:tempDict atIndexedSubscript:menuorder];
+                }else if (menuorder == 1){
+                    [anJianArray addObject:dict];
+                    [tempDict setValue:anJianArray forKey:@"functions"];
+                    [tempDict setValue:dict[@"menu"] forKey:@"name"];
+                    [tempArray setObject:tempDict atIndexedSubscript:menuorder];
+                }else if (menuorder == 2){
+                    [heTongArray addObject:dict];
+                    [tempDict setValue:heTongArray forKey:@"functions"];
+                    [tempDict setValue:dict[@"menu"] forKey:@"name"];
+                    [tempArray setObject:tempDict atIndexedSubscript:menuorder];
+                }else if (menuorder == 3){
+                    [zhiXingArray addObject:dict];
+                    [tempDict setValue:zhiXingArray forKey:@"functions"];
+                    [tempDict setValue:dict[@"menu"] forKey:@"name"];
+                    [tempArray setObject:tempDict atIndexedSubscript:menuorder];
+                }else if (menuorder == 4){
+                    [yueDuArray addObject:dict];
+                    [tempDict setValue:yueDuArray forKey:@"functions"];
+                    [tempDict setValue:dict[@"menu"] forKey:@"name"];
+                    [tempArray setObject:tempDict atIndexedSubscript:menuorder];
+                }else if (menuorder == 5){
+                    [baoBiaoArray addObject:dict];
+                    [tempDict setValue:baoBiaoArray forKey:@"functions"];
+                    [tempDict setValue:dict[@"menu"] forKey:@"name"];
+                    [tempArray setObject:tempDict atIndexedSubscript:menuorder];
+                }else if (menuorder == 98){
+                    menuorder = 6;
+                    [xiTongSZArray addObject:dict];
+                    [tempDict setValue:xiTongSZArray forKey:@"functions"];
+                    [tempDict setValue:dict[@"menu"] forKey:@"name"];
+                    [tempArray setObject:tempDict atIndexedSubscript:menuorder];
+                }
             }
         }
-        _dataArray = tempArray.copy;
-        
-        
+        for (NSDictionary *dict in tempArray) {
+            [nmArray addObject:[TBSystemMenu systemMenuWithDict:dict]];
+        }
+        _dataArray = nmArray;
     }
     
     return _dataArray;
 }
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
+- (id)init{
+    
     self = [super initWithStyle:UITableViewStyleGrouped];
-    
-    if (self)
-    {
-        
-    }
     return self;
-}
-
-
-- (void)loadData {
-    
-    NSArray * secArr = @[@"我的好友", @"小学同学", @"初中同学", @"高中同学", @"大学同学"];
-    NSArray * rowsArr = @[@(12), @(10), @(15), @(13), @(22)];
-    
-    for (int i = 0; i < secArr.count; i++) {
-        
-        NSMutableArray * friendArr = [[NSMutableArray alloc] init];
-        for (int j = 0; j < [rowsArr[i] intValue]; j++) {
-            
-            [friendArr addObject:@(j)];
-        }
-        [self.sectionArr addObject:secArr[i]];
-        [self.boolArr addObject:@NO];
-    }
 }
 
 
@@ -95,7 +116,7 @@ static NSString *tableSampleIdentifier = @"tableSampleIdentifier";
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
    
-    return 10;
+    return self.dataArray.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -104,23 +125,24 @@ static NSString *tableSampleIdentifier = @"tableSampleIdentifier";
     if ([self.boolArr[section] boolValue] == NO) {
         
         return 0;
+        
     }else {
         
-        return [self.dataArr[section] count];
+        TBSystemMenu *systemMenu = self.dataArray[section];
+        
+        return systemMenu.functions.count;
     }
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    TBSystemTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tableSampleIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tableSampleIdentifier forIndexPath:indexPath];
     
-    if (cell == nil) {
+    
         
-        if (indexPath.row < [self.dataArr[indexPath.section] count]) {
-            //这里可以传入请求的数据，此方法可以根据自己的需求做更改
-            [cell configCellWithData:nil row:indexPath.row];
-        }
-      
-    }
+        TBSystemMenu *systemMenu = self.dataArray[indexPath.section];
+        TBFunction *functionMenu = systemMenu.functions[indexPath.row];
+            cell.textLabel.text = functionMenu.functionnm;
+
     
     return cell;
     
@@ -132,7 +154,7 @@ static NSString *tableSampleIdentifier = @"tableSampleIdentifier";
     UIView * headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.pj_width, 50)];
     headerView.tag = 2016 + section;
     headerView.backgroundColor = [UIColor colorWithRed:235/255.0 green:235/255.0 blue:235/255.0 alpha:1];
-    
+    [headerView setUserInteractionEnabled:YES];
     //添加imageview
     UIImageView * iv = [[UIImageView alloc] initWithFrame:CGRectMake(10, 15, 20, 20)];
     
@@ -142,14 +164,16 @@ static NSString *tableSampleIdentifier = @"tableSampleIdentifier";
     
     //添加标题label
     UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(35, 0, self.tableView.pj_width - 100, 50)];
-    label.text = self.sectionArr[section];
+    TBSystemMenu *systemMenu = self.dataArray[section];
+
+    label.text = systemMenu.name;
     [headerView addSubview:label];
     
     //添加分组人数和在线人数显示的label
     UILabel * labelR = [[UILabel alloc] initWithFrame:CGRectMake(self.tableView.pj_width - 60, 0, 60, 50)];
     labelR.textAlignment = NSTextAlignmentCenter;
     //这里小编把在线人数全部设置成了0，可以根据需求更改
-    labelR.text = [NSString stringWithFormat:@"%d/%lu", 0, [self.dataArr[section] count]];
+    labelR.text = [NSString stringWithFormat:@"%lu",systemMenu.functions.count ];
     [headerView addSubview:labelR];
     
     //添加轻扣手势
@@ -166,12 +190,11 @@ static NSString *tableSampleIdentifier = @"tableSampleIdentifier";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    return 70;
+    return 50;
 }
 
 
 - (void)tapGR:(UITapGestureRecognizer *)tapGR {
-    
     //获取section
     NSInteger section = tapGR.view.tag - 2016;
     //判断改变bool值
@@ -184,5 +207,14 @@ static NSString *tableSampleIdentifier = @"tableSampleIdentifier";
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:section] withRowAnimation:UITableViewRowAnimationFade];
 }
 
+
+- (NSMutableArray *)boolArr {
+    
+    if (!_boolArr) {
+        
+        _boolArr = [[NSMutableArray alloc] init];
+    }
+    return _boolArr;
+}
 
 @end
