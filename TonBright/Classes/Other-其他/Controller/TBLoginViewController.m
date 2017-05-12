@@ -12,8 +12,8 @@
 #import "TBTabBarController.h"
 #import "TBAPPSetting.h"
 
-//static NSString * const TBCommonURL = @"http://121.40.92.131/newbusiness/apipj/api.user.login.php";
-static NSString * const TBCommonURL = @"http://121.40.92.131/newbusiness/apimzp/api.user.login.php";
+static NSString * const TBCommonURL = @"http://121.40.92.131/newbusiness/apipj/api.user.login.php";
+//static NSString * const TBCommonURL = @"http://121.40.92.131/newbusiness/apimzp/api.user.login.php";
 
 @interface TBLoginViewController ()
 
@@ -26,7 +26,7 @@ static NSString * const TBCommonURL = @"http://121.40.92.131/newbusiness/apimzp/
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.loginNameTextField.text = @"TH16029";
+    self.loginNameTextField.text = @"ccaiwu4d9590";
     self.passWordTextField.text = @"123456";
 }
 

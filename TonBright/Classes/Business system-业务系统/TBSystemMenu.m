@@ -27,9 +27,12 @@
     self = [super init];
 
     if (self) {
+        if (dict) {
+            [self setValuesForKeysWithDictionary:dict];
+
+        }
         
-        [self setValuesForKeysWithDictionary:dict];
-    }
+      }
 
     return self;
     

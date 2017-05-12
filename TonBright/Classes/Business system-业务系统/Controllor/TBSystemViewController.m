@@ -14,12 +14,6 @@
 
 @property (nonatomic,strong) NSArray *dataArray;
 
-@property (nonatomic,strong) NSArray *dataArr;
-
-@property (nonatomic, strong) NSMutableDictionary * dataDic;
-//每组的标题
-@property (nonatomic, strong) NSMutableArray * sectionArr;
-//存储是否展开的BOOL值
 @property (nonatomic, strong) NSMutableArray * boolArr;
 
 @end
@@ -33,76 +27,6 @@ static NSString *tableSampleIdentifier = @"tableSampleIdentifier";
     self.navigationItem.title = @"业务系统";
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:tableSampleIdentifier];
     [self.dataArray writeToFile:@"/Users/jiepeng/Desktop/menus.plist" atomically:YES];
-//    self.tableView.tableFooterView = [[UIView alloc] init];
-}
-
-- (NSArray *)dataArray{
-    
-    if (!_dataArray) {
-        //获取数据源
-        NSArray *userfunctionArray = [TBAPPSetting shareAppSetting].userfunction;
-        NSMutableArray *zhuBiaoArray = [NSMutableArray array];
-        NSMutableArray *anJianArray = [NSMutableArray array];
-        NSMutableArray *heTongArray = [NSMutableArray array];
-        NSMutableArray *zhiXingArray = [NSMutableArray array];
-        NSMutableArray *yueDuArray = [NSMutableArray array];
-        NSMutableArray *baoBiaoArray = [NSMutableArray array];
-        NSMutableArray *xiTongSZArray = [NSMutableArray array];
-        NSMutableArray *tempArray = [NSMutableArray array];
-        NSMutableArray *nmArray = [NSMutableArray array];
-        
-        //解析数据
-        for (NSDictionary* dict in userfunctionArray) {
-            if ([dict[@"ismenu"] intValue]) {
-            NSMutableDictionary *tempDict = [NSMutableDictionary dictionary];
-                int menuorder = [dict[@"menuorder"] intValue] - 1;
-                [self.boolArr addObject:@NO];
-                if (menuorder == 0) {
-                    [zhuBiaoArray addObject:dict];
-                    [tempDict setValue:zhuBiaoArray forKey:@"functions"];
-                    [tempDict setValue:dict[@"menu"] forKey:@"name"];
-                    [tempArray setObject:tempDict atIndexedSubscript:menuorder];
-                }else if (menuorder == 1){
-                    [anJianArray addObject:dict];
-                    [tempDict setValue:anJianArray forKey:@"functions"];
-                    [tempDict setValue:dict[@"menu"] forKey:@"name"];
-                    [tempArray setObject:tempDict atIndexedSubscript:menuorder];
-                }else if (menuorder == 2){
-                    [heTongArray addObject:dict];
-                    [tempDict setValue:heTongArray forKey:@"functions"];
-                    [tempDict setValue:dict[@"menu"] forKey:@"name"];
-                    [tempArray setObject:tempDict atIndexedSubscript:menuorder];
-                }else if (menuorder == 3){
-                    [zhiXingArray addObject:dict];
-                    [tempDict setValue:zhiXingArray forKey:@"functions"];
-                    [tempDict setValue:dict[@"menu"] forKey:@"name"];
-                    [tempArray setObject:tempDict atIndexedSubscript:menuorder];
-                }else if (menuorder == 4){
-                    [yueDuArray addObject:dict];
-                    [tempDict setValue:yueDuArray forKey:@"functions"];
-                    [tempDict setValue:dict[@"menu"] forKey:@"name"];
-                    [tempArray setObject:tempDict atIndexedSubscript:menuorder];
-                }else if (menuorder == 5){
-                    [baoBiaoArray addObject:dict];
-                    [tempDict setValue:baoBiaoArray forKey:@"functions"];
-                    [tempDict setValue:dict[@"menu"] forKey:@"name"];
-                    [tempArray setObject:tempDict atIndexedSubscript:menuorder];
-                }else if (menuorder == 98){
-                    menuorder = 6;
-                    [xiTongSZArray addObject:dict];
-                    [tempDict setValue:xiTongSZArray forKey:@"functions"];
-                    [tempDict setValue:dict[@"menu"] forKey:@"name"];
-                    [tempArray setObject:tempDict atIndexedSubscript:menuorder];
-                }
-            }
-        }
-        for (NSDictionary *dict in tempArray) {
-            [nmArray addObject:[TBSystemMenu systemMenuWithDict:dict]];
-        }
-        _dataArray = nmArray;
-    }
-    
-    return _dataArray;
 }
 
 - (id)init{
@@ -121,7 +45,6 @@ static NSString *tableSampleIdentifier = @"tableSampleIdentifier";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    //判断是否展开，如果未展开则返回0
     if ([self.boolArr[section] boolValue] == NO) {
         
         return 0;
@@ -137,12 +60,9 @@ static NSString *tableSampleIdentifier = @"tableSampleIdentifier";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tableSampleIdentifier forIndexPath:indexPath];
     
-    
-        
-        TBSystemMenu *systemMenu = self.dataArray[indexPath.section];
-        TBFunction *functionMenu = systemMenu.functions[indexPath.row];
-            cell.textLabel.text = functionMenu.functionnm;
-
+    TBSystemMenu *systemMenu = self.dataArray[indexPath.section];
+    TBFunction *functionMenu = systemMenu.functions[indexPath.row];
+        cell.textLabel.text = functionMenu.functionnm;
     
     return cell;
     
@@ -150,33 +70,27 @@ static NSString *tableSampleIdentifier = @"tableSampleIdentifier";
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
-    //创建header的view
     UIView * headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.pj_width, 50)];
     headerView.tag = 2016 + section;
     headerView.backgroundColor = [UIColor colorWithRed:235/255.0 green:235/255.0 blue:235/255.0 alpha:1];
     [headerView setUserInteractionEnabled:YES];
-    //添加imageview
+
     UIImageView * iv = [[UIImageView alloc] initWithFrame:CGRectMake(10, 15, 20, 20)];
     
-    //三目运算选择展开或者闭合时候的图标
     iv.image = [_boolArr[section] boolValue] ? [UIImage imageNamed:@"buddy_header_arrow_down"] : [UIImage imageNamed:@"buddy_header_arrow_right"];
     [headerView addSubview:iv];
     
-    //添加标题label
     UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(35, 0, self.tableView.pj_width - 100, 50)];
     TBSystemMenu *systemMenu = self.dataArray[section];
 
     label.text = systemMenu.name;
     [headerView addSubview:label];
     
-    //添加分组人数和在线人数显示的label
     UILabel * labelR = [[UILabel alloc] initWithFrame:CGRectMake(self.tableView.pj_width - 60, 0, 60, 50)];
     labelR.textAlignment = NSTextAlignmentCenter;
-    //这里小编把在线人数全部设置成了0，可以根据需求更改
     labelR.text = [NSString stringWithFormat:@"%lu",systemMenu.functions.count ];
     [headerView addSubview:labelR];
     
-    //添加轻扣手势
     UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGR:)];
     [headerView addGestureRecognizer:tap];
     
@@ -215,6 +129,96 @@ static NSString *tableSampleIdentifier = @"tableSampleIdentifier";
         _boolArr = [[NSMutableArray alloc] init];
     }
     return _boolArr;
+}
+
+- (NSArray *)dataArray{
+    
+    if (!_dataArray) {
+        //获取数据源
+        NSArray *userfunctionArray = [TBAPPSetting shareAppSetting].userfunction;
+        [userfunctionArray writeToFile:@"/Users/jiepeng/Desktop/userfunctions.plist" atomically:YES];
+        NSMutableArray *zhuBiaoArray = [NSMutableArray array];
+        NSMutableArray *anJianArray = [NSMutableArray array];
+        NSMutableArray *heTongArray = [NSMutableArray array];
+        NSMutableArray *zhiXingArray = [NSMutableArray array];
+        NSMutableArray *yueDuArray = [NSMutableArray array];
+        NSMutableArray *baoBiaoArray = [NSMutableArray array];
+        NSMutableArray *xiTongSZArray = [NSMutableArray array];
+        NSMutableArray *tempArray = [NSMutableArray array];
+        NSMutableArray *nmArray = [NSMutableArray array];
+        NSMutableDictionary *zhuBiaoDict = [NSMutableDictionary dictionary];
+        NSMutableDictionary *anJianDict = [NSMutableDictionary dictionary];
+        NSMutableDictionary *heTongADict = [NSMutableDictionary dictionary];
+        NSMutableDictionary *zhiXingDict = [NSMutableDictionary dictionary];
+        NSMutableDictionary *yueDuDict = [NSMutableDictionary dictionary];
+        NSMutableDictionary *baoBiaoDict = [NSMutableDictionary dictionary];
+        NSMutableDictionary *xiTongSZDict = [NSMutableDictionary dictionary];
+        //解析数据
+        for (NSDictionary* dict in userfunctionArray) {
+            if ([dict[@"ismenu"] intValue]) {
+                int menuorder = [dict[@"menuorder"] intValue] - 1;
+                if (menuorder == 0) {
+                    [zhuBiaoArray addObject:dict];
+                    [zhuBiaoDict setValue:zhuBiaoArray forKey:@"functions"];
+                    [zhuBiaoDict setValue:dict[@"menu"] forKey:@"name"];
+                }else if (menuorder == 1){
+                    [anJianArray addObject:dict];
+                    [anJianDict setValue:anJianArray forKey:@"functions"];
+                    [anJianDict setValue:dict[@"menu"] forKey:@"name"];
+                }else if (menuorder == 2){
+                    [heTongArray addObject:dict];
+                    [heTongADict setValue:heTongArray forKey:@"functions"];
+                    [heTongADict setValue:dict[@"menu"] forKey:@"name"];
+                }else if (menuorder == 3){
+                    [zhiXingArray addObject:dict];
+                    [zhiXingDict setValue:zhiXingArray forKey:@"functions"];
+                    [zhiXingDict setValue:dict[@"menu"] forKey:@"name"];
+                }else if (menuorder == 4){
+                    [yueDuArray addObject:dict];
+                    [yueDuDict setValue:yueDuArray forKey:@"functions"];
+                    [yueDuDict setValue:dict[@"menu"] forKey:@"name"];
+                }else if (menuorder == 5){
+                    [baoBiaoArray addObject:dict];
+                    [baoBiaoDict setValue:baoBiaoArray forKey:@"functions"];
+                    [baoBiaoDict setValue:dict[@"menu"] forKey:@"name"];
+                }else if (menuorder == 98){
+                    menuorder = 6;
+                    [xiTongSZArray addObject:dict];
+                    [xiTongSZDict setValue:xiTongSZArray forKey:@"functions"];
+                    [xiTongSZDict setValue:dict[@"menu"] forKey:@"name"];
+                }
+            }
+        }
+        if (zhuBiaoDict.count) {
+            [tempArray addObject:zhuBiaoDict];
+        }
+        if (anJianDict.count) {
+            [tempArray addObject:anJianDict];
+        }
+        if (heTongADict.count) {
+            [tempArray addObject:heTongADict];
+        }
+        if (zhiXingDict.count) {
+            [tempArray addObject:zhiXingDict];
+        }
+        if (yueDuDict.count) {
+            [tempArray addObject:yueDuDict];
+        }
+        if (baoBiaoDict.count) {
+            [tempArray addObject:baoBiaoDict];
+        }
+        if (xiTongSZDict.count) {
+            [tempArray addObject:xiTongSZDict];
+        }
+        
+        for (NSDictionary *dict in tempArray) {
+            [self.boolArr addObject:@NO];
+            [nmArray addObject:[TBSystemMenu systemMenuWithDict:dict]];
+        }
+        _dataArray = nmArray;
+    }
+    
+    return _dataArray;
 }
 
 @end
