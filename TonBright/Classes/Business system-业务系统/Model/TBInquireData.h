@@ -46,9 +46,19 @@
  */
 @property (nonatomic,copy)NSString *casestatus;
 /**
- 状态
+ 状态对应键值
+ */
+@property (nonatomic,copy)NSString *casestatusKey;
+
+/**
+合同类型
  */
 @property (nonatomic,copy)NSString *casetype;
+
+/**
+ 合同类型键值
+ */
+@property (nonatomic,copy)NSString *casetypeKey;
 
 
 @end

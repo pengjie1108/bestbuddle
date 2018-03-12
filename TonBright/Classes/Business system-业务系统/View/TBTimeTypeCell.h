@@ -33,6 +33,9 @@
 //时间
 @property (nonatomic, copy) NSString *timeTitle;
 
+//时间
+@property (nonatomic, copy) NSString *timeTitleKey;
+
 //delegate
 @property (nonatomic, weak) id<TBTimeTypeCellDelegate> delegate;
 

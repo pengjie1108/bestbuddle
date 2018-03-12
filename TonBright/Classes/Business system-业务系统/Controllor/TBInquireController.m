@@ -108,6 +108,7 @@ static NSString * const TBTimeTypeCellId = @"TBTimeTypeCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"检索条件";
+    self.tableView.separatorColor = [UIColor clearColor];
     self.navigationItem.rightBarButtonItem= [[UIBarButtonItem alloc] initWithTitle:@"查询" style:UIBarButtonItemStylePlain target:self action:@selector(inquire)];
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([TBInquireDefaultCell class]) bundle:nil] forCellReuseIdentifier:TBInquireDefaultCellId];
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([TBTimeTypeCell class]) bundle:nil] forCellReuseIdentifier:TBTimeTypeCellId];
@@ -127,7 +128,11 @@ static NSString * const TBTimeTypeCellId = @"TBTimeTypeCell";
             [tempDict setValue:defaultCell.itemContentTextField.text forKey:key];
         }else if([cell isKindOfClass:[TBTimeTypeCell class]]){
             TBTimeTypeCell *timeTypeCell = (TBTimeTypeCell *)cell;
+            if (timeTypeCell.timeTitleKey.length) {
+                [tempDict setValue:timeTypeCell.timeTitleKey forKey:key];
+            }else{
             [tempDict setValue:timeTypeCell.timeTitle forKey:key];
+            }
         }
         i ++;
      }
@@ -166,10 +171,12 @@ static NSString * const TBTimeTypeCellId = @"TBTimeTypeCell";
         cell.row = indexPath.row;
         if (indexPath.row == 2) {
             cell.timeTitle = self.inquireData.casestatus;
+            cell.timeTitleKey = self.inquireData.casestatusKey;
         }else if(indexPath.row  == 5){
             cell.timeTitle = self.inquireData.casetype;
+            cell.timeTitleKey = self.inquireData.casetypeKey;
         }else if(indexPath.row  == 8){
-            cell.timeTitle = self.inquireData.casestatus;
+            cell.timeTitle = self.inquireData.casetype;
         }
         return cell;
     }else{//日期cell
@@ -250,8 +257,10 @@ static NSString * const TBTimeTypeCellId = @"TBTimeTypeCell";
             __strong typeof(weakSelf) strongSelf = weakSelf;
             if (row == 2) {
                 strongSelf.inquireData.casestatus = str.parameterValue;
+                strongSelf.inquireData.casestatusKey = str.parameterCode;
             }else if (row == 5){
                 strongSelf.inquireData.casetype = str.parameterValue;
+                strongSelf.inquireData.casetypeKey = str.parameterCode;
             }
             
             [strongSelf.tableView reloadData];

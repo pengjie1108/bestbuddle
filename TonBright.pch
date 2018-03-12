@@ -9,7 +9,6 @@
 #ifndef TonBright_pch
 #define TonBright_pch
 
-
 #ifdef __OBJC__
 
 #import "UIView+PJExtension.h"

@@ -20,7 +20,7 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="开始时间" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7V-la-l0e">
                         <rect key="frame" x="0.0" y="0.0" width="120" height="43.5"/>
-                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.18853946360000001" green="0.62080635939999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="120" id="byQ-Hg-LBG"/>
                         </constraints>
@@ -79,7 +79,7 @@
                 <outlet property="headTitleL" destination="U7V-la-l0e" id="oAY-6m-Pud"/>
                 <outlet property="timeDetailL" destination="YTI-iC-THy" id="mGy-pH-XUZ"/>
             </connections>
-            <point key="canvasLocation" x="215" y="558"/>
+            <point key="canvasLocation" x="90" y="119"/>
         </tableViewCell>
     </objects>
     <resources>
