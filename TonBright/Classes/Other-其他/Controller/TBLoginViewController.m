@@ -11,9 +11,10 @@
 #import "TBHTTPSessionManager.h"
 #import "TBTabBarController.h"
 #import "TBAPPSetting.h"
+#import "TBTempTabBarViewController.h"
 
-static NSString * const TBCommonURL = @"http://121.40.92.131/newbusiness/apipj/api.user.login.php";
-//static NSString * const TBCommonURL = @"http://121.40.92.131/newbusiness/apimzp/api.user.login.php";
+//static NSString * const TBCommonURL = @"http://192.168.1.65/nbsst/api/api.user.login.php";
+static NSString * const TBCommonURL = @"http://203.156.252.183:81/nbs/api/api.user.login.php";
 
 @interface TBLoginViewController ()
 
@@ -26,8 +27,8 @@ static NSString * const TBCommonURL = @"http://121.40.92.131/newbusiness/apipj/a
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.loginNameTextField.text = @"ccaiwu4d9590";
-    self.passWordTextField.text = @"123456";
+    self.loginNameTextField.text = @"pengjie";
+    self.passWordTextField.text = @"1n/Gu66phfUoAdoyHyGl6gUzxoiaI0aateCFl9556QY=";
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle{
@@ -39,10 +40,16 @@ static NSString * const TBCommonURL = @"http://121.40.92.131/newbusiness/apipj/a
     [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 
+
+/**
+ 登录执行
+
+ @param sender 登录按钮
+ */
 - (IBAction)login:(id)sender {
     
     [self showProgressHUD];
-    
+    //过滤字符串开始位置和结束位置的空格
     NSCharacterSet *whiteNewChars = [NSCharacterSet whitespaceAndNewlineCharacterSet];
     NSString *loginname = [self.loginNameTextField.text stringByTrimmingCharactersInSet:whiteNewChars];
     NSString *password = [self.passWordTextField.text stringByTrimmingCharactersInSet:whiteNewChars];
@@ -50,7 +57,7 @@ static NSString * const TBCommonURL = @"http://121.40.92.131/newbusiness/apipj/a
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"loginname"] = loginname;
     params[@"password"] = password;
-    
+
     __weak typeof(self) weakSelf = self;
     [[TBHTTPSessionManager manager] POST:TBCommonURL parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary* _Nullable responseObject) {
 
@@ -58,10 +65,10 @@ static NSString * const TBCommonURL = @"http://121.40.92.131/newbusiness/apipj/a
         if (![stat intValue]) {
             [responseObject writeToFile:@"/Users/jiepeng/Desktop/me.plist" atomically:YES];
             //模拟网络延迟
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [weakSelf hideProgressHUD];
                 [weakSelf setAppSeting:responseObject[@"data"]];
-                TBTabBarController *tabVc = [[TBTabBarController alloc] init];
+                TBTempTabBarViewController *tabVc = [[TBTempTabBarViewController alloc] init];
                 UIWindow *window = [UIApplication sharedApplication].keyWindow;
                 window.rootViewController = tabVc;
                 [tabVc showTextHUDWithMessage:@"登录成功"];
@@ -75,7 +82,6 @@ static NSString * const TBCommonURL = @"http://121.40.92.131/newbusiness/apipj/a
    }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    
     [self.view endEditing:YES];
 }
 

@@ -7,13 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4460ED091EBC6F7400D85AB6 /* TBNetWorkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4460ED081EBC6F7400D85AB6 /* TBNetWorkRequest.m */; };
-		446BE0991EC1B3DF00528513 /* TBSystemMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 446BE0981EC1B3DF00528513 /* TBSystemMenu.m */; };
+		441B816E20466034005EB4F2 /* TBCustomerBaseContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 441B816C20466034005EB4F2 /* TBCustomerBaseContentCell.m */; };
+		441B816F20466034005EB4F2 /* TBCustomerBaseContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 441B816D20466034005EB4F2 /* TBCustomerBaseContentCell.xib */; };
+		441B817220469E9C005EB4F2 /* TBCustomerData.m in Sources */ = {isa = PBXBuildFile; fileRef = 441B817020469E9B005EB4F2 /* TBCustomerData.m */; };
+		441B817620478F4C005EB4F2 /* TBCustomerCaseContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 441B817420478F4C005EB4F2 /* TBCustomerCaseContentCell.m */; };
+		441B817720478F4C005EB4F2 /* TBCustomerCaseContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 441B817520478F4C005EB4F2 /* TBCustomerCaseContentCell.xib */; };
+		441B817B2047FBCA005EB4F2 /* TBObjectRelateDataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 441B81792047FBCA005EB4F2 /* TBObjectRelateDataCell.m */; };
+		441B817C2047FBCA005EB4F2 /* TBObjectRelateDataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 441B817A2047FBCA005EB4F2 /* TBObjectRelateDataCell.xib */; };
+		441B8180204E6468005EB4F2 /* TBFinancingPlanDataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 441B817E204E6468005EB4F2 /* TBFinancingPlanDataCell.m */; };
+		441B8181204E6468005EB4F2 /* TBFinancingPlanDataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 441B817F204E6468005EB4F2 /* TBFinancingPlanDataCell.xib */; };
+		441B8185204E8528005EB4F2 /* TBRepaymentplanCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 441B8183204E8528005EB4F2 /* TBRepaymentplanCell.m */; };
+		441B8189204FECA3005EB4F2 /* TBTempTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 441B8188204FECA3005EB4F2 /* TBTempTabBarViewController.m */; };
+		441B818C204FEED9005EB4F2 /* TBTempSystemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 441B818B204FEED9005EB4F2 /* TBTempSystemViewController.m */; };
+		442F904A20317B8C00D049F3 /* TBHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 442F904520317B8C00D049F3 /* TBHTTPSessionManager.m */; };
+		442F904B20317B8C00D049F3 /* TBNetWorkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 442F904620317B8C00D049F3 /* TBNetWorkRequest.m */; };
+		442F904C20317B8C00D049F3 /* TBAPPSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 442F904720317B8C00D049F3 /* TBAPPSetting.m */; };
+		442F904F2031872C00D049F3 /* TBContractList.m in Sources */ = {isa = PBXBuildFile; fileRef = 442F904E2031872C00D049F3 /* TBContractList.m */; };
+		442F90532031902000D049F3 /* TBContractListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 442F90512031902000D049F3 /* TBContractListCell.m */; };
+		442F90542031902000D049F3 /* TBContractListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 442F90522031902000D049F3 /* TBContractListCell.xib */; };
+		442F90572032D54C00D049F3 /* TBCommonItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 442F90562032D54C00D049F3 /* TBCommonItemModel.m */; };
+		442F90652032DE8A00D049F3 /* TBSystemMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 442F90632032DE8A00D049F3 /* TBSystemMenu.m */; };
 		446BE09C1EC2AEB900528513 /* TBFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 446BE09B1EC2AEB900528513 /* TBFunction.m */; };
 		447E87281EBC1756005B4EE2 /* TBLoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 447E87271EBC1756005B4EE2 /* TBLoginViewController.storyboard */; };
 		447E872B1EBC2592005B4EE2 /* UIView+TBMBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 447E872A1EBC2592005B4EE2 /* UIView+TBMBProgressHUD.m */; };
 		447E872E1EBC26F1005B4EE2 /* UIViewController+TBMBPProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 447E872D1EBC26F1005B4EE2 /* UIViewController+TBMBPProgressHUD.m */; };
-		447E87321EBC4094005B4EE2 /* TBAPPSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 447E87311EBC4094005B4EE2 /* TBAPPSetting.m */; };
+		44A01FB620511C96005B6054 /* TBApproveHisCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A01FB520511C96005B6054 /* TBApproveHisCell.m */; };
+		44A01FBA20526A20005B6054 /* TBTimeTypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44A01FB720526A1F005B6054 /* TBTimeTypeCell.xib */; };
+		44A01FBB20526A20005B6054 /* TBTimeTypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A01FB920526A20005B6054 /* TBTimeTypeCell.m */; };
+		44A01FBF2052749E005B6054 /* AbsenceDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A01FBC2052749D005B6054 /* AbsenceDatePickerView.m */; };
+		44A01FC02052749E005B6054 /* AbsenceDatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44A01FBE2052749E005B6054 /* AbsenceDatePickerView.xib */; };
+		44A01FC3205275C3005B6054 /* TBInquireData.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A01FC2205275C3005B6054 /* TBInquireData.m */; };
+		44A01FC620527951005B6054 /* HelpObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A01FC420527950005B6054 /* HelpObject.m */; };
+		44A01FCA20562457005B6054 /* AbsenceTypePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A01FC820562457005B6054 /* AbsenceTypePickerView.m */; };
+		44A01FCB20562457005B6054 /* AbsenceTypePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44A01FC920562457005B6054 /* AbsenceTypePickerView.xib */; };
+		44A01FCE205626DC005B6054 /* AbsenceTypeEnumModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A01FCC205626DC005B6054 /* AbsenceTypeEnumModel.m */; };
 		44A5D4F61EB8757C00D924E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44A5D4F51EB8757C00D924E9 /* Assets.xcassets */; };
 		44A5D5041EB8757C00D924E9 /* TonBrightTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A5D5031EB8757C00D924E9 /* TonBrightTests.m */; };
 		44A5D50F1EB8757C00D924E9 /* TonBrightUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A5D50E1EB8757C00D924E9 /* TonBrightUITests.m */; };
@@ -30,8 +57,15 @@
 		44A5D55E1EB99D2E00D924E9 /* TBLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A5D55C1EB99D2E00D924E9 /* TBLoginViewController.m */; };
 		44A5D5621EB9AE4400D924E9 /* TBLoginTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A5D5611EB9AE4400D924E9 /* TBLoginTextField.m */; };
 		44A5D5651EB9AEAE00D924E9 /* UITextField+TBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A5D5641EB9AEAE00D924E9 /* UITextField+TBExtension.m */; };
-		44A5D5681EB9BFB900D924E9 /* TBHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A5D5671EB9BFB900D924E9 /* TBHTTPSessionManager.m */; };
 		44A5D5711EBAD71600D924E9 /* TBUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A5D5701EBAD71600D924E9 /* TBUser.m */; };
+		44AC6823203E707A0043316B /* TBInquireController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AC6822203E707A0043316B /* TBInquireController.m */; };
+		44AC6827203EB40E0043316B /* TBInquireDefaultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AC6825203EB40E0043316B /* TBInquireDefaultCell.m */; };
+		44AC6828203EB40E0043316B /* TBInquireDefaultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44AC6826203EB40E0043316B /* TBInquireDefaultCell.xib */; };
+		44AC683C2041614D0043316B /* TBContractDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AC683B2041614D0043316B /* TBContractDetailController.m */; };
+		44AC683F20416C050043316B /* TBContractDetailData.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AC683D20416C050043316B /* TBContractDetailData.m */; };
+		44BA62671EC95D62009FE7DA /* TBContractListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44BA62661EC95D62009FE7DA /* TBContractListViewController.m */; };
+		44BE9BC32043F2F9003E1341 /* TBDetailBaseContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44BE9BC12043F2F9003E1341 /* TBDetailBaseContentCell.m */; };
+		44BE9BC42043F2F9003E1341 /* TBDetailBaseContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44BE9BC22043F2F9003E1341 /* TBDetailBaseContentCell.xib */; };
 		82CBF6F801EF705B8DA242A0 /* libPods-TonBright.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D4634E77ED09FDC4904872E /* libPods-TonBright.a */; };
 /* End PBXBuildFile section */
 
@@ -55,10 +89,41 @@
 /* Begin PBXFileReference section */
 		1D4634E77ED09FDC4904872E /* libPods-TonBright.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TonBright.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		36BB66F3B13A2B7559AE4F97 /* Pods-TonBright.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TonBright.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TonBright/Pods-TonBright.debug.xcconfig"; sourceTree = "<group>"; };
-		4460ED071EBC6F7400D85AB6 /* TBNetWorkRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBNetWorkRequest.h; sourceTree = "<group>"; };
-		4460ED081EBC6F7400D85AB6 /* TBNetWorkRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBNetWorkRequest.m; sourceTree = "<group>"; };
-		446BE0971EC1B3DF00528513 /* TBSystemMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TBSystemMenu.h; path = ../TBSystemMenu.h; sourceTree = "<group>"; };
-		446BE0981EC1B3DF00528513 /* TBSystemMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TBSystemMenu.m; path = ../TBSystemMenu.m; sourceTree = "<group>"; };
+		441B816B20466034005EB4F2 /* TBCustomerBaseContentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBCustomerBaseContentCell.h; sourceTree = "<group>"; };
+		441B816C20466034005EB4F2 /* TBCustomerBaseContentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBCustomerBaseContentCell.m; sourceTree = "<group>"; };
+		441B816D20466034005EB4F2 /* TBCustomerBaseContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TBCustomerBaseContentCell.xib; sourceTree = "<group>"; };
+		441B817020469E9B005EB4F2 /* TBCustomerData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBCustomerData.m; sourceTree = "<group>"; };
+		441B817120469E9C005EB4F2 /* TBCustomerData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCustomerData.h; sourceTree = "<group>"; };
+		441B817320478F4C005EB4F2 /* TBCustomerCaseContentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBCustomerCaseContentCell.h; sourceTree = "<group>"; };
+		441B817420478F4C005EB4F2 /* TBCustomerCaseContentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBCustomerCaseContentCell.m; sourceTree = "<group>"; };
+		441B817520478F4C005EB4F2 /* TBCustomerCaseContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TBCustomerCaseContentCell.xib; sourceTree = "<group>"; };
+		441B81782047FBCA005EB4F2 /* TBObjectRelateDataCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBObjectRelateDataCell.h; sourceTree = "<group>"; };
+		441B81792047FBCA005EB4F2 /* TBObjectRelateDataCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBObjectRelateDataCell.m; sourceTree = "<group>"; };
+		441B817A2047FBCA005EB4F2 /* TBObjectRelateDataCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TBObjectRelateDataCell.xib; sourceTree = "<group>"; };
+		441B817D204E6468005EB4F2 /* TBFinancingPlanDataCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBFinancingPlanDataCell.h; sourceTree = "<group>"; };
+		441B817E204E6468005EB4F2 /* TBFinancingPlanDataCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBFinancingPlanDataCell.m; sourceTree = "<group>"; };
+		441B817F204E6468005EB4F2 /* TBFinancingPlanDataCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TBFinancingPlanDataCell.xib; sourceTree = "<group>"; };
+		441B8182204E8528005EB4F2 /* TBRepaymentplanCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBRepaymentplanCell.h; sourceTree = "<group>"; };
+		441B8183204E8528005EB4F2 /* TBRepaymentplanCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBRepaymentplanCell.m; sourceTree = "<group>"; };
+		441B8187204FECA3005EB4F2 /* TBTempTabBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBTempTabBarViewController.h; sourceTree = "<group>"; };
+		441B8188204FECA3005EB4F2 /* TBTempTabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBTempTabBarViewController.m; sourceTree = "<group>"; };
+		441B818A204FEED9005EB4F2 /* TBTempSystemViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBTempSystemViewController.h; sourceTree = "<group>"; };
+		441B818B204FEED9005EB4F2 /* TBTempSystemViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBTempSystemViewController.m; sourceTree = "<group>"; };
+		442F904420317B8C00D049F3 /* TBAPPSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBAPPSetting.h; sourceTree = "<group>"; };
+		442F904520317B8C00D049F3 /* TBHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBHTTPSessionManager.m; sourceTree = "<group>"; };
+		442F904620317B8C00D049F3 /* TBNetWorkRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBNetWorkRequest.m; sourceTree = "<group>"; };
+		442F904720317B8C00D049F3 /* TBAPPSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBAPPSetting.m; sourceTree = "<group>"; };
+		442F904820317B8C00D049F3 /* TBHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBHTTPSessionManager.h; sourceTree = "<group>"; };
+		442F904920317B8C00D049F3 /* TBNetWorkRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBNetWorkRequest.h; sourceTree = "<group>"; };
+		442F904D2031872C00D049F3 /* TBContractList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBContractList.h; sourceTree = "<group>"; };
+		442F904E2031872C00D049F3 /* TBContractList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBContractList.m; sourceTree = "<group>"; };
+		442F90502031902000D049F3 /* TBContractListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBContractListCell.h; sourceTree = "<group>"; };
+		442F90512031902000D049F3 /* TBContractListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBContractListCell.m; sourceTree = "<group>"; };
+		442F90522031902000D049F3 /* TBContractListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TBContractListCell.xib; sourceTree = "<group>"; };
+		442F90552032D54C00D049F3 /* TBCommonItemModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBCommonItemModel.h; sourceTree = "<group>"; };
+		442F90562032D54C00D049F3 /* TBCommonItemModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBCommonItemModel.m; sourceTree = "<group>"; };
+		442F90632032DE8A00D049F3 /* TBSystemMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBSystemMenu.m; sourceTree = "<group>"; };
+		442F90642032DE8A00D049F3 /* TBSystemMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBSystemMenu.h; sourceTree = "<group>"; };
 		446BE09A1EC2AEB900528513 /* TBFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBFunction.h; sourceTree = "<group>"; };
 		446BE09B1EC2AEB900528513 /* TBFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBFunction.m; sourceTree = "<group>"; };
 		447E87271EBC1756005B4EE2 /* TBLoginViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TBLoginViewController.storyboard; sourceTree = "<group>"; };
@@ -66,8 +131,23 @@
 		447E872A1EBC2592005B4EE2 /* UIView+TBMBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TBMBProgressHUD.m"; sourceTree = "<group>"; };
 		447E872C1EBC26F1005B4EE2 /* UIViewController+TBMBPProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TBMBPProgressHUD.h"; sourceTree = "<group>"; };
 		447E872D1EBC26F1005B4EE2 /* UIViewController+TBMBPProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TBMBPProgressHUD.m"; sourceTree = "<group>"; };
-		447E87301EBC4094005B4EE2 /* TBAPPSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBAPPSetting.h; sourceTree = "<group>"; };
-		447E87311EBC4094005B4EE2 /* TBAPPSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBAPPSetting.m; sourceTree = "<group>"; };
+		44A01FB420511C96005B6054 /* TBApproveHisCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBApproveHisCell.h; sourceTree = "<group>"; };
+		44A01FB520511C96005B6054 /* TBApproveHisCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBApproveHisCell.m; sourceTree = "<group>"; };
+		44A01FB720526A1F005B6054 /* TBTimeTypeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TBTimeTypeCell.xib; sourceTree = "<group>"; };
+		44A01FB820526A20005B6054 /* TBTimeTypeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBTimeTypeCell.h; sourceTree = "<group>"; };
+		44A01FB920526A20005B6054 /* TBTimeTypeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBTimeTypeCell.m; sourceTree = "<group>"; };
+		44A01FBC2052749D005B6054 /* AbsenceDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbsenceDatePickerView.m; sourceTree = "<group>"; };
+		44A01FBD2052749E005B6054 /* AbsenceDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbsenceDatePickerView.h; sourceTree = "<group>"; };
+		44A01FBE2052749E005B6054 /* AbsenceDatePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AbsenceDatePickerView.xib; sourceTree = "<group>"; };
+		44A01FC1205275C3005B6054 /* TBInquireData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBInquireData.h; sourceTree = "<group>"; };
+		44A01FC2205275C3005B6054 /* TBInquireData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBInquireData.m; sourceTree = "<group>"; };
+		44A01FC420527950005B6054 /* HelpObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpObject.m; sourceTree = "<group>"; };
+		44A01FC520527950005B6054 /* HelpObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpObject.h; sourceTree = "<group>"; };
+		44A01FC720562456005B6054 /* AbsenceTypePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbsenceTypePickerView.h; sourceTree = "<group>"; };
+		44A01FC820562457005B6054 /* AbsenceTypePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbsenceTypePickerView.m; sourceTree = "<group>"; };
+		44A01FC920562457005B6054 /* AbsenceTypePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AbsenceTypePickerView.xib; sourceTree = "<group>"; };
+		44A01FCC205626DC005B6054 /* AbsenceTypeEnumModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbsenceTypeEnumModel.m; sourceTree = "<group>"; };
+		44A01FCD205626DC005B6054 /* AbsenceTypeEnumModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbsenceTypeEnumModel.h; sourceTree = "<group>"; };
 		44A5D4E61EB8757C00D924E9 /* TonBright.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TonBright.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44A5D4F51EB8757C00D924E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44A5D4FF1EB8757C00D924E9 /* TonBrightTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TonBrightTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,10 +181,22 @@
 		44A5D5611EB9AE4400D924E9 /* TBLoginTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBLoginTextField.m; sourceTree = "<group>"; };
 		44A5D5631EB9AEAE00D924E9 /* UITextField+TBExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+TBExtension.h"; sourceTree = "<group>"; };
 		44A5D5641EB9AEAE00D924E9 /* UITextField+TBExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+TBExtension.m"; sourceTree = "<group>"; };
-		44A5D5661EB9BFB900D924E9 /* TBHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBHTTPSessionManager.h; sourceTree = "<group>"; };
-		44A5D5671EB9BFB900D924E9 /* TBHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBHTTPSessionManager.m; sourceTree = "<group>"; };
 		44A5D56F1EBAD71600D924E9 /* TBUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBUser.h; sourceTree = "<group>"; };
 		44A5D5701EBAD71600D924E9 /* TBUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBUser.m; sourceTree = "<group>"; };
+		44AC6821203E707A0043316B /* TBInquireController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBInquireController.h; sourceTree = "<group>"; };
+		44AC6822203E707A0043316B /* TBInquireController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBInquireController.m; sourceTree = "<group>"; };
+		44AC6824203EB40E0043316B /* TBInquireDefaultCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBInquireDefaultCell.h; sourceTree = "<group>"; };
+		44AC6825203EB40E0043316B /* TBInquireDefaultCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBInquireDefaultCell.m; sourceTree = "<group>"; };
+		44AC6826203EB40E0043316B /* TBInquireDefaultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TBInquireDefaultCell.xib; sourceTree = "<group>"; };
+		44AC683A2041614D0043316B /* TBContractDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBContractDetailController.h; sourceTree = "<group>"; };
+		44AC683B2041614D0043316B /* TBContractDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBContractDetailController.m; sourceTree = "<group>"; };
+		44AC683D20416C050043316B /* TBContractDetailData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBContractDetailData.m; sourceTree = "<group>"; };
+		44AC683E20416C050043316B /* TBContractDetailData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBContractDetailData.h; sourceTree = "<group>"; };
+		44BA62651EC95D62009FE7DA /* TBContractListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBContractListViewController.h; sourceTree = "<group>"; };
+		44BA62661EC95D62009FE7DA /* TBContractListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBContractListViewController.m; sourceTree = "<group>"; };
+		44BE9BC02043F2F9003E1341 /* TBDetailBaseContentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBDetailBaseContentCell.h; sourceTree = "<group>"; };
+		44BE9BC12043F2F9003E1341 /* TBDetailBaseContentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBDetailBaseContentCell.m; sourceTree = "<group>"; };
+		44BE9BC22043F2F9003E1341 /* TBDetailBaseContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TBDetailBaseContentCell.xib; sourceTree = "<group>"; };
 		F492298DDFEE419F458C69AA /* Pods-TonBright.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TonBright.release.xcconfig"; path = "Pods/Target Support Files/Pods-TonBright/Pods-TonBright.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,6 +226,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		442F904320317B8C00D049F3 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				44A01FC520527950005B6054 /* HelpObject.h */,
+				44A01FC420527950005B6054 /* HelpObject.m */,
+				442F904420317B8C00D049F3 /* TBAPPSetting.h */,
+				442F904720317B8C00D049F3 /* TBAPPSetting.m */,
+				442F904820317B8C00D049F3 /* TBHTTPSessionManager.h */,
+				442F904520317B8C00D049F3 /* TBHTTPSessionManager.m */,
+				442F904920317B8C00D049F3 /* TBNetWorkRequest.h */,
+				442F904620317B8C00D049F3 /* TBNetWorkRequest.m */,
+			);
+			name = Tools;
+			path = "TonBright/Classes/Other-其他/Tools";
+			sourceTree = SOURCE_ROOT;
+		};
 		44A5D4DD1EB8757C00D924E9 = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +328,14 @@
 			children = (
 				44A5D5421EB8833400D924E9 /* TBSystemViewController.h */,
 				44A5D5431EB8833400D924E9 /* TBSystemViewController.m */,
+				44BA62651EC95D62009FE7DA /* TBContractListViewController.h */,
+				44BA62661EC95D62009FE7DA /* TBContractListViewController.m */,
+				44AC6821203E707A0043316B /* TBInquireController.h */,
+				44AC6822203E707A0043316B /* TBInquireController.m */,
+				44AC683A2041614D0043316B /* TBContractDetailController.h */,
+				44AC683B2041614D0043316B /* TBContractDetailController.m */,
+				441B818A204FEED9005EB4F2 /* TBTempSystemViewController.h */,
+				441B818B204FEED9005EB4F2 /* TBTempSystemViewController.m */,
 			);
 			path = Controllor;
 			sourceTree = "<group>";
@@ -227,10 +343,22 @@
 		44A5D5231EB87A5800D924E9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				446BE0971EC1B3DF00528513 /* TBSystemMenu.h */,
-				446BE0981EC1B3DF00528513 /* TBSystemMenu.m */,
+				44A01FCD205626DC005B6054 /* AbsenceTypeEnumModel.h */,
+				44A01FCC205626DC005B6054 /* AbsenceTypeEnumModel.m */,
+				441B817120469E9C005EB4F2 /* TBCustomerData.h */,
+				441B817020469E9B005EB4F2 /* TBCustomerData.m */,
+				44AC683E20416C050043316B /* TBContractDetailData.h */,
+				44AC683D20416C050043316B /* TBContractDetailData.m */,
+				442F90642032DE8A00D049F3 /* TBSystemMenu.h */,
+				442F90632032DE8A00D049F3 /* TBSystemMenu.m */,
 				446BE09A1EC2AEB900528513 /* TBFunction.h */,
 				446BE09B1EC2AEB900528513 /* TBFunction.m */,
+				442F904D2031872C00D049F3 /* TBContractList.h */,
+				442F904E2031872C00D049F3 /* TBContractList.m */,
+				442F90552032D54C00D049F3 /* TBCommonItemModel.h */,
+				442F90562032D54C00D049F3 /* TBCommonItemModel.m */,
+				44A01FC1205275C3005B6054 /* TBInquireData.h */,
+				44A01FC2205275C3005B6054 /* TBInquireData.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -238,6 +366,40 @@
 		44A5D5241EB87A5800D924E9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				44A01FC720562456005B6054 /* AbsenceTypePickerView.h */,
+				44A01FC820562457005B6054 /* AbsenceTypePickerView.m */,
+				44A01FC920562457005B6054 /* AbsenceTypePickerView.xib */,
+				44A01FBD2052749E005B6054 /* AbsenceDatePickerView.h */,
+				44A01FBC2052749D005B6054 /* AbsenceDatePickerView.m */,
+				44A01FBE2052749E005B6054 /* AbsenceDatePickerView.xib */,
+				44A01FB820526A20005B6054 /* TBTimeTypeCell.h */,
+				44A01FB920526A20005B6054 /* TBTimeTypeCell.m */,
+				44A01FB720526A1F005B6054 /* TBTimeTypeCell.xib */,
+				442F90502031902000D049F3 /* TBContractListCell.h */,
+				442F90512031902000D049F3 /* TBContractListCell.m */,
+				442F90522031902000D049F3 /* TBContractListCell.xib */,
+				44AC6824203EB40E0043316B /* TBInquireDefaultCell.h */,
+				44AC6825203EB40E0043316B /* TBInquireDefaultCell.m */,
+				44AC6826203EB40E0043316B /* TBInquireDefaultCell.xib */,
+				44BE9BC02043F2F9003E1341 /* TBDetailBaseContentCell.h */,
+				44BE9BC12043F2F9003E1341 /* TBDetailBaseContentCell.m */,
+				44BE9BC22043F2F9003E1341 /* TBDetailBaseContentCell.xib */,
+				441B816B20466034005EB4F2 /* TBCustomerBaseContentCell.h */,
+				441B816C20466034005EB4F2 /* TBCustomerBaseContentCell.m */,
+				441B816D20466034005EB4F2 /* TBCustomerBaseContentCell.xib */,
+				441B817320478F4C005EB4F2 /* TBCustomerCaseContentCell.h */,
+				441B817420478F4C005EB4F2 /* TBCustomerCaseContentCell.m */,
+				441B817520478F4C005EB4F2 /* TBCustomerCaseContentCell.xib */,
+				441B81782047FBCA005EB4F2 /* TBObjectRelateDataCell.h */,
+				441B81792047FBCA005EB4F2 /* TBObjectRelateDataCell.m */,
+				441B817A2047FBCA005EB4F2 /* TBObjectRelateDataCell.xib */,
+				441B817D204E6468005EB4F2 /* TBFinancingPlanDataCell.h */,
+				441B817E204E6468005EB4F2 /* TBFinancingPlanDataCell.m */,
+				441B817F204E6468005EB4F2 /* TBFinancingPlanDataCell.xib */,
+				441B8182204E8528005EB4F2 /* TBRepaymentplanCell.h */,
+				441B8183204E8528005EB4F2 /* TBRepaymentplanCell.m */,
+				44A01FB420511C96005B6054 /* TBApproveHisCell.h */,
+				44A01FB520511C96005B6054 /* TBApproveHisCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -379,17 +541,12 @@
 			children = (
 				44A5D53C1EB87EDF00D924E9 /* Category */,
 				44A5D53D1EB87EDF00D924E9 /* Controller */,
+				442F904320317B8C00D049F3 /* Tools */,
 				44A5D53E1EB87EDF00D924E9 /* View */,
 				44A5D5361EB87A5800D924E9 /* AppDelegate.h */,
 				44A5D5371EB87A5800D924E9 /* AppDelegate.m */,
 				44A5D5381EB87A5800D924E9 /* main.m */,
 				44A5D5581EB96F4C00D924E9 /* TonBright.pch */,
-				44A5D5661EB9BFB900D924E9 /* TBHTTPSessionManager.h */,
-				44A5D5671EB9BFB900D924E9 /* TBHTTPSessionManager.m */,
-				447E87301EBC4094005B4EE2 /* TBAPPSetting.h */,
-				447E87311EBC4094005B4EE2 /* TBAPPSetting.m */,
-				4460ED071EBC6F7400D85AB6 /* TBNetWorkRequest.h */,
-				4460ED081EBC6F7400D85AB6 /* TBNetWorkRequest.m */,
 			);
 			path = "Other-其他";
 			sourceTree = "<group>";
@@ -417,6 +574,8 @@
 				44A5D55B1EB99D2E00D924E9 /* TBLoginViewController.h */,
 				44A5D55C1EB99D2E00D924E9 /* TBLoginViewController.m */,
 				447E87271EBC1756005B4EE2 /* TBLoginViewController.storyboard */,
+				441B8187204FECA3005EB4F2 /* TBTempTabBarViewController.h */,
+				441B8188204FECA3005EB4F2 /* TBTempTabBarViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -560,8 +719,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				44A5D51F1EB87A2F00D924E9 /* Info.plist in Resources */,
+				441B8181204E6468005EB4F2 /* TBFinancingPlanDataCell.xib in Resources */,
+				441B817720478F4C005EB4F2 /* TBCustomerCaseContentCell.xib in Resources */,
+				441B816F20466034005EB4F2 /* TBCustomerBaseContentCell.xib in Resources */,
 				447E87281EBC1756005B4EE2 /* TBLoginViewController.storyboard in Resources */,
+				44BE9BC42043F2F9003E1341 /* TBDetailBaseContentCell.xib in Resources */,
 				44A5D4F61EB8757C00D924E9 /* Assets.xcassets in Resources */,
+				44A01FCB20562457005B6054 /* AbsenceTypePickerView.xib in Resources */,
+				441B817C2047FBCA005EB4F2 /* TBObjectRelateDataCell.xib in Resources */,
+				442F90542031902000D049F3 /* TBContractListCell.xib in Resources */,
+				44A01FBA20526A20005B6054 /* TBTimeTypeCell.xib in Resources */,
+				44A01FC02052749E005B6054 /* AbsenceDatePickerView.xib in Resources */,
+				44AC6828203EB40E0043316B /* TBInquireDefaultCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,9 +757,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TonBright/Pods-TonBright-resources.sh",
+				"${PODS_ROOT}/SSKeychain/Support/SSKeychain.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -603,13 +775,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TonBright-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DC79D1B6B082E1E70042C1B5 /* [CP] Embed Pods Frameworks */ = {
@@ -635,25 +810,49 @@
 			buildActionMask = 2147483647;
 			files = (
 				44A5D54A1EB883AA00D924E9 /* TBMeViewController.m in Sources */,
+				44AC683F20416C050043316B /* TBContractDetailData.m in Sources */,
 				447E872B1EBC2592005B4EE2 /* UIView+TBMBProgressHUD.m in Sources */,
+				44A01FBF2052749E005B6054 /* AbsenceDatePickerView.m in Sources */,
+				44AC683C2041614D0043316B /* TBContractDetailController.m in Sources */,
 				44A5D5621EB9AE4400D924E9 /* TBLoginTextField.m in Sources */,
+				442F904F2031872C00D049F3 /* TBContractList.m in Sources */,
+				441B8180204E6468005EB4F2 /* TBFinancingPlanDataCell.m in Sources */,
+				44A01FB620511C96005B6054 /* TBApproveHisCell.m in Sources */,
 				446BE09C1EC2AEB900528513 /* TBFunction.m in Sources */,
 				44A5D5471EB8837500D924E9 /* TBFocusViewController.m in Sources */,
 				44A5D5711EBAD71600D924E9 /* TBUser.m in Sources */,
+				44AC6827203EB40E0043316B /* TBInquireDefaultCell.m in Sources */,
 				44A5D55E1EB99D2E00D924E9 /* TBLoginViewController.m in Sources */,
 				44A5D54D1EB883D900D924E9 /* TBTodoViewController.m in Sources */,
-				447E87321EBC4094005B4EE2 /* TBAPPSetting.m in Sources */,
+				442F904A20317B8C00D049F3 /* TBHTTPSessionManager.m in Sources */,
+				441B817220469E9C005EB4F2 /* TBCustomerData.m in Sources */,
+				44A01FC620527951005B6054 /* HelpObject.m in Sources */,
+				44A01FCA20562457005B6054 /* AbsenceTypePickerView.m in Sources */,
+				441B818C204FEED9005EB4F2 /* TBTempSystemViewController.m in Sources */,
 				44A5D5651EB9AEAE00D924E9 /* UITextField+TBExtension.m in Sources */,
-				446BE0991EC1B3DF00528513 /* TBSystemMenu.m in Sources */,
+				44BE9BC32043F2F9003E1341 /* TBDetailBaseContentCell.m in Sources */,
+				442F904B20317B8C00D049F3 /* TBNetWorkRequest.m in Sources */,
+				441B8185204E8528005EB4F2 /* TBRepaymentplanCell.m in Sources */,
+				44A01FCE205626DC005B6054 /* AbsenceTypeEnumModel.m in Sources */,
 				44A5D53A1EB87A5800D924E9 /* main.m in Sources */,
-				4460ED091EBC6F7400D85AB6 /* TBNetWorkRequest.m in Sources */,
+				441B817620478F4C005EB4F2 /* TBCustomerCaseContentCell.m in Sources */,
+				441B816E20466034005EB4F2 /* TBCustomerBaseContentCell.m in Sources */,
+				442F90532031902000D049F3 /* TBContractListCell.m in Sources */,
+				44A01FBB20526A20005B6054 /* TBTimeTypeCell.m in Sources */,
+				442F904C20317B8C00D049F3 /* TBAPPSetting.m in Sources */,
 				44A5D5441EB8833400D924E9 /* TBSystemViewController.m in Sources */,
 				447E872E1EBC26F1005B4EE2 /* UIViewController+TBMBPProgressHUD.m in Sources */,
-				44A5D5681EB9BFB900D924E9 /* TBHTTPSessionManager.m in Sources */,
+				44BA62671EC95D62009FE7DA /* TBContractListViewController.m in Sources */,
 				44A5D5561EB9671B00D924E9 /* UIView+PJExtension.m in Sources */,
+				441B817B2047FBCA005EB4F2 /* TBObjectRelateDataCell.m in Sources */,
+				44AC6823203E707A0043316B /* TBInquireController.m in Sources */,
+				441B8189204FECA3005EB4F2 /* TBTempTabBarViewController.m in Sources */,
 				44A5D5391EB87A5800D924E9 /* AppDelegate.m in Sources */,
+				44A01FC3205275C3005B6054 /* TBInquireData.m in Sources */,
+				442F90572032D54C00D049F3 /* TBCommonItemModel.m in Sources */,
 				44A5D5411EB87F3400D924E9 /* TBTabBarController.m in Sources */,
 				44A5D5501EB88C9100D924E9 /* TBTabBar.m in Sources */,
+				442F90652032DE8A00D049F3 /* TBSystemMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

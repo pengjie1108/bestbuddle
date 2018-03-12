@@ -16,6 +16,6 @@
 
 - (instancetype)initWithDict:(NSDictionary *)dict;
 
-+(instancetype) systemMenuWithDict:(NSDictionary *)dict;
++ (instancetype) systemMenuWithDict:(NSDictionary *)dict;
 
 @end

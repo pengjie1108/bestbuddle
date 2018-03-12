@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="olc-nC-5Jh" userLabel="AbsenceTypePickerView" customClass="AbsenceTypePickerView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="212"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZOO-Eq-syI">
+                    <rect key="frame" x="0.0" y="65" width="320" height="147"/>
+                </pickerView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oGd-f3-MSO">
+                    <rect key="frame" x="8" y="8" width="50" height="42"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="42" id="CdL-qQ-XJ3"/>
+                        <constraint firstAttribute="width" constant="50" id="Odr-P9-Pd3"/>
+                    </constraints>
+                    <state key="normal" title="取消">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="noBtnClick:" destination="olc-nC-5Jh" eventType="touchUpInside" id="1oN-cj-djH"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eci-GM-3Jb">
+                    <rect key="frame" x="262" y="8" width="50" height="49"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="NwR-kQ-C1y"/>
+                        <constraint firstAttribute="height" constant="49" id="cPS-WA-L0M"/>
+                    </constraints>
+                    <state key="normal" title="确定">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="yesBtnClick:" destination="olc-nC-5Jh" eventType="touchUpInside" id="5eH-zk-pnL"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ZOO-Eq-syI" firstAttribute="top" secondItem="eci-GM-3Jb" secondAttribute="bottom" constant="8" id="4gn-1t-nfF"/>
+                <constraint firstAttribute="trailing" secondItem="eci-GM-3Jb" secondAttribute="trailing" constant="8" id="5Ku-ag-wHO"/>
+                <constraint firstItem="eci-GM-3Jb" firstAttribute="top" secondItem="olc-nC-5Jh" secondAttribute="top" constant="8" id="Fs7-Ls-bAM"/>
+                <constraint firstItem="oGd-f3-MSO" firstAttribute="top" secondItem="olc-nC-5Jh" secondAttribute="top" constant="8" id="c2r-Z2-FV6"/>
+                <constraint firstItem="oGd-f3-MSO" firstAttribute="leading" secondItem="olc-nC-5Jh" secondAttribute="leading" constant="8" id="e9m-H7-1gW"/>
+                <constraint firstAttribute="bottom" secondItem="ZOO-Eq-syI" secondAttribute="bottom" id="hHF-Pp-7L6"/>
+                <constraint firstAttribute="trailing" secondItem="ZOO-Eq-syI" secondAttribute="trailing" id="uh8-n9-969"/>
+                <constraint firstItem="ZOO-Eq-syI" firstAttribute="leading" secondItem="olc-nC-5Jh" secondAttribute="leading" id="vqr-Vc-EVZ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="typePick" destination="ZOO-Eq-syI" id="R5O-8C-2Ca"/>
+            </connections>
+            <point key="canvasLocation" x="233" y="211"/>
+        </view>
+    </objects>
+</document>

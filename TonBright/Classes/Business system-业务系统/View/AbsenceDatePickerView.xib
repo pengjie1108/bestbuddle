@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="MuO-Z0-dIa" userLabel="AbsenceDatePickerView" customClass="AbsenceDatePickerView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="212"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="H5g-bU-wMh">
+                    <rect key="frame" x="0.0" y="65" width="320" height="147"/>
+                    <date key="date" timeIntervalSinceReferenceDate="495860922.72320002">
+                        <!--2016-09-18 03:08:42 +0000-->
+                    </date>
+                    <locale key="locale" localeIdentifier="zh"/>
+                </datePicker>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Zk-qW-mcl">
+                    <rect key="frame" x="8" y="8" width="50" height="49"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="49" id="OCL-cf-mJY"/>
+                        <constraint firstAttribute="width" constant="50" id="ntC-bj-Z7r"/>
+                    </constraints>
+                    <state key="normal" title="取消">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="cancleBtnClick:" destination="MuO-Z0-dIa" eventType="touchUpInside" id="pr5-oq-fbz"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P1s-jU-G00">
+                    <rect key="frame" x="262" y="14" width="50" height="43"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="43" id="Xd1-44-Dnd"/>
+                        <constraint firstAttribute="width" constant="50" id="wJn-4s-0zG"/>
+                    </constraints>
+                    <state key="normal" title="确定">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="yesBtnClick:" destination="MuO-Z0-dIa" eventType="touchUpInside" id="Wtr-up-M5s"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="H5g-bU-wMh" firstAttribute="leading" secondItem="MuO-Z0-dIa" secondAttribute="leading" id="3UK-fp-QFb"/>
+                <constraint firstItem="0Zk-qW-mcl" firstAttribute="leading" secondItem="MuO-Z0-dIa" secondAttribute="leading" constant="8" id="7gS-Nc-djZ"/>
+                <constraint firstItem="P1s-jU-G00" firstAttribute="top" secondItem="MuO-Z0-dIa" secondAttribute="top" constant="14" id="9sB-nQ-5md"/>
+                <constraint firstItem="H5g-bU-wMh" firstAttribute="top" secondItem="0Zk-qW-mcl" secondAttribute="bottom" constant="8" id="Dd9-45-VvG"/>
+                <constraint firstAttribute="trailing" secondItem="H5g-bU-wMh" secondAttribute="trailing" id="WXE-Te-Oqg"/>
+                <constraint firstAttribute="trailing" secondItem="P1s-jU-G00" secondAttribute="trailing" constant="8" id="gQD-1V-sYf"/>
+                <constraint firstAttribute="bottom" secondItem="H5g-bU-wMh" secondAttribute="bottom" id="ttF-q5-DOg"/>
+                <constraint firstItem="0Zk-qW-mcl" firstAttribute="top" secondItem="MuO-Z0-dIa" secondAttribute="top" constant="8" id="zcS-Wb-pwz"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="timePick" destination="H5g-bU-wMh" id="TfB-kh-FEP"/>
+            </connections>
+            <point key="canvasLocation" x="307" y="564"/>
+        </view>
+    </objects>
+</document>

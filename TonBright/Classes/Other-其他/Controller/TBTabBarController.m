@@ -30,6 +30,7 @@
     
 }
 
+//设置tabBar格式
 - (void)setupItemTitleTextAttributes{
     
     UITabBarItem *item = [UITabBarItem appearance];
@@ -44,6 +45,7 @@
     [item setTitleTextAttributes:selectedAttrs forState:UIControlStateSelected];
 }
 
+//设置子控制器
 - (void)setupChildViewControllers{
     
     [self setupOneChildViewController:[[UINavigationController alloc] initWithRootViewController:[[TBSystemViewController alloc] init]] title:@"系统" image:@"tabBar_essence_icon" selectedImage:@"tabBar_essence_click_icon"];
@@ -52,7 +54,7 @@
     
      [self setupOneChildViewController:[[UINavigationController alloc] initWithRootViewController:[[TBFocusViewController alloc] init]] title:@"关注" image:@"tabBar_me_icon" selectedImage:@"tabBar_me_click_icon"];
     
-     [self setupOneChildViewController:[[UINavigationController alloc] initWithRootViewController:[[TBMeViewController alloc] init]] title:@"我的" image:@"tabBar_friendTrends_icon" selectedImage:@"tabBar_friendTrends_click_icon"];
+     [self setupOneChildViewController:[[UINavigationController alloc] initWithRootViewController:[[TBMeViewController alloc] init]] title:@"个人" image:@"tabBar_friendTrends_icon" selectedImage:@"tabBar_friendTrends_click_icon"];
 }
 
 - (void)setupOneChildViewController:(UIViewController *)vc title:(NSString *)title image:(NSString *)image selectedImage:(NSString *)selectedImage{

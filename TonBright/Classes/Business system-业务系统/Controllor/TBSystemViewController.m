@@ -9,6 +9,7 @@
 #import "TBSystemViewController.h"
 #import "TBSystemMenu.h"
 #import "TBFunction.h"
+#import "TBContractListViewController.h"
 
 @interface TBSystemViewController ()
 
@@ -20,13 +21,14 @@
 
 static NSString *tableSampleIdentifier = @"tableSampleIdentifier";
 
+
 @implementation TBSystemViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"业务系统";
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:tableSampleIdentifier];
-    [self.dataArray writeToFile:@"/Users/jiepeng/Desktop/menus.plist" atomically:YES];
+//    [self.dataArray writeToFile:@"/Users/jiepeng/Desktop/menus.plist" atomically:YES];
 }
 
 - (id)init{
@@ -56,13 +58,13 @@ static NSString *tableSampleIdentifier = @"tableSampleIdentifier";
         return systemMenu.functions.count;
     }
 }
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tableSampleIdentifier forIndexPath:indexPath];
-    
     TBSystemMenu *systemMenu = self.dataArray[indexPath.section];
     TBFunction *functionMenu = systemMenu.functions[indexPath.row];
-        cell.textLabel.text = functionMenu.functionnm;
+    cell.textLabel.text = functionMenu.functionnm;
     
     return cell;
     
@@ -71,7 +73,7 @@ static NSString *tableSampleIdentifier = @"tableSampleIdentifier";
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
     UIView * headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.pj_width, 50)];
-    headerView.tag = 2016 + section;
+    headerView.tag = 2017 + section;
     headerView.backgroundColor = [UIColor colorWithRed:235/255.0 green:235/255.0 blue:235/255.0 alpha:1];
     [headerView setUserInteractionEnabled:YES];
 
@@ -108,16 +110,33 @@ static NSString *tableSampleIdentifier = @"tableSampleIdentifier";
 }
 
 
+#pragma 点击事件
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    //获取URL
+    TBSystemMenu *systemMenu = self.dataArray[indexPath.section];
+    TBFunction *functionMenu = systemMenu.functions[indexPath.row];
+    NSString *url = functionMenu.functionurl;
+    TBLog(@"%@",url);
+    
+    if ([url isEqualToString:@"t_contract_check_list.php"]) {
+        TBContractListViewController *contractListVc = [[TBContractListViewController alloc] init];
+        contractListVc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:contractListVc animated:YES];
+    }
+    
+}
+
+
 - (void)tapGR:(UITapGestureRecognizer *)tapGR {
-    //获取section
-    NSInteger section = tapGR.view.tag - 2016;
-    //判断改变bool值
+
+    NSInteger section = tapGR.view.tag - 2017;
+    
     if ([_boolArr[section] boolValue] == YES) {
         [_boolArr replaceObjectAtIndex:section withObject:@NO];
     }else {
         [_boolArr replaceObjectAtIndex:section withObject:@YES];
     }
-    //刷新某个section
+
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:section] withRowAnimation:UITableViewRowAnimationFade];
 }
 
