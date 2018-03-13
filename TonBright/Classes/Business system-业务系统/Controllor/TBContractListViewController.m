@@ -49,6 +49,7 @@ static NSString * const TBContractListCellId = @"TBContractListCell";
     // 注册cell
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([TBContractListCell class]) bundle:nil] forCellReuseIdentifier:TBContractListCellId];
     [self.tableView setSeparatorColor:[UIColor clearColor]];
+    [self inquire];
 }
 
 //跳转到检索控制器

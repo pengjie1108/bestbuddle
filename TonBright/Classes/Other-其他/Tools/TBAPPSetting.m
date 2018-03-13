@@ -84,6 +84,11 @@
      return [self.userDefault objectForKey:COMPANYID_KEY];
 }
 
+- (NSString *)departmentname{
+    return [self.userDefault objectForKey:DEPARTMENTNAME_KEY];
+}
+
+
 - (void)setLoginname:(NSString *)loginname{
     [self.userDefault setObject:loginname forKey:LOGINNAME_KEY];
     [self.userDefault synchronize];
@@ -140,6 +145,11 @@
 
 - (void)setCompanyid:(NSString *)companyid{
     [self.userDefault setObject:companyid forKey:COMPANYID_KEY];
+    [self.userDefault synchronize];
+}
+
+- (void)setDepartmentname:(NSString *)departmentname{
+    [self.userDefault setObject:departmentname forKey:DEPARTMENTNAME_KEY];
     [self.userDefault synchronize];
 }
 

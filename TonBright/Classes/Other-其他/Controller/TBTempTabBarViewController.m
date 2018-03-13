@@ -10,6 +10,7 @@
 #import "TBSystemViewController.h"
 #import "TBMeViewController.h"
 #import "TBTempSystemViewController.h"
+#import "TBContractListViewController.h"
 
 @interface TBTempTabBarViewController ()
 
@@ -44,7 +45,7 @@
 //设置子控制器
 - (void)setupChildViewControllers{
     
-    [self setupOneChildViewController:[[UINavigationController alloc] initWithRootViewController:[[TBTempSystemViewController alloc] init]] title:@"系统" image:@"tabBar_essence_icon" selectedImage:@"tabBar_essence_click_icon"];
+    [self setupOneChildViewController:[[UINavigationController alloc] initWithRootViewController:[[TBContractListViewController alloc] init]] title:@"系统" image:@"tabBar_essence_icon" selectedImage:@"tabBar_essence_click_icon"];
     
     [self setupOneChildViewController:[[UINavigationController alloc] initWithRootViewController:[[TBMeViewController alloc] init]] title:@"个人" image:@"tabBar_friendTrends_icon" selectedImage:@"tabBar_friendTrends_click_icon"];
 }

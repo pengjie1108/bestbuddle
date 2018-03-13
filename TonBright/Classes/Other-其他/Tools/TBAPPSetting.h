@@ -32,6 +32,8 @@
 
 @property (nonatomic,copy) NSString *companyid;
 
+@property (nonatomic,copy) NSString *departmentname;
+
 + (instancetype)shareAppSetting;
 
 - (NSString *)passwordForUserName:(NSString *)userName;

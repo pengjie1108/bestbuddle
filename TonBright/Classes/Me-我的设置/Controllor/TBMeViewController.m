@@ -42,24 +42,30 @@
     [self.view addSubview:introduceLabel];
     
     UILabel *companyIDLabel = [[UILabel alloc] init];
-    companyIDLabel.text = [NSString stringWithFormat:@"公司ID:%@",[TBAPPSetting shareAppSetting].companyid];
+    companyIDLabel.text = [NSString stringWithFormat:@"员工公司ID :%@",[TBAPPSetting shareAppSetting].companyid];
     companyIDLabel.font = [UIFont systemFontOfSize:14];
     [self.view addSubview:companyIDLabel];
     
     UILabel *companyNmLabel = [[UILabel alloc] init];
-    companyNmLabel.text = [NSString stringWithFormat:@"商户公司:%@",[TBAPPSetting shareAppSetting].companyname];
+    companyNmLabel.text = [NSString stringWithFormat:@"员工公司名 :%@",[TBAPPSetting shareAppSetting].companyname];
     companyNmLabel.font = [UIFont systemFontOfSize:14];
     [self.view addSubview:companyNmLabel];
     
     UILabel *userLoginNmLabel = [[UILabel alloc] init];
-    userLoginNmLabel.text = [NSString stringWithFormat:@"用户账户:%@",[TBAPPSetting shareAppSetting].loginname];
+    userLoginNmLabel.text = [NSString stringWithFormat:@"员工登录名 :%@",[TBAPPSetting shareAppSetting].loginname];
     userLoginNmLabel.font = [UIFont systemFontOfSize:14];
     [self.view addSubview:userLoginNmLabel];
+    
+    UILabel *departmentNmLabel = [[UILabel alloc] init];
+    departmentNmLabel.text = [NSString stringWithFormat:@"员工所在部门:%@",[TBAPPSetting shareAppSetting].departmentname];
+    departmentNmLabel.font = [UIFont systemFontOfSize:14];
+    [self.view addSubview:departmentNmLabel];
     
     UIButton *singOutBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     singOutBtn.backgroundColor = [UIColor colorWithRed:139/255.0 green:208/255.0 blue:91/255.0 alpha:1];
     [singOutBtn setTitle:@"退出登录" forState:UIControlStateNormal];
     [singOutBtn setTintColor:[UIColor blackColor]];
+    [singOutBtn addTarget:self action:@selector(singOut) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:singOutBtn];
     
     [introduceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -82,13 +88,23 @@
         make.left.mas_equalTo(companyNmLabel);
     }];
     
+    [departmentNmLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(userLoginNmLabel.mas_bottom).offset(5);
+        make.left.mas_equalTo(userLoginNmLabel);
+    }];
+    
     [singOutBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-         make.top.mas_equalTo(userLoginNmLabel.mas_bottom).offset(5);
+        make.top.mas_equalTo(departmentNmLabel.mas_bottom).offset(15);
         make.left.mas_equalTo(self.view).offset(20);
         make.right.mas_equalTo(self.view).offset(-20);
         make.height.mas_equalTo(35);
     }];
     
+    
+}
+
+- (void)singOut{
+    TBLogFunc;
 }
 
 

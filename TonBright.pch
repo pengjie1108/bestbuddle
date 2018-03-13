@@ -39,6 +39,8 @@
 
 #define COMPANYID_KEY @"companyid"
 
+#define DEPARTMENTNAME_KEY @"departmentname"
+
 #define USERFUNCTION_KEY @"userfunction"
 
 #ifdef DEBUG

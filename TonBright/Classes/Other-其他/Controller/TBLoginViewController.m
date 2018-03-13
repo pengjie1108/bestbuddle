@@ -97,6 +97,7 @@ static NSString * const TBCommonURL = @"http://203.156.252.183:81/nbs/api/api.us
     [TBAPPSetting shareAppSetting].userfunction = responseObject[@"userfunction"];
     [TBAPPSetting shareAppSetting].companyname = responseObject[@"companyname"];
     [TBAPPSetting shareAppSetting].companyid = responseObject[@"companyid"];
+    [TBAPPSetting shareAppSetting].departmentname = responseObject[@"departmentname"];
 }
 
 
