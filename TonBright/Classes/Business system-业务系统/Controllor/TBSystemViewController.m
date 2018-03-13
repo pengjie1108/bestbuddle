@@ -116,7 +116,6 @@ static NSString *tableSampleIdentifier = @"tableSampleIdentifier";
     TBSystemMenu *systemMenu = self.dataArray[indexPath.section];
     TBFunction *functionMenu = systemMenu.functions[indexPath.row];
     NSString *url = functionMenu.functionurl;
-    TBLog(@"%@",url);
     
     if ([url isEqualToString:@"t_contract_check_list.php"]) {
         TBContractListViewController *contractListVc = [[TBContractListViewController alloc] init];

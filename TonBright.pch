@@ -35,6 +35,10 @@
 
 #define USERROLE_KEY @"userrole"
 
+#define COMPANYNAME_KEY @"companyname"
+
+#define COMPANYID_KEY @"companyid"
+
 #define USERFUNCTION_KEY @"userfunction"
 
 #ifdef DEBUG

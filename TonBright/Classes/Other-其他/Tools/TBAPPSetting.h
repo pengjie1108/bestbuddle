@@ -28,6 +28,10 @@
 
 @property (nonatomic,strong) NSArray *userfunction;
 
+@property (nonatomic,copy) NSString *companyname;
+
+@property (nonatomic,copy) NSString *companyid;
+
 + (instancetype)shareAppSetting;
 
 - (NSString *)passwordForUserName:(NSString *)userName;

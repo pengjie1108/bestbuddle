@@ -9,7 +9,7 @@
 #import "TBTimeTypeCell.h"
 
 @interface TBTimeTypeCell ()
-@property (weak, nonatomic) IBOutlet UILabel *timeDetailL;
+
 @property (weak, nonatomic) IBOutlet UILabel *headTitleL;
 @property (weak, nonatomic) IBOutlet UIImageView *downImage;
 

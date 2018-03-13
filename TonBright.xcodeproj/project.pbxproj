@@ -41,6 +41,7 @@
 		44A01FCA20562457005B6054 /* AbsenceTypePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A01FC820562457005B6054 /* AbsenceTypePickerView.m */; };
 		44A01FCB20562457005B6054 /* AbsenceTypePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44A01FC920562457005B6054 /* AbsenceTypePickerView.xib */; };
 		44A01FCE205626DC005B6054 /* AbsenceTypeEnumModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A01FCC205626DC005B6054 /* AbsenceTypeEnumModel.m */; };
+		44A01FD120579F44005B6054 /* TBCompanyData.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A01FD020579F44005B6054 /* TBCompanyData.m */; };
 		44A5D4F61EB8757C00D924E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44A5D4F51EB8757C00D924E9 /* Assets.xcassets */; };
 		44A5D5041EB8757C00D924E9 /* TonBrightTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A5D5031EB8757C00D924E9 /* TonBrightTests.m */; };
 		44A5D50F1EB8757C00D924E9 /* TonBrightUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A5D50E1EB8757C00D924E9 /* TonBrightUITests.m */; };
@@ -148,6 +149,8 @@
 		44A01FC920562457005B6054 /* AbsenceTypePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AbsenceTypePickerView.xib; sourceTree = "<group>"; };
 		44A01FCC205626DC005B6054 /* AbsenceTypeEnumModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbsenceTypeEnumModel.m; sourceTree = "<group>"; };
 		44A01FCD205626DC005B6054 /* AbsenceTypeEnumModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbsenceTypeEnumModel.h; sourceTree = "<group>"; };
+		44A01FCF20579F44005B6054 /* TBCompanyData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBCompanyData.h; sourceTree = "<group>"; };
+		44A01FD020579F44005B6054 /* TBCompanyData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBCompanyData.m; sourceTree = "<group>"; };
 		44A5D4E61EB8757C00D924E9 /* TonBright.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TonBright.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44A5D4F51EB8757C00D924E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44A5D4FF1EB8757C00D924E9 /* TonBrightTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TonBrightTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -359,6 +362,8 @@
 				442F90562032D54C00D049F3 /* TBCommonItemModel.m */,
 				44A01FC1205275C3005B6054 /* TBInquireData.h */,
 				44A01FC2205275C3005B6054 /* TBInquireData.m */,
+				44A01FCF20579F44005B6054 /* TBCompanyData.h */,
+				44A01FD020579F44005B6054 /* TBCompanyData.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -836,6 +841,7 @@
 				44A01FCE205626DC005B6054 /* AbsenceTypeEnumModel.m in Sources */,
 				44A5D53A1EB87A5800D924E9 /* main.m in Sources */,
 				441B817620478F4C005EB4F2 /* TBCustomerCaseContentCell.m in Sources */,
+				44A01FD120579F44005B6054 /* TBCompanyData.m in Sources */,
 				441B816E20466034005EB4F2 /* TBCustomerBaseContentCell.m in Sources */,
 				442F90532031902000D049F3 /* TBContractListCell.m in Sources */,
 				44A01FBB20526A20005B6054 /* TBTimeTypeCell.m in Sources */,

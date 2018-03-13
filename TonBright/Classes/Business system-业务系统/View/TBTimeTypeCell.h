@@ -18,6 +18,8 @@
 
 @interface TBTimeTypeCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *timeDetailL;
+
 //隐藏向下的箭头
 @property (nonatomic, assign) BOOL hideDownBtn;
 

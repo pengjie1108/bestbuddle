@@ -76,6 +76,14 @@
     return [self.userDefault objectForKey:USERFUNCTION_KEY];
 }
 
+- (NSString *)companyname{
+    return [self.userDefault objectForKey:COMPANYNAME_KEY];
+}
+
+- (NSString *)companyid{
+     return [self.userDefault objectForKey:COMPANYID_KEY];
+}
+
 - (void)setLoginname:(NSString *)loginname{
     [self.userDefault setObject:loginname forKey:LOGINNAME_KEY];
     [self.userDefault synchronize];
@@ -125,6 +133,14 @@
     [self.userDefault synchronize];
 }
 
+- (void)setCompanyname:(NSString *)companyname{
+    [self.userDefault setObject:companyname forKey:COMPANYNAME_KEY];
+    [self.userDefault synchronize];
+}
 
+- (void)setCompanyid:(NSString *)companyid{
+    [self.userDefault setObject:companyid forKey:COMPANYID_KEY];
+    [self.userDefault synchronize];
+}
 
 @end

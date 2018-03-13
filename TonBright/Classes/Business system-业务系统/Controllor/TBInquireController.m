@@ -14,6 +14,8 @@
 #import "AbsenceTypePickerView.h"
 #import "TBInquireData.h"
 #import <YYModel.h>
+#import "TBHTTPSessionManager.h"
+#import "TBCompanyData.h"
 
 @interface TBInquireController ()<TBTimeTypeCellDelegate>
 
@@ -26,12 +28,20 @@
 
 @property (nonatomic,strong) NSArray *casestatusArray;
 @property (nonatomic,strong) NSArray *casetypeArray;
+@property (nonatomic,strong) NSArray *companyListArray;
+
+/** 请求管理者 */
+@property (nonatomic, weak) TBHTTPSessionManager *manager;
+
 @end
 
 @implementation TBInquireController
 
 static NSString * const TBInquireDefaultCellId = @"TBInquireDefaultCell";
 static NSString * const TBTimeTypeCellId = @"TBTimeTypeCell";
+
+//static NSString * const TBContractListURL = @"http://192.168.1.65/nbsst/api/api.caseinfo.list.php";
+static NSString * const TBCompanyListURL = @"http://203.156.252.183:81/nbs/api/api.company.list.php";
 
 - (NSArray<NSDictionary *> *)itemNameDateArray{
     if (_itemNameDataArray == nil) {
@@ -97,6 +107,15 @@ static NSString * const TBTimeTypeCellId = @"TBTimeTypeCell";
     return _casetypeArray;
 }
 
+/** manager属性的懒加载 */
+- (TBHTTPSessionManager *)manager
+{
+    if (!_manager) {
+        _manager = [TBHTTPSessionManager manager];
+    }
+    return _manager;
+}
+
 - (TBInquireData *)inquireData{
     
     if (!_inquireData) {
@@ -109,9 +128,34 @@ static NSString * const TBTimeTypeCellId = @"TBTimeTypeCell";
     [super viewDidLoad];
     self.navigationItem.title = @"检索条件";
     self.tableView.separatorColor = [UIColor clearColor];
+    [self getData];
     self.navigationItem.rightBarButtonItem= [[UIBarButtonItem alloc] initWithTitle:@"查询" style:UIBarButtonItemStylePlain target:self action:@selector(inquire)];
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([TBInquireDefaultCell class]) bundle:nil] forCellReuseIdentifier:TBInquireDefaultCellId];
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([TBTimeTypeCell class]) bundle:nil] forCellReuseIdentifier:TBTimeTypeCellId];
+}
+
+- (void)getData{
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params setObject:[TBAPPSetting shareAppSetting].userid forKey:@"tokenuserid"];
+    [params setObject:[TBAPPSetting shareAppSetting].tokenid forKey:@"tokenid"];
+    [params setObject:[TBAPPSetting shareAppSetting].topcompanyid forKey:@"topcompanyid"];
+    __weak typeof(self) weakSelf = self;
+    [self.manager POST:TBCompanyListURL parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary* _Nullable responseObject) {
+        NSString *stat = [NSString stringWithString:responseObject[@"stat"]];
+        if ([stat intValue] == 0) {
+            NSArray *companyArray = [NSArray yy_modelArrayWithClass:[TBCompanyData class]json:responseObject[@"data"][@"companylist"]];
+            NSMutableArray *tempArray = [NSMutableArray array];
+            for (TBCompanyData *data in companyArray) {
+                if (data.isvalid){
+                 [tempArray addObject:[NSDictionary dictionaryWithObjectsAndKeys:data.companynm,@"parameterValue",data.companyid,@"parameterCode", nil]];
+              }
+            }
+            weakSelf.companyListArray = [NSArray yy_modelArrayWithClass:[AbsenceTypeEnumModel class] json:tempArray];
+            [weakSelf.tableView reloadData];
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        TBLog(@"请求失败 - %@", error);
+    }];
 }
 
 //查询
@@ -176,7 +220,9 @@ static NSString * const TBTimeTypeCellId = @"TBTimeTypeCell";
             cell.timeTitle = self.inquireData.casetype;
             cell.timeTitleKey = self.inquireData.casetypeKey;
         }else if(indexPath.row  == 8){
-            cell.timeTitle = self.inquireData.casetype;
+            cell.timeTitle = self.inquireData.companynm;
+            cell.timeDetailL.font = [UIFont systemFontOfSize:9];
+            cell.timeTitleKey = self.inquireData.companynmKey;
         }
         return cell;
     }else{//日期cell
@@ -251,6 +297,8 @@ static NSString * const TBTimeTypeCellId = @"TBTimeTypeCell";
             _typePick.workContent = self.casestatusArray;
         }else if (row == 5){
             _typePick.workContent = self.casetypeArray;
+        }else if (row == 8){
+            _typePick.workContent = self.companyListArray;
         }
         __weak typeof(self) weakSelf = self;
         _typePick.yesClick = ^(AbsenceTypeEnumModel * str) {
@@ -261,6 +309,9 @@ static NSString * const TBTimeTypeCellId = @"TBTimeTypeCell";
             }else if (row == 5){
                 strongSelf.inquireData.casetype = str.parameterValue;
                 strongSelf.inquireData.casetypeKey = str.parameterCode;
+            }else if (row == 8){
+                strongSelf.inquireData.companynm = str.parameterValue;
+                strongSelf.inquireData.companynmKey = str.parameterCode;
             }
             
             [strongSelf.tableView reloadData];

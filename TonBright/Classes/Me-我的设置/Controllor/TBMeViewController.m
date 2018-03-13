@@ -12,6 +12,8 @@
 
 @interface TBMeViewController ()
 
+@property (nonatomic, strong) NSUserDefaults *userDefault;
+
 @end
 
 @implementation TBMeViewController
@@ -40,12 +42,12 @@
     [self.view addSubview:introduceLabel];
     
     UILabel *companyIDLabel = [[UILabel alloc] init];
-    companyIDLabel.text = [NSString stringWithFormat:@"公司ID:%@",[TBAPPSetting shareAppSetting].topcompanyid];
+    companyIDLabel.text = [NSString stringWithFormat:@"公司ID:%@",[TBAPPSetting shareAppSetting].companyid];
     companyIDLabel.font = [UIFont systemFontOfSize:14];
     [self.view addSubview:companyIDLabel];
     
     UILabel *companyNmLabel = [[UILabel alloc] init];
-    companyNmLabel.text = [NSString stringWithFormat:@"商户公司:%@",[TBAPPSetting shareAppSetting].topcompanyid];
+    companyNmLabel.text = [NSString stringWithFormat:@"商户公司:%@",[TBAPPSetting shareAppSetting].companyname];
     companyNmLabel.font = [UIFont systemFontOfSize:14];
     [self.view addSubview:companyNmLabel];
     

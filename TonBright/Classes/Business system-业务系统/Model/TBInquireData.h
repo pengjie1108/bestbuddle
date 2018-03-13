@@ -45,6 +45,7 @@
  状态
  */
 @property (nonatomic,copy)NSString *casestatus;
+
 /**
  状态对应键值
  */
@@ -59,6 +60,16 @@
  合同类型键值
  */
 @property (nonatomic,copy)NSString *casetypeKey;
+
+/**
+ 公司名称
+ */
+@property (nonatomic,copy)NSString *companynm;
+
+/**
+公司名称键值
+ */
+@property (nonatomic,copy)NSString *companynmKey;
 
 
 @end
