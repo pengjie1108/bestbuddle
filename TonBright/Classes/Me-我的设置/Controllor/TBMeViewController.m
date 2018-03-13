@@ -8,7 +8,7 @@
 
 #import "TBMeViewController.h"
 #import <Masonry.h>
-
+#import "TBLoginViewController.h"
 
 @interface TBMeViewController ()
 
@@ -104,7 +104,10 @@
 }
 
 - (void)singOut{
-    TBLogFunc;
+    UIStoryboard *loginVc = [UIStoryboard storyboardWithName:@"TBLoginViewController" bundle:nil];
+    [self presentViewController:(TBLoginViewController *)[loginVc instantiateInitialViewController] animated:YES completion:^{
+        
+    }];
 }
 
 
