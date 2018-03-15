@@ -63,7 +63,7 @@ static NSString * const TBCommonURL = @"http://203.156.252.183:81/nbs/api/api.us
 
         NSString *stat = [NSString stringWithString:responseObject[@"stat"]];
         if (![stat intValue]) {
-            [responseObject writeToFile:@"/Users/jiepeng/Desktop/me.plist" atomically:YES];
+//            [responseObject writeToFile:@"/Users/jiepeng/Desktop/me.plist" atomically:YES];
             //模拟网络延迟
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [weakSelf hideProgressHUD];

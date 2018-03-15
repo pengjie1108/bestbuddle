@@ -23,6 +23,9 @@
 /** 请求管理者 */
 @property (nonatomic, weak) TBHTTPSessionManager *manager;
 
+@property(nonatomic,assign)CGFloat historyY;
+
+@property (nonatomic,assign) BOOL defaultFlag;
 @end
 
 //static NSString * const TBContractListURL = @"http://192.168.1.65/nbsst/api/api.caseinfo.list.php";
@@ -49,7 +52,7 @@ static NSString * const TBContractListCellId = @"TBContractListCell";
     // 注册cell
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([TBContractListCell class]) bundle:nil] forCellReuseIdentifier:TBContractListCellId];
     [self.tableView setSeparatorColor:[UIColor clearColor]];
-    [self inquire];
+    _defaultFlag = NO;
 }
 
 //跳转到检索控制器
@@ -62,27 +65,33 @@ static NSString * const TBContractListCellId = @"TBContractListCell";
 }
 
 - (void)getData:(NSDictionary *)conditionDictionary{
-    __weak typeof(self) weakSelf = self;
-    [self showProgressHUD];
+   
+    if (_defaultFlag) {
+        [self showProgressHUD];
+    }
     
     NSMutableDictionary *params = conditionDictionary.mutableCopy;
     [params setObject:[TBAPPSetting shareAppSetting].userid forKey:@"tokenuserid"];
     [params setObject:[TBAPPSetting shareAppSetting].tokenid forKey:@"tokenid"];
     [params setObject:[TBAPPSetting shareAppSetting].topcompanyid forKey:@"topcompanyid"];
-    
+     __weak typeof(self) weakSelf = self;
     [self.manager POST:TBContractListURL parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary* _Nullable responseObject) {
         NSString *stat = [NSString stringWithString:responseObject[@"stat"]];
         if (![stat intValue]) {
-            [weakSelf showTextHUDWithMessage:@"查询成功"];
+            if (_defaultFlag) {
+                [weakSelf showTextHUDWithMessage:@"查询成功"];
+            }
             weakSelf.contractLists = (NSArray<TBContractList*> *)[NSArray yy_modelArrayWithClass:[TBContractList class] json:responseObject[@"data"][@"caseinfolist"]];
             [weakSelf.tableView setSeparatorColor:[UIColor colorWithRed:224/255.0 green:224/255.0 blue:224/255.0 alpha:1]];
             [weakSelf.tableView reloadData];
-            [responseObject writeToFile:@"/Users/jiepeng/Desktop/contractList.plist" atomically:YES];
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        if (_defaultFlag) {
             [weakSelf showTextHUDWithMessage:@"查询失败"];
+        }
             TBLog(@"请求失败 - %@", error);
            }];
+    
 }
 
 #pragma mark - Table view data source
@@ -93,6 +102,7 @@ static NSString * const TBContractListCellId = @"TBContractListCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TBContractListCell *cell = [tableView dequeueReusableCellWithIdentifier:TBContractListCellId];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.contractList = self.contractLists[indexPath.row];
     return cell;
 }
@@ -102,6 +112,79 @@ static NSString * const TBContractListCellId = @"TBContractListCell";
     TBContractDetailController *contractDetailVC = [[TBContractDetailController alloc] init];
     contractDetailVC.caseid = self.contractLists[indexPath.row].caseid;
     [self.navigationController pushViewController:contractDetailVC animated:YES];
+}
+
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
+{
+    if (_historyY+20<targetContentOffset->y)
+    {
+        [self setTabBarHidden:YES];
+    }
+    else if(_historyY-20>targetContentOffset->y)
+    {
+        
+        [self setTabBarHidden:NO];
+    }
+    _historyY=targetContentOffset->y;
+}
+
+- (void)setTabBarHidden:(BOOL)hidden
+{
+    UIView *tab = self.tabBarController.view;
+    CGRect  tabRect=self.tabBarController.tabBar.frame;
+    if ([tab.subviews count] < 2) {
+        return;
+    }
+    
+    UIView *view;
+    if ([[tab.subviews objectAtIndex:0] isKindOfClass:[UITabBar class]]) {
+        view = [tab.subviews objectAtIndex:1];
+    } else {
+        view = [tab.subviews objectAtIndex:0];
+    }
+    
+    if (hidden) {
+        view.frame = tab.bounds;
+        tabRect.origin.y=[[UIScreen mainScreen]bounds].size.height+self.tabBarController.tabBar.frame.size.height;
+    } else {
+        view.frame = CGRectMake(tab.bounds.origin.x, tab.bounds.origin.y, tab.bounds.size.width, tab.bounds.size.height);
+        tabRect.origin.y=[[UIScreen mainScreen] bounds].size.height-self.tabBarController.tabBar.frame.size.height;
+    }
+    
+    [UIView animateWithDuration:0.5f animations:^{
+        self.tabBarController.tabBar.frame=tabRect;
+    }completion:^(BOOL finished) {
+        
+    }];
+    
+}
+
+//默认展示一个月内案例
+- (void)inquireDefault{
+    NSDate *currentDate = [NSDate date];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSDateComponents *lastMonthComps = [[NSDateComponents alloc] init];
+    [lastMonthComps setMonth:-1];
+    NSDate *newdate = [calendar dateByAddingComponents:lastMonthComps toDate:currentDate options:0];
+    NSString *dateStr = [formatter stringFromDate:newdate];
+    
+    NSDictionary *dict = @{@"loanstartdatef":dateStr};
+    [self getData:dict];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    if (!_defaultFlag) {
+        [self inquireDefault];
+        TBLogFunc;
+        [self performSelector:@selector(delayMethods) withObject:nil afterDelay:2];
+    }
+}
+
+- (void)delayMethods{
+  _defaultFlag = YES;
 }
 
 @end

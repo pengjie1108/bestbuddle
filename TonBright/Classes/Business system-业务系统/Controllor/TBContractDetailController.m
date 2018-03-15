@@ -115,7 +115,7 @@ static NSString * const TBApproveHisCellId = @"TBApproveHisCell";
             [weakSelf getCustomerDatafrom:self.detailData.customerid];
             weakSelf.approvalHistoryArray = [self.detailData.approvehis componentsSeparatedByString:@"---------------------------------------------------------------------------------------"];
             [weakSelf.tableView reloadData];
-            [responseObject writeToFile:@"/Users/jiepeng/Desktop/contractDetail.plist" atomically:YES];
+//            [responseObject writeToFile:@"/Users/jiepeng/Desktop/contractDetail.plist" atomically:YES];
         }else{
         [weakSelf showTextHUDWithMessage:[NSString stringWithFormat:@"查询失败 stat= %@",stat]];
         }
@@ -140,7 +140,7 @@ static NSString * const TBApproveHisCellId = @"TBApproveHisCell";
         if ([stat intValue] == 0) {
             weakSelf.customerData = [TBCustomerData yy_modelWithJSON:responseObject[@"data"]];
             [weakSelf.tableView reloadData];
-            [responseObject writeToFile:@"/Users/jiepeng/Desktop/CustomerData.plist" atomically:YES];
+//            [responseObject writeToFile:@"/Users/jiepeng/Desktop/CustomerData.plist" atomically:YES];
         }else{
             [weakSelf showTextHUDWithMessage:[NSString stringWithFormat:@"查询失败 stat= %@",stat]];
         }
