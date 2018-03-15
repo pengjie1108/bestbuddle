@@ -6,15 +6,23 @@
 //  Copyright © 2017年 jie peng. All rights reserved.
 //
 
+#define MAS_SHORTHAND
+//可以自动装箱基本数据类型,//使用后可以不适用前缀mas_
+#define MAS_SHORTHAND_GLOBALS
+//屏幕的尺寸
+#define kMainScreenSize [UIScreen mainScreen].bounds.size
+
 #import "TBMeViewController.h"
 #import <Masonry.h>
 #import "TBLoginViewController.h"
+
 
 @interface TBMeViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) NSUserDefaults *userDefault;
 
 @property (nonatomic,weak) UITableView *tableview;
+
 @end
 
 @implementation TBMeViewController
@@ -23,8 +31,6 @@
     [super viewDidLoad];
     
     [self setUI];
-
-    
 }
 
 - (void)setUI{
@@ -149,6 +155,8 @@
     
     [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(singOutBtn.mas_bottom).offset(10);
+        make.bottom.offset(0);
+        make.width.equalTo(kMainScreenSize.width);
     }];
     
 }
