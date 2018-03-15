@@ -13,4 +13,6 @@
 + (HelpObject *)manager;
 
 - (NSString *)getCurentTime:(NSString *)dateFormateSet dateN:(NSDate *)dateN;
++ (BOOL)isBlankString:(NSString *)string;
++ (NSString *)changeNull:(id)object;
 @end

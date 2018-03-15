@@ -16,6 +16,7 @@
 #import <YYModel.h>
 #import "TBHTTPSessionManager.h"
 #import "TBCompanyData.h"
+#import "HelpObject.h"
 
 @interface TBInquireController ()<TBTimeTypeCellDelegate>
 
@@ -214,7 +215,7 @@ static NSString * const TBCompanyListURL = @"http://203.156.252.183:81/nbs/api/a
         cell.delegate = self;
         cell.row = indexPath.row;
         if (indexPath.row == 2) {
-            cell.timeTitle = self.inquireData.casestatus;
+            cell.timeTitle =  [HelpObject isBlankString:self.inquireData.casestatus] ? @"请选择" : self.inquireData.casestatus;
             cell.timeTitleKey = self.inquireData.casestatusKey;
         }else if(indexPath.row  == 5){
             cell.timeTitle = self.inquireData.casetype;
@@ -326,6 +327,7 @@ static NSString * const TBCompanyListURL = @"http://203.156.252.183:81/nbs/api/a
         [self.view.window addSubview:_typePick];
     }
 }
+
 
 
 

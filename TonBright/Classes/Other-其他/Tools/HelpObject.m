@@ -32,4 +32,59 @@ static HelpObject *helper = nil;
     return [dateFormate stringFromDate:date];
     
 }
+
+//判断字符串是不是空
++ (BOOL)isBlankString:(NSString *)string{
+    
+    if (string == nil) {
+        
+        return YES;
+        
+    }
+    
+    if (string == NULL) {
+        
+        return YES;
+        
+    }
+    
+    if ([string isKindOfClass:[NSNull class]]) {
+        
+        return YES;
+        
+    }
+    
+    if ([[string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length]==0) {
+        
+        return YES;
+        
+    }
+    
+    return NO;
+    
+}
+
++ (NSString *)changeNull:(id)object {
+    if ([self isNull:object]) {
+        return @"";
+    } else {
+        return [NSString stringWithFormat:@"%@",object];
+    }
+}
+
+//完整判断方法
++ (BOOL)isNull:(id)object
+{
+    // 判断是否为空串
+    if ([object isEqual:[NSNull null]]) {
+        return YES;
+    } else if ([object isKindOfClass:[NSNull class]]) {
+        return YES;
+    } else if (object==nil) {
+        return YES;
+    }
+    
+    return NO;
+}
+
 @end

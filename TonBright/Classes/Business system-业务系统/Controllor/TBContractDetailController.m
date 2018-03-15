@@ -93,7 +93,10 @@ static NSString * const TBApproveHisCellId = @"TBApproveHisCell";
     [self.tableView registerClass:[TBRepaymentplanCell class] forCellReuseIdentifier:TBRepaymentplanCellId];
     [self.tableView registerClass:[TBApproveHisCell class] forCellReuseIdentifier:TBApproveHisCellId];
     [self getCaseDatafrom:self.caseid];
-    
+    self.tableView.estimatedSectionHeaderHeight = 0;
+    self.tableView.estimatedSectionFooterHeight = 0;
+    self.tableView.sectionHeaderHeight = 0;
+    self.tableView.sectionFooterHeight = 0;
 }
 
 //查询案件
