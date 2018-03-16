@@ -27,6 +27,7 @@
 @property (nonatomic,strong) NSArray *sectionArray;
 @property (nonatomic,strong) TBCustomerData *customerData;
 @property (nonatomic,strong) NSArray *approvalHistoryArray;
+@property(nonatomic,assign)CGFloat historyY;
 @end
 
 @implementation TBContractDetailController
@@ -44,7 +45,7 @@
     if (!_boolArr) {
         _boolArr = [[NSMutableArray alloc] init];
         for (int i = 0; i < self.sectionArray.count; i ++) {
-            [_boolArr addObject:@YES];
+            [_boolArr addObject:@NO];
         }
     }
     return _boolArr;
@@ -254,6 +255,52 @@ static NSString * const TBApproveHisCellId = @"TBApproveHisCell";
     if (indexPath.row == 5) {
         
     }
+}
+
+
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
+{
+    if (_historyY+20<targetContentOffset->y)
+    {
+        [self setTabBarHidden:YES];
+    }
+    else if(_historyY-20>targetContentOffset->y)
+    {
+        
+        [self setTabBarHidden:NO];
+    }
+    _historyY=targetContentOffset->y;
+}
+
+- (void)setTabBarHidden:(BOOL)hidden
+{
+    UIView *tab = self.tabBarController.view;
+    CGRect  tabRect=self.tabBarController.tabBar.frame;
+    if ([tab.subviews count] < 2) {
+        return;
+    }
+    
+    UIView *view;
+    if ([[tab.subviews objectAtIndex:0] isKindOfClass:[UITabBar class]]) {
+        view = [tab.subviews objectAtIndex:1];
+    } else {
+        view = [tab.subviews objectAtIndex:0];
+    }
+    
+    if (hidden) {
+        view.frame = tab.bounds;
+        tabRect.origin.y=[[UIScreen mainScreen]bounds].size.height+self.tabBarController.tabBar.frame.size.height;
+    } else {
+        view.frame = CGRectMake(tab.bounds.origin.x, tab.bounds.origin.y, tab.bounds.size.width, tab.bounds.size.height);
+        tabRect.origin.y=[[UIScreen mainScreen] bounds].size.height-self.tabBarController.tabBar.frame.size.height;
+    }
+    
+    [UIView animateWithDuration:0.5f animations:^{
+        self.tabBarController.tabBar.frame=tabRect;
+    }completion:^(BOOL finished) {
+        
+    }];
+    
 }
 
 @end

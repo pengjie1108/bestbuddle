@@ -103,7 +103,10 @@ static NSString * const TBContractListCellId = @"TBContractListCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TBContractListCell *cell = [tableView dequeueReusableCellWithIdentifier:TBContractListCellId];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.contractList = self.contractLists[indexPath.row];
+    UIColor *color = ((indexPath.row % 2) == 0) ? [UIColor clearColor] : [UIColor colorWithRed:230.0/255 green:230.0/255 blue:230.0/255 alpha:1];
+    cell.backgroundColor = color;
     return cell;
 }
 
@@ -179,7 +182,7 @@ static NSString * const TBContractListCellId = @"TBContractListCell";
     if (!_defaultFlag) {
         [self inquireDefault];
         TBLogFunc;
-        [self performSelector:@selector(delayMethods) withObject:nil afterDelay:2];
+        [self performSelector:@selector(delayMethods) withObject:nil afterDelay:4];
     }
 }
 

@@ -173,19 +173,17 @@ static NSString * const TBCompanyListURL = @"http://203.156.252.183:81/nbs/api/a
             [tempDict setValue:defaultCell.itemContentTextField.text forKey:key];
         }else if([cell isKindOfClass:[TBTimeTypeCell class]]){
             TBTimeTypeCell *timeTypeCell = (TBTimeTypeCell *)cell;
-            if (timeTypeCell.timeTitleKey.length) {
                 [tempDict setValue:timeTypeCell.timeTitleKey forKey:key];
-            }else{
-            [tempDict setValue:timeTypeCell.timeTitle forKey:key];
-            }
         }
         i ++;
      }
      self.conditionDictionary = tempDict;
+    TBLog(@"%@",tempDict);
    //2.页面跳转
     TBContractListViewController *contractListVC = [self.navigationController.viewControllers objectAtIndex:self.navigationController.viewControllers.count - 2];
     contractListVC.conditionDictionary = nil;
     contractListVC.conditionDictionary = self.conditionDictionary;
+    
     if (self.delegate && [self.delegate respondsToSelector:@selector(getData:)]) {
         [self.delegate getData:self.conditionDictionary];
     }
@@ -215,14 +213,14 @@ static NSString * const TBCompanyListURL = @"http://203.156.252.183:81/nbs/api/a
         cell.delegate = self;
         cell.row = indexPath.row;
         if (indexPath.row == 2) {
-            cell.timeTitle =  [HelpObject isBlankString:self.inquireData.casestatus] ? @"请选择" : self.inquireData.casestatus;
+            cell.timeTitle =  [HelpObject isBlankString:self.inquireData.casestatus] ? @"请选择合同状态" : self.inquireData.casestatus;
             cell.timeTitleKey = self.inquireData.casestatusKey;
         }else if(indexPath.row  == 5){
-            cell.timeTitle = self.inquireData.casetype;
-            cell.timeTitleKey = self.inquireData.casetypeKey;
+            cell.timeTitle =  [HelpObject isBlankString:self.inquireData.casetype] ? @"请选择合同类型" : self.inquireData.casetype;
+            cell.timeTitleKey =  self.inquireData.casetypeKey;
         }else if(indexPath.row  == 8){
-            cell.timeTitle = self.inquireData.companynm;
-            cell.timeDetailL.font = [UIFont systemFontOfSize:9];
+            cell.timeTitle = [HelpObject isBlankString:self.inquireData.companynm] ? @"请选择出租人公司" : self.inquireData.companynm;
+            cell.timeDetailL.font = [HelpObject isBlankString:self.inquireData.companynm] ?[UIFont systemFontOfSize:14] :[UIFont systemFontOfSize:11];
             cell.timeTitleKey = self.inquireData.companynmKey;
         }
         return cell;
@@ -233,17 +231,23 @@ static NSString * const TBCompanyListURL = @"http://203.156.252.183:81/nbs/api/a
         cell.delegate = self;
         cell.row = indexPath.row;
         if (indexPath.row  == 3) {
-            cell.timeTitle = self.inquireData.loanstartdatef;
+            cell.timeTitle = [HelpObject isBlankString:self.inquireData.loanstartdatef] ? @"请选择租赁开始日期from" : self.inquireData.loanstartdatef;
+            cell.timeTitleKey = self.inquireData.loanstartdatef;
         }else if(indexPath.row  == 4){
-            cell.timeTitle = self.inquireData.loanstartdatet;
+            cell.timeTitle = [HelpObject isBlankString:self.inquireData.loanstartdatet] ? @"请选择租赁开始日期to" :self.inquireData.loanstartdatet;
+            cell.timeTitleKey = self.inquireData.loanstartdatet;
         }else if(indexPath.row  == 6){
-            cell.timeTitle = self.inquireData.loanconfirmdatef;
+            cell.timeTitle = [HelpObject isBlankString:self.inquireData.loanconfirmdatef] ? @"请选择起租确认日期from" :self.inquireData.loanconfirmdatef;
+            cell.timeTitleKey = self.inquireData.loanconfirmdatef;
         }else if(indexPath.row  == 7){
-            cell.timeTitle = self.inquireData.loanconfirmdatet;
+            cell.timeTitle = [HelpObject isBlankString:self.inquireData.loanconfirmdatet] ? @"请选择起租确认日期to" :self.inquireData.loanconfirmdatet;
+            cell.timeTitleKey = self.inquireData.loanconfirmdatet;
         }else if(indexPath.row  == 9){
-            cell.timeTitle = self.inquireData.settleamounttimef;
+            cell.timeTitle = [HelpObject isBlankString:self.inquireData.settleamounttimef] ? @"请选择结清日期from" :self.inquireData.settleamounttimef;
+            cell.timeTitleKey = self.inquireData.settleamounttimef;
         }else if(indexPath.row  == 10){
-            cell.timeTitle = self.inquireData.settleamounttimet;
+            cell.timeTitle = [HelpObject isBlankString:self.inquireData.settleamounttimet] ? @"请选择结清日期to" :self.inquireData.settleamounttimet;
+            cell.timeTitleKey = self.inquireData.settleamounttimet;
         }
         return cell;
     }

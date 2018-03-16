@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		39E03E50205AA85F00BBBDD2 /* HelpObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 39E03E4E205AA85E00BBBDD2 /* HelpObject.m */; };
+		44024999205B6EDF0065A284 /* TBMeAboutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44024998205B6EDF0065A284 /* TBMeAboutTableViewCell.m */; };
+		4402499B205BA8510065A284 /* article.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4402499A205BA8500065A284 /* article.txt */; };
 		441B816E20466034005EB4F2 /* TBCustomerBaseContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 441B816C20466034005EB4F2 /* TBCustomerBaseContentCell.m */; };
 		441B816F20466034005EB4F2 /* TBCustomerBaseContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 441B816D20466034005EB4F2 /* TBCustomerBaseContentCell.xib */; };
 		441B817220469E9C005EB4F2 /* TBCustomerData.m in Sources */ = {isa = PBXBuildFile; fileRef = 441B817020469E9B005EB4F2 /* TBCustomerData.m */; };
@@ -92,6 +94,9 @@
 		36BB66F3B13A2B7559AE4F97 /* Pods-TonBright.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TonBright.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TonBright/Pods-TonBright.debug.xcconfig"; sourceTree = "<group>"; };
 		39E03E4E205AA85E00BBBDD2 /* HelpObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpObject.m; sourceTree = "<group>"; };
 		39E03E4F205AA85F00BBBDD2 /* HelpObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpObject.h; sourceTree = "<group>"; };
+		44024997205B6EDF0065A284 /* TBMeAboutTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBMeAboutTableViewCell.h; sourceTree = "<group>"; };
+		44024998205B6EDF0065A284 /* TBMeAboutTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBMeAboutTableViewCell.m; sourceTree = "<group>"; };
+		4402499A205BA8500065A284 /* article.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = article.txt; sourceTree = "<group>"; };
 		441B816B20466034005EB4F2 /* TBCustomerBaseContentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBCustomerBaseContentCell.h; sourceTree = "<group>"; };
 		441B816C20466034005EB4F2 /* TBCustomerBaseContentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBCustomerBaseContentCell.m; sourceTree = "<group>"; };
 		441B816D20466034005EB4F2 /* TBCustomerBaseContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TBCustomerBaseContentCell.xib; sourceTree = "<group>"; };
@@ -279,6 +284,7 @@
 		44A5D4E91EB8757C00D924E9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4402499A205BA8500065A284 /* article.txt */,
 				44A5D51E1EB87A2F00D924E9 /* Info.plist */,
 				44A5D4F51EB8757C00D924E9 /* Assets.xcassets */,
 			);
@@ -471,6 +477,8 @@
 		44A5D52C1EB87A5800D924E9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				44024997205B6EDF0065A284 /* TBMeAboutTableViewCell.h */,
+				44024998205B6EDF0065A284 /* TBMeAboutTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -736,6 +744,7 @@
 				44A01FBA20526A20005B6054 /* TBTimeTypeCell.xib in Resources */,
 				44A01FC02052749E005B6054 /* AbsenceDatePickerView.xib in Resources */,
 				44AC6828203EB40E0043316B /* TBInquireDefaultCell.xib in Resources */,
+				4402499B205BA8510065A284 /* article.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -845,6 +854,7 @@
 				441B816E20466034005EB4F2 /* TBCustomerBaseContentCell.m in Sources */,
 				442F90532031902000D049F3 /* TBContractListCell.m in Sources */,
 				44A01FBB20526A20005B6054 /* TBTimeTypeCell.m in Sources */,
+				44024999205B6EDF0065A284 /* TBMeAboutTableViewCell.m in Sources */,
 				442F904C20317B8C00D049F3 /* TBAPPSetting.m in Sources */,
 				44A5D5441EB8833400D924E9 /* TBSystemViewController.m in Sources */,
 				447E872E1EBC26F1005B4EE2 /* UIViewController+TBMBPProgressHUD.m in Sources */,
@@ -996,7 +1006,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = J7VATFW6YR;
+				DEVELOPMENT_TEAM = H96A698YS9;
 				GCC_PREFIX_HEADER = TonBright.pch;
 				INFOPLIST_FILE = TonBright/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1012,7 +1022,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = J7VATFW6YR;
+				DEVELOPMENT_TEAM = H96A698YS9;
 				GCC_PREFIX_HEADER = TonBright.pch;
 				INFOPLIST_FILE = TonBright/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
