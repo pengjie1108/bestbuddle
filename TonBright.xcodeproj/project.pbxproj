@@ -10,6 +10,8 @@
 		39E03E50205AA85F00BBBDD2 /* HelpObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 39E03E4E205AA85E00BBBDD2 /* HelpObject.m */; };
 		44024999205B6EDF0065A284 /* TBMeAboutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44024998205B6EDF0065A284 /* TBMeAboutTableViewCell.m */; };
 		4402499B205BA8510065A284 /* article.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4402499A205BA8500065A284 /* article.txt */; };
+		440249A1205F64E40065A284 /* TBNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 440249A0205F64E40065A284 /* TBNavigationController.m */; };
+		440249A5205F7FE00065A284 /* UIBarButtonItem+TBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 440249A4205F7FE00065A284 /* UIBarButtonItem+TBExtension.m */; };
 		441B816E20466034005EB4F2 /* TBCustomerBaseContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 441B816C20466034005EB4F2 /* TBCustomerBaseContentCell.m */; };
 		441B816F20466034005EB4F2 /* TBCustomerBaseContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 441B816D20466034005EB4F2 /* TBCustomerBaseContentCell.xib */; };
 		441B817220469E9C005EB4F2 /* TBCustomerData.m in Sources */ = {isa = PBXBuildFile; fileRef = 441B817020469E9B005EB4F2 /* TBCustomerData.m */; };
@@ -97,6 +99,10 @@
 		44024997205B6EDF0065A284 /* TBMeAboutTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBMeAboutTableViewCell.h; sourceTree = "<group>"; };
 		44024998205B6EDF0065A284 /* TBMeAboutTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBMeAboutTableViewCell.m; sourceTree = "<group>"; };
 		4402499A205BA8500065A284 /* article.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = article.txt; sourceTree = "<group>"; };
+		4402499F205F64E40065A284 /* TBNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBNavigationController.h; sourceTree = "<group>"; };
+		440249A0205F64E40065A284 /* TBNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBNavigationController.m; sourceTree = "<group>"; };
+		440249A3205F7FE00065A284 /* UIBarButtonItem+TBExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+TBExtension.h"; sourceTree = "<group>"; };
+		440249A4205F7FE00065A284 /* UIBarButtonItem+TBExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+TBExtension.m"; sourceTree = "<group>"; };
 		441B816B20466034005EB4F2 /* TBCustomerBaseContentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBCustomerBaseContentCell.h; sourceTree = "<group>"; };
 		441B816C20466034005EB4F2 /* TBCustomerBaseContentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBCustomerBaseContentCell.m; sourceTree = "<group>"; };
 		441B816D20466034005EB4F2 /* TBCustomerBaseContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TBCustomerBaseContentCell.xib; sourceTree = "<group>"; };
@@ -575,6 +581,8 @@
 				447E872A1EBC2592005B4EE2 /* UIView+TBMBProgressHUD.m */,
 				447E872C1EBC26F1005B4EE2 /* UIViewController+TBMBPProgressHUD.h */,
 				447E872D1EBC26F1005B4EE2 /* UIViewController+TBMBPProgressHUD.m */,
+				440249A3205F7FE00065A284 /* UIBarButtonItem+TBExtension.h */,
+				440249A4205F7FE00065A284 /* UIBarButtonItem+TBExtension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -589,6 +597,8 @@
 				447E87271EBC1756005B4EE2 /* TBLoginViewController.storyboard */,
 				441B8187204FECA3005EB4F2 /* TBTempTabBarViewController.h */,
 				441B8188204FECA3005EB4F2 /* TBTempTabBarViewController.m */,
+				4402499F205F64E40065A284 /* TBNavigationController.h */,
+				440249A0205F64E40065A284 /* TBNavigationController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -831,6 +841,7 @@
 				44A5D5621EB9AE4400D924E9 /* TBLoginTextField.m in Sources */,
 				442F904F2031872C00D049F3 /* TBContractList.m in Sources */,
 				441B8180204E6468005EB4F2 /* TBFinancingPlanDataCell.m in Sources */,
+				440249A1205F64E40065A284 /* TBNavigationController.m in Sources */,
 				44A01FB620511C96005B6054 /* TBApproveHisCell.m in Sources */,
 				446BE09C1EC2AEB900528513 /* TBFunction.m in Sources */,
 				44A5D5471EB8837500D924E9 /* TBFocusViewController.m in Sources */,
@@ -842,6 +853,7 @@
 				441B817220469E9C005EB4F2 /* TBCustomerData.m in Sources */,
 				44A01FCA20562457005B6054 /* AbsenceTypePickerView.m in Sources */,
 				39E03E50205AA85F00BBBDD2 /* HelpObject.m in Sources */,
+				440249A5205F7FE00065A284 /* UIBarButtonItem+TBExtension.m in Sources */,
 				441B818C204FEED9005EB4F2 /* TBTempSystemViewController.m in Sources */,
 				44A5D5651EB9AEAE00D924E9 /* UITextField+TBExtension.m in Sources */,
 				44BE9BC32043F2F9003E1341 /* TBDetailBaseContentCell.m in Sources */,
@@ -1009,6 +1021,7 @@
 				DEVELOPMENT_TEAM = H96A698YS9;
 				GCC_PREFIX_HEADER = TonBright.pch;
 				INFOPLIST_FILE = TonBright/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = TonBright.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1025,6 +1038,7 @@
 				DEVELOPMENT_TEAM = H96A698YS9;
 				GCC_PREFIX_HEADER = TonBright.pch;
 				INFOPLIST_FILE = TonBright/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = TonBright.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";

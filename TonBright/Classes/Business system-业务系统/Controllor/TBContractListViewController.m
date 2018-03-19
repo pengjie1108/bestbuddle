@@ -48,7 +48,12 @@ static NSString * const TBContractListCellId = @"TBContractListCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"合同查看";
-    self.navigationItem.rightBarButtonItem= [[UIBarButtonItem alloc] initWithTitle:@"检索" style:UIBarButtonItemStylePlain target:self action:@selector(inquire)];
+    
+    UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithTitle:@"查询" style:UIBarButtonItemStylePlain target:self action:@selector(inquire)];
+    [rightBtn setTintColor:[UIColor blackColor]];
+    [rightBtn setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:14], NSFontAttributeName,nil] forState:(UIControlStateNormal)];
+    self.navigationItem.rightBarButtonItem = rightBtn;
+     
     // 注册cell
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([TBContractListCell class]) bundle:nil] forCellReuseIdentifier:TBContractListCellId];
     [self.tableView setSeparatorColor:[UIColor clearColor]];
@@ -84,6 +89,9 @@ static NSString * const TBContractListCellId = @"TBContractListCell";
             weakSelf.contractLists = (NSArray<TBContractList*> *)[NSArray yy_modelArrayWithClass:[TBContractList class] json:responseObject[@"data"][@"caseinfolist"]];
             [weakSelf.tableView setSeparatorColor:[UIColor colorWithRed:224/255.0 green:224/255.0 blue:224/255.0 alpha:1]];
             [weakSelf.tableView reloadData];
+        }else{
+            NSString *errorString = [NSString stringWithFormat:@"%@",responseObject[@"error"]];
+            [weakSelf showTextHUDWithMessage:[NSString stringWithFormat:@"登录失败:%@",errorString]];
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if (_defaultFlag) {
@@ -134,7 +142,7 @@ static NSString * const TBContractListCellId = @"TBContractListCell";
 - (void)setTabBarHidden:(BOOL)hidden
 {
     UIView *tab = self.tabBarController.view;
-    CGRect  tabRect=self.tabBarController.tabBar.frame;
+    CGRect  tabRect = self.tabBarController.tabBar.frame;
     if ([tab.subviews count] < 2) {
         return;
     }
@@ -179,15 +187,21 @@ static NSString * const TBContractListCellId = @"TBContractListCell";
 }
 
 - (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+    
     if (!_defaultFlag) {
         [self inquireDefault];
-        TBLogFunc;
         [self performSelector:@selector(delayMethods) withObject:nil afterDelay:4];
     }
 }
 
 - (void)delayMethods{
   _defaultFlag = YES;
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    self.navigationItem.rightBarButtonItem.enabled = false;
+    self.navigationItem.rightBarButtonItem.enabled = true;
 }
 
 @end

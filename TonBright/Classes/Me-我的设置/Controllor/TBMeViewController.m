@@ -238,12 +238,15 @@ static NSString * const meAboutCellID = @"meAboutCellID";
         UIImage *image;
         image = [UIImage imageNamed:@"about.jpg"];
         imageH = image.size.height;
-        
+        TBLog(@"SreenWidth%lf",SreenWidth);
         if(SreenWidth == 320){
-            image = [UIImage imageNamed:@"about.jpg"];
+            image = [UIImage imageNamed:@"about640.jpg"];
+            imageH = image.size.height;
+        }else if(SreenWidth == 414){//plus
+            image = [UIImage imageNamed:@"about1080.jpg"];
             imageH = image.size.height;
         }else if(SreenHeight == 812){//适配iphoneX
-            image = [UIImage imageNamed:@"about.jpg"];
+            image = [UIImage imageNamed:@"about1125.jpg"];
             imageH = image.size.height;
         }
         scroll.contentSize=CGSizeMake(0, imageH + 50);
@@ -258,16 +261,27 @@ static NSString * const meAboutCellID = @"meAboutCellID";
         termsVC.view.backgroundColor = [UIColor whiteColor];
         [termsVC.view addSubview:scroll];
         termsVC.navigationItem.title = @"使用条款";
-        UILabel *label = [[UILabel alloc] init];
-        label.numberOfLines = 0;
         NSString *path = [[NSBundle mainBundle] pathForResource:@"article" ofType:@"txt"];
         NSString *txt = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-        label.text = [NSString stringWithFormat:@"%@",txt];
-        CGSize size = CGSizeMake(SreenWidth - 20, 3470);
+        
+        NSMutableAttributedString *attributeString = [[NSMutableAttributedString alloc] initWithString:txt];
+        NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
+        style.lineSpacing = 10;
+        UIFont *font = [UIFont systemFontOfSize:14];
+        [attributeString addAttribute:NSParagraphStyleAttributeName value:style range:NSMakeRange(0, txt.length)];
+        [attributeString addAttribute:NSFontAttributeName value:font range:NSMakeRange(0, txt.length)];
+        UILabel *label = [[UILabel alloc] init];
+        label.font = [UIFont systemFontOfSize:14];
+        label.text = txt;
+        label.numberOfLines = 0;
+        label.attributedText = attributeString;
+        CGSize size = [label sizeThatFits:CGSizeMake(self.view.frame.size.width, CGFLOAT_MAX)];
+        label.pj_size = size;
+        NSLog(@"size:%@", NSStringFromCGSize(size));
+        NSLog(@"label.frame.size:%@", NSStringFromCGSize(label.frame.size));
         scroll.contentSize = size;
-        [label setFont:[UIFont systemFontOfSize:14]];
-        label.frame = CGRectMake(10, 10, size.width, size.height);
         [scroll addSubview:label];
+        [label sizeToFit];
         [self.navigationController pushViewController:termsVC animated:YES];
     }
 }

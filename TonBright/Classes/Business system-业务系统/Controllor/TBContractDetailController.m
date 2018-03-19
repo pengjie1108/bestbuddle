@@ -119,9 +119,9 @@ static NSString * const TBApproveHisCellId = @"TBApproveHisCell";
             [weakSelf getCustomerDatafrom:self.detailData.customerid];
             weakSelf.approvalHistoryArray = [self.detailData.approvehis componentsSeparatedByString:@"---------------------------------------------------------------------------------------"];
             [weakSelf.tableView reloadData];
-//            [responseObject writeToFile:@"/Users/jiepeng/Desktop/contractDetail.plist" atomically:YES];
         }else{
-        [weakSelf showTextHUDWithMessage:[NSString stringWithFormat:@"查询失败 stat= %@",stat]];
+            NSString *errorString = [NSString stringWithFormat:@"%@",responseObject[@"error"]];
+            [weakSelf showTextHUDWithMessage:[NSString stringWithFormat:@"登录失败:%@",errorString]];
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [weakSelf showTextHUDWithMessage:@"查询失败"];
@@ -144,9 +144,9 @@ static NSString * const TBApproveHisCellId = @"TBApproveHisCell";
         if ([stat intValue] == 0) {
             weakSelf.customerData = [TBCustomerData yy_modelWithJSON:responseObject[@"data"]];
             [weakSelf.tableView reloadData];
-//            [responseObject writeToFile:@"/Users/jiepeng/Desktop/CustomerData.plist" atomically:YES];
         }else{
-            [weakSelf showTextHUDWithMessage:[NSString stringWithFormat:@"查询失败 stat= %@",stat]];
+            NSString *errorString = [NSString stringWithFormat:@"%@",responseObject[@"error"]];
+            [weakSelf showTextHUDWithMessage:[NSString stringWithFormat:@"登录失败:%@",errorString]];
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
          [weakSelf showTextHUDWithMessage:@"查询失败"];

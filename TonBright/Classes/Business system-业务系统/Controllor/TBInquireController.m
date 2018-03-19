@@ -130,7 +130,10 @@ static NSString * const TBCompanyListURL = @"http://203.156.252.183:81/nbs/api/a
     self.navigationItem.title = @"检索条件";
     self.tableView.separatorColor = [UIColor clearColor];
     [self getData];
-    self.navigationItem.rightBarButtonItem= [[UIBarButtonItem alloc] initWithTitle:@"查询" style:UIBarButtonItemStylePlain target:self action:@selector(inquire)];
+    UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStylePlain target:self action:@selector(inquire)];
+    [rightBtn setTintColor:[UIColor blackColor]];
+    [rightBtn setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:14], NSFontAttributeName,nil] forState:(UIControlStateNormal)];
+    self.navigationItem.rightBarButtonItem = rightBtn;
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([TBInquireDefaultCell class]) bundle:nil] forCellReuseIdentifier:TBInquireDefaultCellId];
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([TBTimeTypeCell class]) bundle:nil] forCellReuseIdentifier:TBTimeTypeCellId];
 }
@@ -153,6 +156,9 @@ static NSString * const TBCompanyListURL = @"http://203.156.252.183:81/nbs/api/a
             }
             weakSelf.companyListArray = [NSArray yy_modelArrayWithClass:[AbsenceTypeEnumModel class] json:tempArray];
             [weakSelf.tableView reloadData];
+        }else{
+            NSString *errorString = [NSString stringWithFormat:@"%@",responseObject[@"error"]];
+            [weakSelf showTextHUDWithMessage:[NSString stringWithFormat:@"登录失败:%@",errorString]];
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         TBLog(@"请求失败 - %@", error);

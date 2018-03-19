@@ -61,11 +61,10 @@ static NSString * const TBCommonURL = @"http://203.156.252.183:81/nbs/api/api.us
     __weak typeof(self) weakSelf = self;
     [[TBHTTPSessionManager manager] POST:TBCommonURL parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary* _Nullable responseObject) {
 
-        NSString *stat = [NSString stringWithString:responseObject[@"stat"]];
+        NSString *stat = [NSString stringWithFormat:@"%@",responseObject[@"stat"]];
         if (![stat intValue]) {
-//            [responseObject writeToFile:@"/Users/jiepeng/Desktop/me.plist" atomically:YES];
             //模拟网络延迟
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [weakSelf hideProgressHUD];
                 [weakSelf setAppSeting:responseObject[@"data"]];
                 TBTempTabBarViewController *tabVc = [[TBTempTabBarViewController alloc] init];
@@ -73,6 +72,9 @@ static NSString * const TBCommonURL = @"http://203.156.252.183:81/nbs/api/api.us
                 window.rootViewController = tabVc;
                 [tabVc showTextHUDWithMessage:@"登录成功"];
             });
+        }else{
+        NSString *errorString = [NSString stringWithFormat:@"%@",responseObject[@"error"]];
+        [weakSelf showTextHUDWithMessage:[NSString stringWithFormat:@"登录失败:%@",errorString]];
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [weakSelf showTextHUDWithMessage:@"登录失败"];

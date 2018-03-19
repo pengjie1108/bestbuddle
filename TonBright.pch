@@ -15,6 +15,7 @@
 #import "UITextField+TBExtension.h"
 #import "UIViewController+TBMBPProgressHUD.h"
 #import "UIView+TBMBProgressHUD.h"
+#import "UIBarButtonItem+TBExtension.h"
 #import "TBAPPSetting.h"
 
 #define USERNM_KEY @"usernm"
