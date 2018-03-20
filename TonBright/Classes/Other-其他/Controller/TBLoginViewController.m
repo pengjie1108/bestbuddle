@@ -13,8 +13,8 @@
 #import "TBAPPSetting.h"
 #import "TBTempTabBarViewController.h"
 
-//static NSString * const TBCommonURL = @"http://192.168.1.65/nbsst/api/api.user.login.php";
-static NSString * const TBCommonURL = @"http://203.156.252.183:81/nbs/api/api.user.login.php";
+//static NSString * const TBCommonURL = @"http://192.168.1.65/nbsst/api/api.m.user.login.php";
+static NSString * const TBCommonURL = @"http://203.156.252.183:81/nbs/api/api.m.user.login.php";
 
 @interface TBLoginViewController ()
 
@@ -27,8 +27,7 @@ static NSString * const TBCommonURL = @"http://203.156.252.183:81/nbs/api/api.us
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.loginNameTextField.text = @"pengjie";
-    self.passWordTextField.text = @"1n/Gu66phfUoAdoyHyGl6gUzxoiaI0aateCFl9556QY=";
+    
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle{
@@ -77,6 +76,9 @@ static NSString * const TBCommonURL = @"http://203.156.252.183:81/nbs/api/api.us
         [weakSelf showTextHUDWithMessage:[NSString stringWithFormat:@"登录失败:%@",errorString]];
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        if (error.code == -1001) {
+            [weakSelf showTextHUDWithMessage:@"登录失败:请求超时"];
+        }
         [weakSelf showTextHUDWithMessage:@"登录失败"];
         TBLog(@"请求失败--%@",error);
     }];

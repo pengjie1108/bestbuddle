@@ -41,7 +41,7 @@ static NSString * const meAboutCellID = @"meAboutCellID";
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.title = @"个人设置";
     
-    UIScrollView *scroll=[[UIScrollView alloc]initWithFrame:self.view.frame];
+    UIScrollView *scroll= [[UIScrollView alloc]initWithFrame:self.view.frame];
     scroll.backgroundColor = [UIColor whiteColor];
     scroll.contentSize = CGSizeMake(0, self.view.pj_height + 1);
     scroll.showsVerticalScrollIndicator = NO;
@@ -266,7 +266,7 @@ static NSString * const meAboutCellID = @"meAboutCellID";
         
         NSMutableAttributedString *attributeString = [[NSMutableAttributedString alloc] initWithString:txt];
         NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
-        style.lineSpacing = 10;
+        style.lineSpacing = 8;
         UIFont *font = [UIFont systemFontOfSize:14];
         [attributeString addAttribute:NSParagraphStyleAttributeName value:style range:NSMakeRange(0, txt.length)];
         [attributeString addAttribute:NSFontAttributeName value:font range:NSMakeRange(0, txt.length)];
@@ -277,8 +277,6 @@ static NSString * const meAboutCellID = @"meAboutCellID";
         label.attributedText = attributeString;
         CGSize size = [label sizeThatFits:CGSizeMake(self.view.frame.size.width, CGFLOAT_MAX)];
         label.pj_size = size;
-        NSLog(@"size:%@", NSStringFromCGSize(size));
-        NSLog(@"label.frame.size:%@", NSStringFromCGSize(label.frame.size));
         scroll.contentSize = size;
         [scroll addSubview:label];
         [label sizeToFit];

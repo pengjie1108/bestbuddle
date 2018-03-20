@@ -20,7 +20,7 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="开始时间" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7V-la-l0e">
                         <rect key="frame" x="0.0" y="0.0" width="120" height="43.5"/>
-                        <color key="backgroundColor" red="0.18853946360000001" green="0.62080635939999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.71478857289999997" green="0.86008756210000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="120" id="byQ-Hg-LBG"/>
                         </constraints>

@@ -21,7 +21,7 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 项目名称" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNJ-ec-bde">
                         <rect key="frame" x="0.0" y="0.0" width="120" height="44"/>
-                        <color key="backgroundColor" red="0.18853946355440987" green="0.62080635938964357" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.71478857289999997" green="0.86008756210000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="120" id="Lz5-TO-tks"/>
                         </constraints>
@@ -32,6 +32,7 @@
                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Qn-GY-AKq">
                         <rect key="frame" x="120" y="0.0" width="200" height="43.5"/>
                         <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <textInputTraits key="textInputTraits"/>
                         <connections>
                             <outlet property="delegate" destination="KGk-i7-Jjw" id="8DW-Si-0lo"/>

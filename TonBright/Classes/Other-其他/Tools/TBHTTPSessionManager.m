@@ -28,7 +28,9 @@
     
     // 重写给 acceptableContentTypes赋值
     mgr.responseSerializer.acceptableContentTypes = newSet;
-    
+    [mgr.requestSerializer willChangeValueForKey:@"timeoutInterval"];
+    mgr.requestSerializer.timeoutInterval = 8.f;
+    [mgr.requestSerializer didChangeValueForKey:@"timeoutInterval"];
     return mgr;
 }
 

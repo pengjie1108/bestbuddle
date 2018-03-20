@@ -41,7 +41,7 @@
 static NSString * const TBInquireDefaultCellId = @"TBInquireDefaultCell";
 static NSString * const TBTimeTypeCellId = @"TBTimeTypeCell";
 
-//static NSString * const TBContractListURL = @"http://192.168.1.65/nbsst/api/api.caseinfo.list.php";
+//static NSString * const TBCompanyListURL = @"http://192.168.1.65/nbsst/api/api.company.list.php";
 static NSString * const TBCompanyListURL = @"http://203.156.252.183:81/nbs/api/api.company.list.php";
 
 - (NSArray<NSDictionary *> *)itemNameDateArray{
@@ -167,7 +167,6 @@ static NSString * const TBCompanyListURL = @"http://203.156.252.183:81/nbs/api/a
 
 //查询
 - (void)inquire{
-    TBLogFunc;
     //1.获取文本框的值
     NSArray *array = self.tableView.visibleCells;
     NSMutableDictionary *tempDict = [NSMutableDictionary dictionary];
@@ -184,7 +183,6 @@ static NSString * const TBCompanyListURL = @"http://203.156.252.183:81/nbs/api/a
         i ++;
      }
      self.conditionDictionary = tempDict;
-    TBLog(@"%@",tempDict);
    //2.页面跳转
     TBContractListViewController *contractListVC = [self.navigationController.viewControllers objectAtIndex:self.navigationController.viewControllers.count - 2];
     contractListVC.conditionDictionary = nil;
@@ -202,6 +200,9 @@ static NSString * const TBCompanyListURL = @"http://203.156.252.183:81/nbs/api/a
     return self.itemNameDateArray.count;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 44;
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -337,7 +338,6 @@ static NSString * const TBCompanyListURL = @"http://203.156.252.183:81/nbs/api/a
         [self.view.window addSubview:_typePick];
     }
 }
-
 
 
 
