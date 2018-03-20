@@ -204,7 +204,7 @@ static NSString * const meAboutCellID = @"meAboutCellID";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 3;
+    return 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -215,9 +215,9 @@ static NSString * const meAboutCellID = @"meAboutCellID";
     if (indexPath.row == 0) {
         cell.textLabel.text = [NSString stringWithFormat:@"关于同辉"];
     }else if(indexPath.row == 1){
-        cell.textLabel.text = [NSString stringWithFormat:@"检查新版本"];
-    }else if(indexPath.row == 2){
         cell.textLabel.text = [NSString stringWithFormat:@"使用条款和隐私政策"];
+    }else if(indexPath.row == 2){
+        cell.textLabel.text = [NSString stringWithFormat:@"检查新版本"];
     }
     [cell.textLabel setFont:[UIFont systemFontOfSize:14]];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -243,7 +243,7 @@ static NSString * const meAboutCellID = @"meAboutCellID";
             image = [UIImage imageNamed:@"about640.jpg"];
             imageH = image.size.height;
         }else if(SreenWidth == 414){//plus
-            image = [UIImage imageNamed:@"about1080.jpg"];
+            image = [UIImage imageNamed:@"about1242.jpg"];
             imageH = image.size.height;
         }else if(SreenHeight == 812){//适配iphoneX
             image = [UIImage imageNamed:@"about1125.jpg"];
@@ -254,7 +254,7 @@ static NSString * const meAboutCellID = @"meAboutCellID";
         imagev.image=image;
         [scroll addSubview:imagev];
         [self.navigationController pushViewController:aboutThVC animated:YES];
-    }else if (indexPath.row == 2){
+    }else if (indexPath.row == 1){
         UIViewController *termsVC = [[UIViewController alloc] init];
         UIScrollView *scroll=[[UIScrollView alloc]initWithFrame:self.view.frame];
         scroll.showsVerticalScrollIndicator = NO;
