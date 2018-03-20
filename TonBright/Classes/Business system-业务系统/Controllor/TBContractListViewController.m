@@ -70,7 +70,7 @@ static NSString * const TBContractListCellId = @"TBContractListCell";
 }
 
 - (void)getData:(NSDictionary *)conditionDictionary{
-   
+    TBLog(@"%d",_defaultFlag);
     if (_defaultFlag) {
         [self showProgressHUD];
     }
@@ -89,6 +89,10 @@ static NSString * const TBContractListCellId = @"TBContractListCell";
             weakSelf.contractLists = (NSArray<TBContractList*> *)[NSArray yy_modelArrayWithClass:[TBContractList class] json:responseObject[@"data"][@"caseinfolist"]];
             [weakSelf.tableView setSeparatorColor:[UIColor colorWithRed:224/255.0 green:224/255.0 blue:224/255.0 alpha:1]];
             [weakSelf.tableView reloadData];
+            CGPoint offset = weakSelf.tableView.contentOffset;
+            offset.y =  - weakSelf.tableView.contentInset.top - 64;
+            [weakSelf.tableView setContentOffset:offset animated:YES];
+            
         }else{
             NSString *errorString = [NSString stringWithFormat:@"%@",responseObject[@"error"]];
             [weakSelf showTextHUDWithMessage:[NSString stringWithFormat:@"登录失败:%@",errorString]];
@@ -191,7 +195,7 @@ static NSString * const TBContractListCellId = @"TBContractListCell";
     
     if (!_defaultFlag) {
         [self inquireDefault];
-        [self performSelector:@selector(delayMethods) withObject:nil afterDelay:4];
+        [self performSelector:@selector(delayMethods) withObject:nil afterDelay:2];
     }
 }
 

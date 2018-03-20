@@ -9,6 +9,7 @@
 #import "TBCustomerCaseContentCell.h"
 #import "TBContractDetailData.h"
 #import "TBCustomerData.h"
+#import "HelpObject.h"
 
 @interface TBCustomerCaseContentCell ()
 
@@ -101,8 +102,8 @@
                                        guarantorDate.contactpostno,
                                        guarantorDate.phone,
                                        guarantorDate.mobile,
-                                       [monthincomeDict objectForKey:guarantorDate.monthincome],
-                                       [netpropertyDict objectForKey:guarantorDate.netproperty]]];
+                                       [HelpObject isBlankString:guarantorDate.monthincome] ? @" " :[monthincomeDict objectForKey:guarantorDate.monthincome],
+                                       [HelpObject isBlankString:guarantorDate.netproperty] ? @" " :[netpropertyDict objectForKey:guarantorDate.netproperty]]];
                 if(detailData.guarantorlist.count > 1 && i < detailData.guarantorlist.count){
                     guarantorDataString = [guarantorDataString stringByAppendingString:@"\n\n"];
                 }

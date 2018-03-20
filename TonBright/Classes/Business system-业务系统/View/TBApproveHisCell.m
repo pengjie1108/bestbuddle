@@ -31,12 +31,15 @@
     
     self.approveHisLabel.numberOfLines = 0;
     self.approveHisLabel.text = approveHisString;
+    CGSize size = [self.approveHisLabel sizeThatFits:CGSizeMake(self.frame.size.width -50, CGFLOAT_MAX)];
+    self.approveHisLabel.pj_size = size;
     [self.approveHisLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.contentView).with.offset(5);
+        make.top.mas_equalTo(self.contentView).with.offset(0);
         make.left.mas_equalTo(self.contentView).with.offset(25);
         make.right.mas_equalTo(self.contentView).with.offset(-25);
         make.bottom.mas_equalTo(self.contentView).with.offset(0);
     }];
+    [self.approveHisLabel sizeToFit];
     
     [self.approveHisLabel setNeedsLayout];
 }
