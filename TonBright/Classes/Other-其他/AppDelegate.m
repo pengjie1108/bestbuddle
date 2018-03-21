@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "TBTabBarController.h"
 #import "TBLoginViewController.h"
-
+#import <AvoidCrash.h>
 
 @interface AppDelegate ()
 
@@ -17,9 +17,9 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+    [AvoidCrash becomeEffective];
+
     application.statusBarHidden = NO;
     
     self.window = [[UIWindow alloc] init];

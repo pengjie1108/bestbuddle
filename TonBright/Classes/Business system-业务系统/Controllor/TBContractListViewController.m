@@ -26,6 +26,8 @@
 @property(nonatomic,assign)CGFloat historyY;
 
 @property (nonatomic,assign) BOOL defaultFlag;
+
+@property (nonatomic, strong) MBProgressHUD *hud;
 @end
 
 //static NSString * const TBContractListURL = @"http://192.168.1.65/nbsst/api/api.caseinfo.list.php";
@@ -43,6 +45,15 @@ static NSString * const TBContractListCellId = @"TBContractListCell";
         _manager = [TBHTTPSessionManager manager];
     }
     return _manager;
+}
+
+- (void)showMbHub {
+    _hud = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:YES];
+    _hud.mode = MBProgressHUDModeIndeterminate;
+}
+
+- (void)hidHud {
+    [_hud hideAnimated:YES];
 }
 
 - (void)viewDidLoad {
@@ -72,7 +83,7 @@ static NSString * const TBContractListCellId = @"TBContractListCell";
 - (void)getData:(NSDictionary *)conditionDictionary{
     TBLog(@"%d",_defaultFlag);
     if (_defaultFlag) {
-        [self showProgressHUD];
+        [self showMbHub];
     }
     
     NSMutableDictionary *params = conditionDictionary.mutableCopy;
@@ -81,6 +92,7 @@ static NSString * const TBContractListCellId = @"TBContractListCell";
     [params setObject:[TBAPPSetting shareAppSetting].topcompanyid forKey:@"topcompanyid"];
      __weak typeof(self) weakSelf = self;
     [self.manager POST:TBContractListURL parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary* _Nullable responseObject) {
+        [weakSelf hidHud];
         NSString *stat = [NSString stringWithString:responseObject[@"stat"]];
         if (![stat intValue]) {
             if (_defaultFlag) {
@@ -98,6 +110,7 @@ static NSString * const TBContractListCellId = @"TBContractListCell";
             [weakSelf showTextHUDWithMessage:[NSString stringWithFormat:@"登录失败:%@",errorString]];
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [weakSelf hidHud];
         if (_defaultFlag) {
             [weakSelf showTextHUDWithMessage:@"查询失败"];
         }

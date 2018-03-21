@@ -47,6 +47,8 @@ static NSString * const TBCommonURL = @"http://203.156.252.183:81/nbs/api/api.m.
  */
 - (IBAction)login:(id)sender {
     
+    //进行账号密码为空判断---------------
+    
     [self showProgressHUD];
     //过滤字符串开始位置和结束位置的空格
     NSCharacterSet *whiteNewChars = [NSCharacterSet whitespaceAndNewlineCharacterSet];

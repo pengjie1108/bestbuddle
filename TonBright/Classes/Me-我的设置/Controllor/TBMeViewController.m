@@ -240,13 +240,16 @@ static NSString * const meAboutCellID = @"meAboutCellID";
         imageH = image.size.height;
         TBLog(@"SreenWidth%lf",SreenWidth);
         if(SreenWidth == 320){
-            image = [UIImage imageNamed:@"about640.jpg"];
+            image = [UIImage imageNamed:@"about640px.jpg"];
             imageH = image.size.height;
         }else if(SreenWidth == 414){//plus
-            image = [UIImage imageNamed:@"about1242.jpg"];
+            image = [UIImage imageNamed:@"about1242px.jpg"];
             imageH = image.size.height;
         }else if(SreenHeight == 812){//适配iphoneX
-            image = [UIImage imageNamed:@"about1125.jpg"];
+            image = [UIImage imageNamed:@"about1125px.jpg"];
+            imageH = image.size.height;
+        }else {
+            image = [UIImage imageNamed:@"about1125px.jpg"];
             imageH = image.size.height;
         }
         scroll.contentSize=CGSizeMake(0, imageH + 50);
