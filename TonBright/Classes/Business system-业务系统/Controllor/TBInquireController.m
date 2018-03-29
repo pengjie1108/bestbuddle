@@ -64,7 +64,8 @@ static NSString * const TBCompanyListURL = @"http://203.156.252.183:81/nbs/api/a
 
 - (NSArray *)casestatusArray{
     if (_casestatusArray == nil) {
-        NSArray *array = @[@{@"parameterCode":@"1",@"parameterValue":@"编辑中"},
+        NSArray *array = @[@{@"parameterCode":@"",@"parameterValue":@"请选择合同状态"},
+                           @{@"parameterCode":@"1",@"parameterValue":@"编辑中"},
                                @{@"parameterCode":@"1.5",@"parameterValue":@"特批中"},
                                @{@"parameterCode":@"2",@"parameterValue":@"销售总监审批中"},
                                @{@"parameterCode":@"3",@"parameterValue":@"销售总监驳回"},
@@ -93,7 +94,8 @@ static NSString * const TBCompanyListURL = @"http://203.156.252.183:81/nbs/api/a
 
 - (NSArray *)casetypeArray{
     if (_casetypeArray == nil) {
-        NSArray *array = @[@{@"parameterCode":@"T",@"parameterValue":@"标准方案"},
+        NSArray *array = @[@{@"parameterCode":@"",@"parameterValue":@"请选择合同类型"},
+                           @{@"parameterCode":@"T",@"parameterValue":@"标准方案"},
                            @{@"parameterCode":@"B",@"parameterValue":@"二手车方案"},
                            @{@"parameterCode":@"C",@"parameterValue":@"残值方案"},
                            @{@"parameterCode":@"D",@"parameterValue":@"建店融资"},
@@ -152,7 +154,12 @@ static NSString * const TBCompanyListURL = @"http://203.156.252.183:81/nbs/api/a
     [self.manager POST:TBCompanyListURL parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary* _Nullable responseObject) {
         NSString *stat = [NSString stringWithString:responseObject[@"stat"]];
         if ([stat intValue] == 0) {
-            NSArray *companyArray = [NSArray yy_modelArrayWithClass:[TBCompanyData class]json:responseObject[@"data"][@"companylist"]];
+            NSMutableArray *companyArray = [NSArray yy_modelArrayWithClass:[TBCompanyData class]json:responseObject[@"data"][@"companylist"]].mutableCopy;
+            TBCompanyData *tmpData = [TBCompanyData new];
+            tmpData.companyid = @"";
+            tmpData.companynm = @"请选择出租人公司";
+            tmpData.isvalid = @"1";
+            [companyArray insertObject:tmpData atIndex:0];
             NSMutableArray *tempArray = [NSMutableArray array];
             for (TBCompanyData *data in companyArray) {
                 if (data.isvalid){
