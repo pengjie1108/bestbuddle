@@ -89,6 +89,7 @@
 }
 
 
+
 - (void)setLoginname:(NSString *)loginname{
     [self.userDefault setObject:loginname forKey:LOGINNAME_KEY];
     [self.userDefault synchronize];
@@ -151,6 +152,18 @@
 - (void)setDepartmentname:(NSString *)departmentname{
     [self.userDefault setObject:departmentname forKey:DEPARTMENTNAME_KEY];
     [self.userDefault synchronize];
+}
+
+- (void)setInquireDataStr:(NSString *)inquireDataStr foruserId:(NSString *)userid {
+    self.inquireDataDic = [NSMutableDictionary dictionary];
+    [self.inquireDataDic setValue:inquireDataStr forKey:userid];
+    [self.userDefault setObject:self.inquireDataDic forKey:InquireDataDic_KEY];
+    [self.userDefault synchronize];
+}
+
+- (NSString *)inquireDataStrFotUserid:(NSString *)userid {
+    NSDictionary *tmpDic = [self.userDefault objectForKey:InquireDataDic_KEY];
+    return tmpDic ? [tmpDic valueForKey:userid] : @"";
 }
 
 @end

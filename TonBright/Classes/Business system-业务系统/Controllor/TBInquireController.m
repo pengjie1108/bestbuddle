@@ -118,9 +118,14 @@ static NSString * const TBCompanyListURL = @"http://203.156.252.183:81/nbs/api/a
 }
 
 - (TBInquireData *)inquireData{
-    
+    NSString *tmpInqureStr = [[TBAPPSetting shareAppSetting] inquireDataStrFotUserid:[TBAPPSetting shareAppSetting].userid];
     if (!_inquireData) {
-        _inquireData = [[TBInquireData alloc] init];
+        //判断是否有历史数据
+        if ([HelpObject isBlankString:tmpInqureStr]) {
+            _inquireData = [[TBInquireData alloc] init];
+        }else {
+            _inquireData = [TBInquireData yy_modelWithJSON:tmpInqureStr];
+        }
     }
     return _inquireData;
 }
@@ -165,8 +170,14 @@ static NSString * const TBCompanyListURL = @"http://203.156.252.183:81/nbs/api/a
     }];
 }
 
+// MARK: - 查询按钮点击事件---------------------------------
 //查询
 - (void)inquire{
+    
+    //存储模型数据--------存储当前用户对应的,防止使用其他账号也能看到相同数据-------------
+    NSString *inqureStr = [self.inquireData yy_modelToJSONString];
+    [[TBAPPSetting shareAppSetting] setInquireDataStr:[HelpObject changeNull:inqureStr] foruserId:[TBAPPSetting shareAppSetting].userid];
+    
     //1.获取文本框的值
     NSArray *array = self.tableView.visibleCells;
     NSMutableDictionary *tempDict = [NSMutableDictionary dictionary];

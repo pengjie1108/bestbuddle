@@ -7,7 +7,11 @@
 //
 
 #import "TBInquireData.h"
+#import <YYModel.h>
 
 @implementation TBInquireData
-
+- (NSString *)description
+{
+    return [self yy_modelDescription];
+}
 @end
