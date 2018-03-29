@@ -14,6 +14,9 @@ PODS:
   - AFNetworking/Serialization (3.2.0)
   - AFNetworking/UIKit (3.2.0):
     - AFNetworking/NSURLSession
+  - AvoidCrash (2.5.1)
+  - Bugly (2.5.0)
+  - IQKeyboardManager (5.0.7)
   - Masonry (1.1.0)
   - MBProgressHUD (1.0.0)
   - SSKeychain (1.4.1)
@@ -21,6 +24,9 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - AvoidCrash
+  - Bugly
+  - IQKeyboardManager
   - Masonry
   - MBProgressHUD (~> 1.0.0)
   - SSKeychain
@@ -28,11 +34,14 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 8ac6017b94ea105479f7776e5288e48ae9c59bb4
+  AvoidCrash: 1fb7e2fa4b982c069b748266371654e4054683b1
+  Bugly: 3ca9f255c01025582df26f9222893b383c7e4b4e
+  IQKeyboardManager: 0bfa4607d39924116b5c0c8b55b5d789288b5cba
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   SSKeychain: 55cc80f66f5c73da827e3077f02e43528897db41
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 9bdf9d15396f13bf7297c83d8768ab2b7a9c591f
+PODFILE CHECKSUM: 88ecc84f46dbec9134d2437693a90a4c3a914e7e
 
 COCOAPODS: 1.3.1
