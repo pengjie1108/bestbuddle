@@ -51,24 +51,28 @@ static NSString * const meAboutCellID = @"meAboutCellID";
     [scroll addSubview:logoImageView];
     
     UILabel *introduceLabel = [[UILabel alloc] init];
-    introduceLabel.text = @"同辉用车无忧员工端";
+//    introduceLabel.text = @"同辉用车无忧员工端";
+    introduceLabel.text = @"同辉用车无忧商户端";
     introduceLabel.textColor = [UIColor blackColor];
     [introduceLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:18]];
     [scroll addSubview:introduceLabel];
     
     UILabel *companyIDLabel = [[UILabel alloc] init];
-    companyIDLabel.text = [NSString stringWithFormat:@"员工公司ID:%@",[TBAPPSetting shareAppSetting].companyid];
+//    companyIDLabel.text = [NSString stringWithFormat:@"员工公司ID:%@",[TBAPPSetting shareAppSetting].companyid];
+    companyIDLabel.text = [NSString stringWithFormat:@"商户ID:%@",[TBAPPSetting shareAppSetting].companyid];
     companyIDLabel.font = [UIFont systemFontOfSize:13];
     [scroll addSubview:companyIDLabel];
     
     UILabel *companyNmLabel = [[UILabel alloc] init];
-    companyNmLabel.text = [NSString stringWithFormat:@"员工公司名:%@",[TBAPPSetting shareAppSetting].companyname];
+//    companyNmLabel.text = [NSString stringWithFormat:@"员工公司名:%@",[TBAPPSetting shareAppSetting].companyname];
+    companyNmLabel.text = [NSString stringWithFormat:@"商户公司名:%@",[TBAPPSetting shareAppSetting].companyname];
     companyNmLabel.font = [UIFont systemFontOfSize:13];
     companyNmLabel.numberOfLines = 0;
     [scroll addSubview:companyNmLabel];
     
     UILabel *userLoginNmLabel = [[UILabel alloc] init];
-    userLoginNmLabel.text = [NSString stringWithFormat:@"员工登录名:%@",[TBAPPSetting shareAppSetting].loginname];
+//    userLoginNmLabel.text = [NSString stringWithFormat:@"员工登录名:%@",[TBAPPSetting shareAppSetting].loginname];
+    userLoginNmLabel.text = [NSString stringWithFormat:@"商户登录名:%@",[TBAPPSetting shareAppSetting].loginname];
     userLoginNmLabel.font = [UIFont systemFontOfSize:13];
     [scroll addSubview:userLoginNmLabel];
     

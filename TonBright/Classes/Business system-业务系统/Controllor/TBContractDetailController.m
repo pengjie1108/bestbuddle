@@ -112,6 +112,7 @@ static NSString * const TBApproveHisCellId = @"TBApproveHisCell";
     [params setObject:[TBAPPSetting shareAppSetting].topcompanyid forKey:@"topcompanyid"];
     
     [self.manager POST:TBContractDetailURL parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary* _Nullable responseObject) {
+//        [responseObject writeToFile:@"/Users/jiepeng/Desktop/TBContractDetailData.plist" atomically:YES];
         NSString *stat = [NSString stringWithString:responseObject[@"stat"]];
         if ([stat intValue] == 0) {
             [weakSelf showTextHUDWithMessage:@"查询成功"];

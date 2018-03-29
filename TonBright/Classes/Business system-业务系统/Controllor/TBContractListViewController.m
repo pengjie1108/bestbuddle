@@ -81,7 +81,6 @@ static NSString * const TBContractListCellId = @"TBContractListCell";
 }
 
 - (void)getData:(NSDictionary *)conditionDictionary{
-    TBLog(@"%d",_defaultFlag);
     if (_defaultFlag) {
         [self showMbHub];
     }
