@@ -17,7 +17,7 @@
 #import "TBHTTPSessionManager.h"
 #import "TBCompanyData.h"
 #import "HelpObject.h"
-
+#import "TBSelCompanyTableView.h"
 @interface TBInquireController ()<TBTimeTypeCellDelegate>
 
 @property (nonatomic,strong) NSArray <NSDictionary *> *itemNameDataArray;
@@ -26,7 +26,7 @@
 /** pickerView */
 @property (nonatomic,strong)AbsenceDatePickerView *datePick;
 @property (nonatomic,strong)AbsenceTypePickerView *typePick;
-
+@property (nonatomic,strong)TBSelCompanyTableView *selCompanyView;
 @property (nonatomic,strong) NSArray *casestatusArray;
 @property (nonatomic,strong) NSArray *casetypeArray;
 @property (nonatomic,strong) NSArray *companyListArray;
@@ -143,6 +143,8 @@ static NSString * const TBCompanyListURL = @"http://203.156.252.183:81/nbs/api/a
     self.navigationItem.rightBarButtonItem = rightBtn;
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([TBInquireDefaultCell class]) bundle:nil] forCellReuseIdentifier:TBInquireDefaultCellId];
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([TBTimeTypeCell class]) bundle:nil] forCellReuseIdentifier:TBTimeTypeCellId];
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.estimatedRowHeight = 44;
 }
 
 - (void)getData{
@@ -218,9 +220,9 @@ static NSString * const TBCompanyListURL = @"http://203.156.252.183:81/nbs/api/a
     return self.itemNameDateArray.count;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 44;
-}
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+//    return 44;
+//}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -245,7 +247,7 @@ static NSString * const TBCompanyListURL = @"http://203.156.252.183:81/nbs/api/a
             cell.timeTitleKey =  self.inquireData.casetypeKey;
         }else if(indexPath.row  == 8){
             cell.timeTitle = [HelpObject isBlankString:self.inquireData.companynm] ? @"请选择出租人公司" : self.inquireData.companynm;
-            cell.timeDetailL.font = [HelpObject isBlankString:self.inquireData.companynm] ?[UIFont systemFontOfSize:14] :[UIFont systemFontOfSize:11];
+            cell.timeDetailL.font = [HelpObject isBlankString:self.inquireData.companynm] ?[UIFont systemFontOfSize:14] :[UIFont systemFontOfSize:14];
             cell.timeTitleKey = self.inquireData.companynmKey;
         }
         return cell;
@@ -320,6 +322,23 @@ static NSString * const TBCompanyListURL = @"http://203.156.252.183:81/nbs/api/a
         };
         [self.view.window addSubview:_datePick];
     } else if (pickType == 1) {
+        //代表这个是公司的选项--------
+        if (row == 8) {
+            _selCompanyView = [[TBSelCompanyTableView alloc] initWithFrame:CGRectMake(0, SreenHeight - 300, SreenWidth, 300)];
+            _selCompanyView.companyList = self.companyListArray;
+            __weak typeof(self) weakSelf = self;
+            _selCompanyView.seleCompanyBlock = ^(AbsenceTypeEnumModel *str) {
+                __strong typeof(weakSelf) strongSelf = weakSelf;
+                strongSelf.inquireData.companynm = str.parameterValue;
+                strongSelf.inquireData.companynmKey = str.parameterCode;
+                [strongSelf.tableView reloadData];
+                [strongSelf.bgView removeFromSuperview];
+                [strongSelf.selCompanyView removeFromSuperview];
+            };
+            [self.view.window addSubview:_selCompanyView];
+            return;
+        }
+        
         //添加类型选择器
         _typePick = [AbsenceTypePickerView typePickView];
         _typePick.frame = CGRectMake(0, SreenHeight - 200, SreenWidth, 200);
