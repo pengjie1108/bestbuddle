@@ -34,10 +34,19 @@
 
 @property (nonatomic,copy) NSString *departmentname;
 
+/**
+ 历史查询数据-----------
+ */
+//@property (nonatomic,copy)NSString *inquireDataStr;
+@property (nonatomic,strong)NSMutableDictionary *inquireDataDic;
+
 + (instancetype)shareAppSetting;
 
 - (NSString *)passwordForUserName:(NSString *)userName;
 
 - (void)setPassword:(NSString *)password userName:(NSString *)userName;
 
+- (void)setInquireDataStr:(NSString *)inquireDataStr foruserId:(NSString *)userid;
+
+- (NSString *)inquireDataStrFotUserid:(NSString *)userid;
 @end

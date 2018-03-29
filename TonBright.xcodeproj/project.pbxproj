@@ -1022,7 +1022,7 @@
 				DEVELOPMENT_TEAM = H96A698YS9;
 				GCC_PREFIX_HEADER = TonBright.pch;
 				INFOPLIST_FILE = TonBright/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Businesses.TonBright.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1039,7 +1039,7 @@
 				DEVELOPMENT_TEAM = H96A698YS9;
 				GCC_PREFIX_HEADER = TonBright.pch;
 				INFOPLIST_FILE = TonBright/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Businesses.TonBright.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";

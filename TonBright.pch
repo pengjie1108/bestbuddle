@@ -41,7 +41,7 @@
 #define COMPANYID_KEY @"companyid"
 
 #define DEPARTMENTNAME_KEY @"departmentname"
-
+#define InquireDataDic_KEY @"inquireDataDic"
 #define USERFUNCTION_KEY @"userfunction"
 
 #ifdef DEBUG

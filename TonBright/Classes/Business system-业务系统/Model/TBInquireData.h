@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-
 @interface TBInquireData : NSObject
 
 @property (nonatomic,copy)NSString *Type;
