@@ -263,30 +263,30 @@ static NSString * const meAboutCellID = @"meAboutCellID";
         [self.navigationController pushViewController:aboutThVC animated:YES];
     }else if (indexPath.row == 1){
         UIViewController *termsVC = [[UIViewController alloc] init];
-        UIScrollView *scroll=[[UIScrollView alloc]initWithFrame:self.view.frame];
+        UIScrollView *scroll = [[UIScrollView alloc]initWithFrame:self.view.frame];
         scroll.showsVerticalScrollIndicator = NO;
         termsVC.view.backgroundColor = [UIColor whiteColor];
         [termsVC.view addSubview:scroll];
         termsVC.navigationItem.title = @"使用条款";
         NSString *path = [[NSBundle mainBundle] pathForResource:@"article" ofType:@"txt"];
         NSString *txt = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-        
-        NSMutableAttributedString *attributeString = [[NSMutableAttributedString alloc] initWithString:txt];
-        NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
-        style.lineSpacing = 8;
-        UIFont *font = [UIFont systemFontOfSize:14];
-        [attributeString addAttribute:NSParagraphStyleAttributeName value:style range:NSMakeRange(0, txt.length)];
-        [attributeString addAttribute:NSFontAttributeName value:font range:NSMakeRange(0, txt.length)];
+
+        CGFloat margin = 10;
+        CGFloat textMaxW = [UIScreen mainScreen].bounds.size.width - 2 * margin;
+        CGSize textMaxSize = CGSizeMake(textMaxW, MAXFLOAT);
+        CGSize textSize = [txt boundingRectWithSize:textMaxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:15]} context:nil].size;
         UILabel *label = [[UILabel alloc] init];
-        label.font = [UIFont systemFontOfSize:14];
         label.text = txt;
         label.numberOfLines = 0;
-        label.attributedText = attributeString;
-        CGSize size = [label sizeThatFits:CGSizeMake(self.view.frame.size.width, CGFLOAT_MAX)];
-        label.pj_size = size;
-        scroll.contentSize = size;
+        
+        label.pj_x = margin;
+        label.pj_y = margin * 2;
+        label.pj_width = textMaxW;
+        label.pj_height = textSize.height ;
         [scroll addSubview:label];
-        [label sizeToFit];
+         [label sizeToFit];
+        
+        scroll.contentSize = CGSizeMake( [UIScreen mainScreen].bounds.size.width ,label.pj_bottom);
         [self.navigationController pushViewController:termsVC animated:YES];
     }
 }
