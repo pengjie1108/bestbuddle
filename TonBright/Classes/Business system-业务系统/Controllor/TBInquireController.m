@@ -153,7 +153,9 @@ static NSString * const TBCompanyListURL = @"http://203.156.252.183:81/nbs/api/a
     [params setObject:[TBAPPSetting shareAppSetting].tokenid forKey:@"tokenid"];
     [params setObject:[TBAPPSetting shareAppSetting].topcompanyid forKey:@"topcompanyid"];
     __weak typeof(self) weakSelf = self;
+    [self showProgressHUD];
     [self.manager POST:TBCompanyListURL parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary* _Nullable responseObject) {
+        [weakSelf hideProgressHUD];
         NSString *stat = [NSString stringWithString:responseObject[@"stat"]];
         if ([stat intValue] == 0) {
             NSMutableArray *companyArray = [NSArray yy_modelArrayWithClass:[TBCompanyData class]json:responseObject[@"data"][@"companylist"]].mutableCopy;
@@ -171,6 +173,7 @@ static NSString * const TBCompanyListURL = @"http://203.156.252.183:81/nbs/api/a
             weakSelf.companyListArray = [NSArray yy_modelArrayWithClass:[AbsenceTypeEnumModel class] json:tempArray];
             [weakSelf.tableView reloadData];
         }else{
+            [weakSelf hideProgressHUD];
             NSString *errorString = [NSString stringWithFormat:@"%@",responseObject[@"error"]];
             [weakSelf showTextHUDWithMessage:[NSString stringWithFormat:@"登录失败:%@",errorString]];
         }
