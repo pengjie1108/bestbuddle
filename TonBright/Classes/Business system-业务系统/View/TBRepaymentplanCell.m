@@ -29,6 +29,8 @@
 
 @implementation TBRepaymentplanCell
 
+
+
 - (UILabel *)paymentplanPeriodLabel{
     if (!_paymentplanPeriodLabel) {
         _paymentplanPeriodLabel = [[UILabel alloc] init];

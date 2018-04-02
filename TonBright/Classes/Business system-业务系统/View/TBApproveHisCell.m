@@ -40,7 +40,6 @@
         make.bottom.mas_equalTo(self.contentView).with.offset(0);
     }];
     [self.approveHisLabel sizeToFit];
-    
     [self.approveHisLabel setNeedsLayout];
 }
 @end
