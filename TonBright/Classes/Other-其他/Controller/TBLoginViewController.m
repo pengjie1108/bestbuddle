@@ -20,6 +20,7 @@ static NSString * const TBCommonURL = @"http://203.156.252.183:81/nbs/api/api.m.
 
 @property (weak, nonatomic) IBOutlet TBLoginTextField *loginNameTextField;
 @property (weak, nonatomic) IBOutlet TBLoginTextField *passWordTextField;
+@property (weak, nonatomic) IBOutlet UIImageView *imv_remberP;
 
 @end
 
@@ -27,7 +28,11 @@ static NSString * const TBCommonURL = @"http://203.156.252.183:81/nbs/api/api.m.
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    _loginNameTextField.text = [TBAPPSetting shareAppSetting].loginUserName;
+    if ([TBAPPSetting shareAppSetting].keepLogin) {
+        _passWordTextField.text = [[TBAPPSetting shareAppSetting] passwordForUserName:[TBAPPSetting shareAppSetting].loginUserName];
+        _imv_remberP.image = [UIImage imageNamed:@"勾选框_选中"];
+    }
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle{
@@ -39,6 +44,15 @@ static NSString * const TBCommonURL = @"http://203.156.252.183:81/nbs/api/api.m.
     [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 
+- (IBAction)rememberPwdClick:(id)sender {
+    [TBAPPSetting shareAppSetting].keepLogin = ![TBAPPSetting shareAppSetting].keepLogin;
+    if ([TBAPPSetting shareAppSetting].keepLogin) {
+        _imv_remberP.image = [UIImage imageNamed:@"勾选框_选中"];
+    } else {
+        _imv_remberP.image = [UIImage imageNamed:@"勾选框"];
+    }
+}
+
 
 /**
  登录执行
@@ -46,7 +60,10 @@ static NSString * const TBCommonURL = @"http://203.156.252.183:81/nbs/api/api.m.
  @param sender 登录按钮
  */
 - (IBAction)login:(id)sender {
-    
+    [self.view endEditing:YES];
+    //保存账号
+    [TBAPPSetting shareAppSetting].loginUserName = _loginNameTextField.text;
+
     //进行账号密码为空判断---------------
     
     [self showProgressHUD];
@@ -104,6 +121,11 @@ static NSString * const TBCommonURL = @"http://203.156.252.183:81/nbs/api/api.m.
     [TBAPPSetting shareAppSetting].companyname = responseObject[@"companyname"];
     [TBAPPSetting shareAppSetting].companyid = responseObject[@"companyid"];
     [TBAPPSetting shareAppSetting].departmentname = responseObject[@"departmentname"];
+    if ([TBAPPSetting shareAppSetting].keepLogin) {
+        [[TBAPPSetting shareAppSetting] setPassword:_passWordTextField.text userName:_loginNameTextField.text];
+    } else {
+        [[TBAPPSetting shareAppSetting] setPassword:@"" userName:_loginNameTextField.text];
+    }
 }
 
 

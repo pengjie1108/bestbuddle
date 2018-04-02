@@ -33,12 +33,17 @@
 @property (nonatomic,copy) NSString *companyid;
 
 @property (nonatomic,copy) NSString *departmentname;
+/**
+ 登录用户名-------
+ */
+@property (nonatomic,copy)NSString *loginUserName;
 
 /**
  历史查询数据-----------
  */
 //@property (nonatomic,copy)NSString *inquireDataStr;
 @property (nonatomic,strong)NSMutableDictionary *inquireDataDic;
+@property (nonatomic, assign) BOOL keepLogin;//登录状态
 
 + (instancetype)shareAppSetting;
 

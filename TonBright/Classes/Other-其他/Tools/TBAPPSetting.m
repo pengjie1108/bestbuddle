@@ -166,4 +166,22 @@
     return tmpDic ? [tmpDic valueForKey:userid] : @"";
 }
 
+- (void)setLoginUserName:(NSString *)loginUserName {
+    [self.userDefault setObject:loginUserName forKey:@"loginUserName"];
+    [self.userDefault synchronize];
+}
+
+- (NSString *)loginUserName {
+    return [self.userDefault objectForKey:@"loginUserName"];
+}
+
+- (void)setKeepLogin:(BOOL)keepLogin {
+    [self.userDefault setBool:keepLogin forKey:@"keepLogin"];
+    [self.userDefault synchronize];
+}
+
+- (BOOL)keepLogin {
+    return [self.userDefault boolForKey:@"keepLogin"];
+}
+
 @end
