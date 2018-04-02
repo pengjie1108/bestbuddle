@@ -84,8 +84,16 @@ static NSString * const TBApproveHisCellId = @"TBApproveHisCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.navigationItem.title = @"合同详细";
-    //注册cell
+    
+    [self setTable];
+    
+    [self getCaseDatafrom:self.caseid];
+    
+}
+
+- (void)setTable{
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([TBDetailBaseContentCell class]) bundle:nil] forCellReuseIdentifier:TBDetailBaseContentCellId];
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([TBCustomerBaseContentCell class]) bundle:nil] forCellReuseIdentifier:TBCustomerBaseContentCellId];
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([TBCustomerCaseContentCell class]) bundle:nil] forCellReuseIdentifier:TBCustomerCaseContentCellId];
@@ -93,11 +101,16 @@ static NSString * const TBApproveHisCellId = @"TBApproveHisCell";
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([TBFinancingPlanDataCell class]) bundle:nil] forCellReuseIdentifier:TBFinancingPlanDataCellId];
     [self.tableView registerClass:[TBRepaymentplanCell class] forCellReuseIdentifier:TBRepaymentplanCellId];
     [self.tableView registerClass:[TBApproveHisCell class] forCellReuseIdentifier:TBApproveHisCellId];
-    [self getCaseDatafrom:self.caseid];
+    
     self.tableView.estimatedSectionHeaderHeight = 0;
     self.tableView.estimatedSectionFooterHeight = 0;
     self.tableView.sectionHeaderHeight = 0;
     self.tableView.sectionFooterHeight = 0;
+    
+    if ([self.tableView respondsToSelector:@selector(setSeparatorInset:)]) {
+        [self.tableView setSeparatorInset:UIEdgeInsetsMake(0, -45, 0, 0)];
+        
+    }
 }
 
 //查询案件
