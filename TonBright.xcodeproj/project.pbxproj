@@ -12,6 +12,7 @@
 		4402499B205BA8510065A284 /* article.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4402499A205BA8500065A284 /* article.txt */; };
 		440249A1205F64E40065A284 /* TBNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 440249A0205F64E40065A284 /* TBNavigationController.m */; };
 		440249A5205F7FE00065A284 /* UIBarButtonItem+TBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 440249A4205F7FE00065A284 /* UIBarButtonItem+TBExtension.m */; };
+		4412C20620732E4100DE19E7 /* TBConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 4412C20520732E4100DE19E7 /* TBConst.m */; };
 		441B816E20466034005EB4F2 /* TBCustomerBaseContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 441B816C20466034005EB4F2 /* TBCustomerBaseContentCell.m */; };
 		441B816F20466034005EB4F2 /* TBCustomerBaseContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 441B816D20466034005EB4F2 /* TBCustomerBaseContentCell.xib */; };
 		441B817220469E9C005EB4F2 /* TBCustomerData.m in Sources */ = {isa = PBXBuildFile; fileRef = 441B817020469E9B005EB4F2 /* TBCustomerData.m */; };
@@ -109,6 +110,8 @@
 		440249A0205F64E40065A284 /* TBNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBNavigationController.m; sourceTree = "<group>"; };
 		440249A3205F7FE00065A284 /* UIBarButtonItem+TBExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+TBExtension.h"; sourceTree = "<group>"; };
 		440249A4205F7FE00065A284 /* UIBarButtonItem+TBExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+TBExtension.m"; sourceTree = "<group>"; };
+		4412C20420732E4100DE19E7 /* TBConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBConst.h; sourceTree = "<group>"; };
+		4412C20520732E4100DE19E7 /* TBConst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBConst.m; sourceTree = "<group>"; };
 		441B816B20466034005EB4F2 /* TBCustomerBaseContentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBCustomerBaseContentCell.h; sourceTree = "<group>"; };
 		441B816C20466034005EB4F2 /* TBCustomerBaseContentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBCustomerBaseContentCell.m; sourceTree = "<group>"; };
 		441B816D20466034005EB4F2 /* TBCustomerBaseContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TBCustomerBaseContentCell.xib; sourceTree = "<group>"; };
@@ -592,6 +595,8 @@
 				44A5D5371EB87A5800D924E9 /* AppDelegate.m */,
 				44A5D5381EB87A5800D924E9 /* main.m */,
 				44A5D5581EB96F4C00D924E9 /* TonBright.pch */,
+				4412C20420732E4100DE19E7 /* TBConst.h */,
+				4412C20520732E4100DE19E7 /* TBConst.m */,
 			);
 			path = "Other-其他";
 			sourceTree = "<group>";
@@ -864,6 +869,7 @@
 			files = (
 				CD0DD6A1206CD2A200F459E6 /* TBSelCompanyTableView.m in Sources */,
 				44A5D54A1EB883AA00D924E9 /* TBMeViewController.m in Sources */,
+				4412C20620732E4100DE19E7 /* TBConst.m in Sources */,
 				44AC683F20416C050043316B /* TBContractDetailData.m in Sources */,
 				447E872B1EBC2592005B4EE2 /* UIView+TBMBProgressHUD.m in Sources */,
 				44A01FBF2052749E005B6054 /* AbsenceDatePickerView.m in Sources */,

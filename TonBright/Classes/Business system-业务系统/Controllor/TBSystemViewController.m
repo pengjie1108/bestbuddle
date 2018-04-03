@@ -28,7 +28,6 @@ static NSString *tableSampleIdentifier = @"tableSampleIdentifier";
     [super viewDidLoad];
     self.navigationItem.title = @"业务系统";
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:tableSampleIdentifier];
-//    [self.dataArray writeToFile:@"/Users/jiepeng/Desktop/menus.plist" atomically:YES];
 }
 
 - (id)init{
@@ -154,7 +153,7 @@ static NSString *tableSampleIdentifier = @"tableSampleIdentifier";
     if (!_dataArray) {
         //获取数据源
         NSArray *userfunctionArray = [TBAPPSetting shareAppSetting].userfunction;
-//        [userfunctionArray writeToFile:@"/Users/jiepeng/Desktop/userfunctions.plist" atomically:YES];
+
         NSMutableArray *zhuBiaoArray = [NSMutableArray array];
         NSMutableArray *anJianArray = [NSMutableArray array];
         NSMutableArray *heTongArray = [NSMutableArray array];

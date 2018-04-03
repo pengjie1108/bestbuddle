@@ -13,8 +13,8 @@
 #import "TBAPPSetting.h"
 #import "TBTempTabBarViewController.h"
 
-//static NSString * const TBCommonURL = @"http://192.168.1.65/nbsst/api/api.m.user.login.php";
-static NSString * const TBCommonURL = @"http://203.156.252.183:81/nbs/api/api.m.user.login.php";
+////static NSString * const TBCommonURL = @"http://192.168.1.65/nbsst/api/api.m.user.login.php";
+//static NSString * const TBCommonURL = @"http://203.156.252.183:81/nbs/api/api.m.user.login.php";
 
 @interface TBLoginViewController ()
 
@@ -77,7 +77,7 @@ static NSString * const TBCommonURL = @"http://203.156.252.183:81/nbs/api/api.m.
     params[@"password"] = password;
 
     __weak typeof(self) weakSelf = self;
-    [[TBHTTPSessionManager manager] POST:TBCommonURL parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary* _Nullable responseObject) {
+    [[TBHTTPSessionManager manager] POST:TBLoginURL parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary* _Nullable responseObject) {
 
         NSString *stat = [NSString stringWithFormat:@"%@",responseObject[@"stat"]];
         if (![stat intValue]) {

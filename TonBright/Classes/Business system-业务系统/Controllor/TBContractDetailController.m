@@ -61,14 +61,6 @@
     return _manager;
 }
 
-/** 合同详细API */
-//static NSString * const TBContractDetailURL = @"http://192.168.1.65/nbsst/api/api.caseinfo.get.php";
-static NSString * const TBContractDetailURL = @"http://203.156.252.183:81/nbs/api/api.caseinfo.get.php";
-
-/** 客户信息API */
-//static NSString * const TBCustomerDetailURL = @"http://192.168.1.65/nbsst/api/api.custome.get.php";
-static NSString * const TBCustomerDetailURL = @"http://203.156.252.183:81/nbs/api/api.custome.get.php";
-
 /** cell的重用标识 */
 static NSString * const TBDetailBaseContentCellId = @"TBDetailBaseContentCell";
 static NSString * const TBCustomerBaseContentCellId = @"TBCustomerBaseContentCell";
