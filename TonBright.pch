@@ -17,6 +17,7 @@
 #import "UIView+TBMBProgressHUD.h"
 #import "UIBarButtonItem+TBExtension.h"
 #import "TBAPPSetting.h"
+#import "TBConst.h"
 
 #define USERNM_KEY @"usernm"
 

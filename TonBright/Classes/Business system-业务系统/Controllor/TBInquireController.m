@@ -27,6 +27,7 @@
 @property (nonatomic,strong)AbsenceDatePickerView *datePick;
 @property (nonatomic,strong)AbsenceTypePickerView *typePick;
 @property (nonatomic,strong)TBSelCompanyTableView *selCompanyView;
+
 @property (nonatomic,strong) NSArray *casestatusArray;
 @property (nonatomic,strong) NSArray *casetypeArray;
 @property (nonatomic,strong) NSArray *companyListArray;
@@ -40,9 +41,6 @@
 
 static NSString * const TBInquireDefaultCellId = @"TBInquireDefaultCell";
 static NSString * const TBTimeTypeCellId = @"TBTimeTypeCell";
-
-//static NSString * const TBCompanyListURL = @"http://192.168.1.65/nbsst/api/api.company.list.php";
-static NSString * const TBCompanyListURL = @"http://203.156.252.183:81/nbs/api/api.company.list.php";
 
 - (NSArray<NSDictionary *> *)itemNameDateArray{
     if (_itemNameDataArray == nil) {
@@ -134,18 +132,30 @@ static NSString * const TBCompanyListURL = @"http://203.156.252.183:81/nbs/api/a
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"检索条件";
-    self.tableView.separatorColor = [UIColor clearColor];
+    
+    [self setNavi];
+    
+    [self setTable];
+    
     [self getData];
+}
+
+- (void)setNavi{
+    self.navigationItem.title = @"检索条件";
     UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStylePlain target:self action:@selector(inquire)];
     [rightBtn setTintColor:[UIColor blackColor]];
     [rightBtn setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:14], NSFontAttributeName,nil] forState:(UIControlStateNormal)];
     self.navigationItem.rightBarButtonItem = rightBtn;
+}
+
+- (void)setTable{
+    self.tableView.separatorColor = [UIColor clearColor];
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([TBInquireDefaultCell class]) bundle:nil] forCellReuseIdentifier:TBInquireDefaultCellId];
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([TBTimeTypeCell class]) bundle:nil] forCellReuseIdentifier:TBTimeTypeCellId];
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 44;
 }
+
 
 - (void)getData{
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
@@ -222,10 +232,6 @@ static NSString * const TBCompanyListURL = @"http://203.156.252.183:81/nbs/api/a
 {
     return self.itemNameDateArray.count;
 }
-
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    return 44;
-//}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {

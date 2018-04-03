@@ -20,6 +20,7 @@
 
 /** 所有的合同查询(数组中存放的都是TBContractList模型) */
 @property (nonatomic, strong) NSArray<TBContractList *> *contractLists;
+
 /** 请求管理者 */
 @property (nonatomic, weak) TBHTTPSessionManager *manager;
 
@@ -28,10 +29,8 @@
 @property (nonatomic,assign) BOOL defaultFlag;
 
 @property (nonatomic, strong) MBProgressHUD *hud;
-@end
 
-//static NSString * const TBContractListURL = @"http://192.168.1.65/nbsst/api/api.caseinfo.list.php";
-static NSString * const TBContractListURL = @"http://203.156.252.183:81/nbs/api/api.caseinfo.list.php";
+@end
 
 @implementation TBContractListViewController
 
@@ -57,15 +56,27 @@ static NSString * const TBContractListCellId = @"TBContractListCell";
 }
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
+   
+    [self setNav];
+    
+    [self setTable];
+    
+}
+
+- (void)setNav{
     self.navigationItem.title = @"合同查看";
     
     UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithTitle:@"查询" style:UIBarButtonItemStylePlain target:self action:@selector(inquire)];
     [rightBtn setTintColor:[UIColor blackColor]];
     [rightBtn setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:14], NSFontAttributeName,nil] forState:(UIControlStateNormal)];
+    
     self.navigationItem.rightBarButtonItem = rightBtn;
-     
-    // 注册cell
+}
+
+- (void)setTable{
+    
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([TBContractListCell class]) bundle:nil] forCellReuseIdentifier:TBContractListCellId];
     [self.tableView setSeparatorColor:[UIColor clearColor]];
     _defaultFlag = NO;
@@ -73,10 +84,12 @@ static NSString * const TBContractListCellId = @"TBContractListCell";
 
 //跳转到检索控制器
 - (void)inquire{
+    
     TBInquireController *contractVc = [[TBInquireController alloc] init];
     contractVc.conditionDictionary = nil;
     contractVc.conditionDictionary = self.conditionDictionary;
     contractVc.delegate = self;
+    
     [self.navigationController pushViewController:contractVc animated:YES];
 }
 
@@ -89,7 +102,9 @@ static NSString * const TBContractListCellId = @"TBContractListCell";
     [params setObject:[TBAPPSetting shareAppSetting].userid forKey:@"tokenuserid"];
     [params setObject:[TBAPPSetting shareAppSetting].tokenid forKey:@"tokenid"];
     [params setObject:[TBAPPSetting shareAppSetting].topcompanyid forKey:@"topcompanyid"];
+    
      __weak typeof(self) weakSelf = self;
+    
     [self.manager POST:TBContractListURL parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary* _Nullable responseObject) {
         [weakSelf hidHud];
         NSString *stat = [NSString stringWithString:responseObject[@"stat"]];
@@ -106,16 +121,14 @@ static NSString * const TBContractListCellId = @"TBContractListCell";
             
         }else{
             NSString *errorString = [NSString stringWithFormat:@"%@",responseObject[@"error"]];
-            [weakSelf showTextHUDWithMessage:[NSString stringWithFormat:@"登录失败:%@",errorString]];
+            [weakSelf showTextHUDWithMessage:[NSString stringWithFormat:@"查询失败:%@",errorString]];
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [weakSelf hidHud];
         if (_defaultFlag) {
             [weakSelf showTextHUDWithMessage:@"查询失败"];
-        }
-            TBLog(@"请求失败 - %@", error);
+           }
            }];
-    
 }
 
 #pragma mark - Table view data source
