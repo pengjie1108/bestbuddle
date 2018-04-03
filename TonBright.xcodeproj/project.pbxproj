@@ -75,6 +75,9 @@
 		CD0DD6A1206CD2A200F459E6 /* TBSelCompanyTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0DD6A0206CD2A200F459E6 /* TBSelCompanyTableView.m */; };
 		CD0DD6A5206CD3C400F459E6 /* TBSelCompanyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0DD6A3206CD3C400F459E6 /* TBSelCompanyCell.m */; };
 		CD0DD6A6206CD3C400F459E6 /* TBSelCompanyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD0DD6A4206CD3C400F459E6 /* TBSelCompanyCell.xib */; };
+		CD2F1FE020731DE40008FC6F /* UILabel+CallHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2F1FDE20731DE30008FC6F /* UILabel+CallHeight.m */; };
+		CD2F1FE42073259C0008FC6F /* TBNewApproveHisCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2F1FE22073259C0008FC6F /* TBNewApproveHisCell.m */; };
+		CD2F1FE52073259C0008FC6F /* TBNewApproveHisCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2F1FE32073259C0008FC6F /* TBNewApproveHisCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -219,6 +222,11 @@
 		CD0DD6A2206CD3C400F459E6 /* TBSelCompanyCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBSelCompanyCell.h; sourceTree = "<group>"; };
 		CD0DD6A3206CD3C400F459E6 /* TBSelCompanyCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBSelCompanyCell.m; sourceTree = "<group>"; };
 		CD0DD6A4206CD3C400F459E6 /* TBSelCompanyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TBSelCompanyCell.xib; sourceTree = "<group>"; };
+		CD2F1FDE20731DE30008FC6F /* UILabel+CallHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+CallHeight.m"; sourceTree = "<group>"; };
+		CD2F1FDF20731DE30008FC6F /* UILabel+CallHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+CallHeight.h"; sourceTree = "<group>"; };
+		CD2F1FE12073259C0008FC6F /* TBNewApproveHisCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBNewApproveHisCell.h; sourceTree = "<group>"; };
+		CD2F1FE22073259C0008FC6F /* TBNewApproveHisCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBNewApproveHisCell.m; sourceTree = "<group>"; };
+		CD2F1FE32073259C0008FC6F /* TBNewApproveHisCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TBNewApproveHisCell.xib; sourceTree = "<group>"; };
 		F492298DDFEE419F458C69AA /* Pods-TonBright.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TonBright.release.xcconfig"; path = "Pods/Target Support Files/Pods-TonBright/Pods-TonBright.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -251,6 +259,8 @@
 		442F904320317B8C00D049F3 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				CD2F1FDF20731DE30008FC6F /* UILabel+CallHeight.h */,
+				CD2F1FDE20731DE30008FC6F /* UILabel+CallHeight.m */,
 				39E03E4F205AA85F00BBBDD2 /* HelpObject.h */,
 				39E03E4E205AA85E00BBBDD2 /* HelpObject.m */,
 				442F904420317B8C00D049F3 /* TBAPPSetting.h */,
@@ -425,6 +435,9 @@
 				441B8183204E8528005EB4F2 /* TBRepaymentplanCell.m */,
 				44A01FB420511C96005B6054 /* TBApproveHisCell.h */,
 				44A01FB520511C96005B6054 /* TBApproveHisCell.m */,
+				CD2F1FE12073259C0008FC6F /* TBNewApproveHisCell.h */,
+				CD2F1FE22073259C0008FC6F /* TBNewApproveHisCell.m */,
+				CD2F1FE32073259C0008FC6F /* TBNewApproveHisCell.xib */,
 				CD0DD69F206CD2A200F459E6 /* TBSelCompanyTableView.h */,
 				CD0DD6A0206CD2A200F459E6 /* TBSelCompanyTableView.m */,
 				CD0DD6A2206CD3C400F459E6 /* TBSelCompanyCell.h */,
@@ -763,6 +776,7 @@
 				44A5D4F61EB8757C00D924E9 /* Assets.xcassets in Resources */,
 				44A01FCB20562457005B6054 /* AbsenceTypePickerView.xib in Resources */,
 				441B817C2047FBCA005EB4F2 /* TBObjectRelateDataCell.xib in Resources */,
+				CD2F1FE52073259C0008FC6F /* TBNewApproveHisCell.xib in Resources */,
 				442F90542031902000D049F3 /* TBContractListCell.xib in Resources */,
 				44A01FBA20526A20005B6054 /* TBTimeTypeCell.xib in Resources */,
 				CD0DD6A6206CD3C400F459E6 /* TBSelCompanyCell.xib in Resources */,
@@ -873,6 +887,7 @@
 				441B818C204FEED9005EB4F2 /* TBTempSystemViewController.m in Sources */,
 				44A5D5651EB9AEAE00D924E9 /* UITextField+TBExtension.m in Sources */,
 				44BE9BC32043F2F9003E1341 /* TBDetailBaseContentCell.m in Sources */,
+				CD2F1FE42073259C0008FC6F /* TBNewApproveHisCell.m in Sources */,
 				442F904B20317B8C00D049F3 /* TBNetWorkRequest.m in Sources */,
 				441B8185204E8528005EB4F2 /* TBRepaymentplanCell.m in Sources */,
 				44A01FCE205626DC005B6054 /* AbsenceTypeEnumModel.m in Sources */,
@@ -884,6 +899,7 @@
 				44A01FBB20526A20005B6054 /* TBTimeTypeCell.m in Sources */,
 				44024999205B6EDF0065A284 /* TBMeAboutTableViewCell.m in Sources */,
 				442F904C20317B8C00D049F3 /* TBAPPSetting.m in Sources */,
+				CD2F1FE020731DE40008FC6F /* UILabel+CallHeight.m in Sources */,
 				44A5D5441EB8833400D924E9 /* TBSystemViewController.m in Sources */,
 				447E872E1EBC26F1005B4EE2 /* UIViewController+TBMBPProgressHUD.m in Sources */,
 				44BA62671EC95D62009FE7DA /* TBContractListViewController.m in Sources */,

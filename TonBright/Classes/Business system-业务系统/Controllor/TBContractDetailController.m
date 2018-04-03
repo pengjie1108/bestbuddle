@@ -17,7 +17,8 @@
 #import "TBObjectRelateDataCell.h"
 #import "TBFinancingPlanDataCell.h"
 #import "TBRepaymentplanCell.h"
-#import "TBApproveHisCell.h"
+//#import "TBApproveHisCell.h"
+#import "TBNewApproveHisCell.h"
 
 @interface TBContractDetailController ()
 /** 请求管理者 */
@@ -75,7 +76,7 @@ static NSString * const TBCustomerCaseContentCellId = @"TBCustomerCaseContentCel
 static NSString * const TBObjectRelateDataCellId = @"TBObjectRelateDataCell";
 static NSString * const TBFinancingPlanDataCellId = @"TBFinancingPlanDataCell";
 static NSString * const TBRepaymentplanCellId = @"TBRepaymentplanCell";
-static NSString * const TBApproveHisCellId = @"TBApproveHisCell";
+static NSString * const TBApproveHisCellId = @"TBNewApproveHisCellId";
 
 - (id)init{
     self = [super initWithStyle:UITableViewStyleGrouped];
@@ -100,13 +101,15 @@ static NSString * const TBApproveHisCellId = @"TBApproveHisCell";
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([TBObjectRelateDataCell class]) bundle:nil] forCellReuseIdentifier:TBObjectRelateDataCellId];
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([TBFinancingPlanDataCell class]) bundle:nil] forCellReuseIdentifier:TBFinancingPlanDataCellId];
     [self.tableView registerClass:[TBRepaymentplanCell class] forCellReuseIdentifier:TBRepaymentplanCellId];
-    [self.tableView registerClass:[TBApproveHisCell class] forCellReuseIdentifier:TBApproveHisCellId];
+    [self.tableView registerNib:[UINib nibWithNibName:@"TBNewApproveHisCell" bundle:nil] forCellReuseIdentifier:@"TBNewApproveHisCellId"];
+//    [self.tableView registerClass:[TBApproveHisCell class] forCellReuseIdentifier:TBApproveHisCellId];
     
     self.tableView.estimatedSectionHeaderHeight = 0;
     self.tableView.estimatedSectionFooterHeight = 0;
     self.tableView.sectionHeaderHeight = 0;
     self.tableView.sectionFooterHeight = 0;
-    
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.estimatedRowHeight = 50;
     if ([self.tableView respondsToSelector:@selector(setSeparatorInset:)]) {
         [self.tableView setSeparatorInset:UIEdgeInsetsMake(0, -45, 0, 0)];
         
@@ -244,7 +247,7 @@ static NSString * const TBApproveHisCellId = @"TBApproveHisCell";
             cell.planList = self.detailData.paymentplanlist[indexPath.row];
             return cell;
         }else if (indexPath.section == 6){
-            TBApproveHisCell *cell = [tableView dequeueReusableCellWithIdentifier:TBApproveHisCellId];
+            TBNewApproveHisCell *cell = [tableView dequeueReusableCellWithIdentifier:TBApproveHisCellId];
             cell.approveHisString = self.approvalHistoryArray[indexPath.row];
             return cell;
         }else{
