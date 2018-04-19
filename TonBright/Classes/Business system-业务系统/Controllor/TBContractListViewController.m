@@ -69,8 +69,8 @@ static NSString * const TBContractListCellId = @"TBContractListCell";
     self.navigationItem.title = @"合同查看";
     
     UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithTitle:@"查询" style:UIBarButtonItemStylePlain target:self action:@selector(inquire)];
-    [rightBtn setTintColor:[UIColor blackColor]];
-    [rightBtn setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:14], NSFontAttributeName,nil] forState:(UIControlStateNormal)];
+    [rightBtn setTintColor:[UIColor whiteColor]];
+    [rightBtn setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:15], NSFontAttributeName,nil] forState:(UIControlStateNormal)];
     
     self.navigationItem.rightBarButtonItem = rightBtn;
 }
@@ -97,7 +97,7 @@ static NSString * const TBContractListCellId = @"TBContractListCell";
     if (_defaultFlag) {
         [self showMbHub];
     }
-    
+    [self.navigationItem.rightBarButtonItem setTintColor:[UIColor whiteColor]];
     NSMutableDictionary *params = conditionDictionary.mutableCopy;
     [params setObject:[TBAPPSetting shareAppSetting].userid forKey:@"tokenuserid"];
     [params setObject:[TBAPPSetting shareAppSetting].tokenid forKey:@"tokenid"];

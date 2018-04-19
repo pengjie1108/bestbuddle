@@ -143,8 +143,8 @@ static NSString * const TBTimeTypeCellId = @"TBTimeTypeCell";
 - (void)setNavi{
     self.navigationItem.title = @"检索条件";
     UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStylePlain target:self action:@selector(inquire)];
-    [rightBtn setTintColor:[UIColor blackColor]];
-    [rightBtn setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:14], NSFontAttributeName,nil] forState:(UIControlStateNormal)];
+    [rightBtn setTintColor:[UIColor whiteColor]];
+    [rightBtn setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:15], NSFontAttributeName,nil] forState:(UIControlStateNormal)];
     self.navigationItem.rightBarButtonItem = rightBtn;
 }
 
