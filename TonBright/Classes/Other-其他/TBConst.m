@@ -15,15 +15,15 @@ CGFloat const TBSmallMargin = TBMargin * 0.5;
 #ifdef __OBJC__
 
 
-#ifdef DEBUG
-
-NSString * const TBContractListURL = @"http://192.168.1.65/nbsst/api/api.caseinfo.list.php";
-NSString * const TBLoginURL = @"http://192.168.1.65/nbsst/api/api.m.user.login.php";
-NSString * const TBCompanyListURL = @"http://192.168.1.65/nbsst/api/api.company.list.php";
-NSString * const TBContractDetailURL = @"http://192.168.1.65/nbsst/api/api.caseinfo.get.php";
-NSString * const TBCustomerDetailURL = @"http://192.168.1.65/nbsst/api/api.custome.get.php";
-
-#else
+//#ifdef DEBUG
+//
+//NSString * const TBContractListURL = @"http://192.168.1.65/nbsst/api/api.caseinfo.list.php";
+//NSString * const TBLoginURL = @"http://192.168.1.65/nbsst/api/api.m.user.login.php";
+//NSString * const TBCompanyListURL = @"http://192.168.1.65/nbsst/api/api.company.list.php";
+//NSString * const TBContractDetailURL = @"http://192.168.1.65/nbsst/api/api.caseinfo.get.php";
+//NSString * const TBCustomerDetailURL = @"http://192.168.1.65/nbsst/api/api.custome.get.php";
+//
+//#else
 
 NSString * const TBContractListURL = @"http://203.156.252.183:81/nbs/api/api.caseinfo.list.php";
 NSString * const TBLoginURL = @"http://203.156.252.183:81/nbs/api/api.m.user.login.php";
@@ -31,7 +31,7 @@ NSString * const TBCompanyListURL = @"http://203.156.252.183:81/nbs/api/api.comp
 NSString * const TBContractDetailURL = @"http://203.156.252.183:81/nbs/api/api.caseinfo.get.php";
 NSString * const TBCustomerDetailURL = @"http://203.156.252.183:81/nbs/api/api.custome.get.php";
 
-#endif
+//#endif
 
 #endif
 
